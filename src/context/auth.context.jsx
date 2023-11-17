@@ -34,8 +34,6 @@ function AuthProviderWrapper(props) {
         setUser(user);
       })
       .catch((error) => {
-        // If the server sends an error response (invalid token) ❌
-        // Update state variables        
         setIsLoggedIn(false);
         setIsLoading(false);
         setUser(null);

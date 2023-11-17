@@ -1,25 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import { Navigate } from "react-router-dom";
 import Room from "../components/Room";
 import { useNavigate } from "react-router-dom";
 
 import { socket } from "../services/socket.service";
+import { GameContext} from "../context/game.context";
 
 
 
 function QuizBoardPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const {manageContext} = useContext(GameContext)
+
   const navigate = useNavigate();
 
-  function handleCreate(roomName,name) {
+  function handleCreate(roomName,userName) {
+    manageContext('creator',userName, roomName)
     if (socket && socket.connected) {
-      socket.emit("create-room", { roomName,name });
+      socket.emit("create-room", { 
+        roomName: roomName, 
+        userName: userName 
+      });
     }
   }
 
   function handleJoin(roomName,name) {
+    manageContext('player',name, roomName)
     if (socket && socket.connected) {
-    
       socket.emit("join-room", { roomName,name });
     }
   }

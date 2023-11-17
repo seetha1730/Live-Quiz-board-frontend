@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import Navbar from './components/Navbar'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -7,21 +6,28 @@ import GameRoom from './pages/GameRoom';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignUpPage';
 import IsAnon from "./components/isAnon";
+import { GameContextWrapper } from './context/game.context';
 function App() {
- 
+
+
 
   return (
-  
+    <GameContextWrapper>
       <div className="min-h-full">
         <Navbar />
         <Routes>
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>  } />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
-          <Route path="/" element={<QuizBoardPage />} />
-          <Route path={`/room/:roomName`} element={<GameRoom />} />
+          <Route path="/" element={
+          <QuizBoardPage />} />
+          <Route path={`/room/:roomName`} element={
+            
+          <GameRoom />
+         
+          } />
         </Routes>
       </div>
- 
+      </GameContextWrapper>
   );
 }
 
