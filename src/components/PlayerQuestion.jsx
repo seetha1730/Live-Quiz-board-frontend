@@ -1,27 +1,26 @@
 import React, { useState, useEffect, useContext } from "react";
 import { socket } from "../services/socket.service";
 import { GameContext } from "../context/game.context";
-
+import FancyButton from "./button/FancyButton";
 function PlayerQuestion() {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answerSubmitted, setAnswerSubmitted] = useState(false);
-  const [timer, setTimer] = useState(0)
+  const [timer, setTimer] = useState(0);
   const { playerDetail } = useContext(GameContext);
+
   useEffect(() => {
     socket.on("question", (question) => {
+      console.log("Received question:", question);
       setQuestion(question);
-
-
-      // Reset selected answer and submission status when a new question is received
       setSelectedAnswer(null);
       setAnswerSubmitted(false);
-      setTimer(25);
+      setTimer(500);
     });
   }, []);
 
   useEffect(() => {
-    console.log(timer)
+    console.log("Timer:", timer, "Answer Submitted:", answerSubmitted);
     let timerInterval;
 
     if (timer > 0 && !answerSubmitted) {
@@ -33,60 +32,58 @@ function PlayerQuestion() {
     }
 
     return () => {
-     
       clearInterval(timerInterval);
-     
     };
   }, [timer, answerSubmitted]);
 
   const handleAnswerClick = (selectedOption) => {
+    console.log("Answer Clicked:", selectedOption);
     if (!answerSubmitted) {
       setAnswerSubmitted(true);
+      if (selectedOption === question.answer) {
+        socket.emit("submitAnswer", { playerDetail });
+      }
     }
-    if (selectedOption === question.answer) {
-      socket.emit("submitAnswer", { playerDetail });
-    }
-    setAnswerSubmitted(true);
-
-    
   };
+
+  console.log(
+    "Rendering with Answer Submitted:",
+    answerSubmitted,
+    "Question:",
+    question
+  );
 
   return (
     <>
-      {!answerSubmitted &&
-        (question ? (
-          <div className="flex flex-col px-5 bg-white text-gray-700">
-            <h3 className="bg-blue-500 p-3 mt-4">{question.question}</h3>
-            <ul>
-              {["A", "B", "C", "D"].map((option, index) => (
-                <li className="p-3" key={index}>
-                  <button
-                    className={`p-3 flex w-full bg-violet-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-green-300 ${
-                      selectedAnswer === option ? "bg-green-300" : ""
-                    }`}
-                    onClick={() => handleAnswerClick(option)}
-                  >
-                    <span>{option} </span>
-                    <span className="ml-8">{question[`option${option}`]}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
+      {!answerSubmitted && question ? (
+        <div className="flex flex-col px-5 bg-grey text-gray-700">
+        <div className="animated-box in">
+  <h1 className="bg-[#edf6f9]">{question.question}</h1>
 
-            <div>
-              
-                <span className="countdown font-mono text-6xl">
-                  <span style={{ "--value": timer }}></span>
-                </span>
-              
-            </div>
+</div>
+      {["A", "B", "C", "D"].map((option, index) => (
+  <div key={`${index}-${option}`}>
+    <FancyButton
+      className={`${selectedAnswer === option ? "bg-green-300" : ""}`}
+      option={option}
+      text={question[`option${option}`]}
+      answerClick={(option) => handleAnswerClick(option)}
+    />
+  </div>
+))}
+         
+
+          <div>
+            <span className="countdown font-mono text-6xl">
+              <span style={{ "--value": timer }}></span>
+            </span>
           </div>
-        ) : (
-          <p>Waiting for the questions...</p>
-        ))}
-      {answerSubmitted && (
-        <p className="text-blue-500 mt-2">
-          Answer submitted. Please wait for the next question.
+        </div>
+      ) : (
+        <p>
+          {question
+            ? "Answer submitted. Please wait for the next question."
+            : "Waiting for the questions..."}
         </p>
       )}
     </>

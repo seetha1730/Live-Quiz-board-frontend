@@ -4,6 +4,8 @@ import { GameContext } from '../context/game.context';
 import SendQuestion from '../components/sendQuestion';
 import PlayerQuestion from '../components/PlayerQuestion';
 import { socket } from "../services/socket.service";
+import Dots from './dots';
+import FancyButton from '../components/button/FancyButton';
 function GameRoom() {
   const { gameContext } = useContext(GameContext);
   const { playerDetail } = useContext(GameContext);
@@ -33,11 +35,19 @@ function GameRoom() {
         <>
           <div className="gap-3 col-span-3 bg-white top-[3.8125rem]">
             <RoomAndUsers />
-            <button onClick={()=> endGame(playerDetail.room)} className='bg-red-500'>End Game</button>
+            <FancyButton text="End Game" answerClick={() => endGame(playerDetail.room)}/>
+           
           </div>
          
-          <div className="gap-3 col-span-5 bg-grey">
+          <div className="gap-3 col-span-9 bg-gray ">
+            <div className="container">
+            
+            <Dots/>
+            <div className="content h-100vh overflow-auto">
             <SendQuestion  />
+            </div>
+          </div>
+            
           </div>
 
         
@@ -48,8 +58,16 @@ function GameRoom() {
             <RoomAndUsers />
           </div>
 
-          <div className="gap-3 col-span-5 bg-grey">
-            <PlayerQuestion />
+          <div className="gap-3 col-span-9 bg-gray">
+          <div className="container">
+          
+          <Dots/>
+          <div className="content">
+          <PlayerQuestion />
+          </div>
+        </div>
+
+           
           </div>
         </>
       )}

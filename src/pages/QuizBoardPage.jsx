@@ -7,7 +7,6 @@ import { socket } from "../services/socket.service";
 import { GameContext} from "../context/game.context";
 
 
-
 function QuizBoardPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const {manageContext} = useContext(GameContext)
@@ -44,7 +43,7 @@ function QuizBoardPage() {
   if (!isLoggedIn) return <Navigate to="/error" />;
 
   return (
-    <div className="bg-white">
+    <div className="h-screen" style={{ backgroundImage: 'url("/public/istockphoto-857045822-612x612.jpg")', backgroundSize: 'cover' }}>
       <header className="bg-white shadow">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900">
@@ -52,8 +51,8 @@ function QuizBoardPage() {
           </h1>
         </div>
       </header>
-      <main>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <main className="flex items-center h-screen">
+        <div className="grid grid-cols-12 gap-12 mx-auto w-1/2 ">
           <Room type="Create" buttonEvt={create} title="Create" />
           <Room type="Join" buttonEvt={join} title="Join" />
         </div>
