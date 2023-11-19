@@ -57,8 +57,8 @@ function PlayerQuestion() {
     <>
       {!answerSubmitted && question ? (
         <div className="flex flex-col px-5 bg-grey text-gray-700">
-        <div className="animated-box in">
-  <h1 className="bg-[#edf6f9]">{question.question}</h1>
+        <div className="animated-box bg-[#717ec3] in">
+  <h1 className="text-white">{question.question}</h1>
 
 </div>
       {["A", "B", "C", "D"].map((option, index) => (

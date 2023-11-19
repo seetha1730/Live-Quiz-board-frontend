@@ -1,4 +1,4 @@
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar1'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import QuizBoardPage from './pages/QuizBoardPage';
@@ -7,6 +7,8 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignUpPage';
 import IsAnon from "./components/isAnon";
 import { GameContextWrapper } from './context/game.context';
+import CreateQuestion from './pages/CreateQuestion';
+
 function App() {
 
 
@@ -15,9 +17,11 @@ function App() {
     <GameContextWrapper>
       <div className="min-h-full">
         <Navbar />
+      
         <Routes>
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>  } />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
+        <Route path="/question-answers" element={<CreateQuestion /> } />
           <Route path="/" element={
           <QuizBoardPage />} />
           <Route path={`/room/:roomName`} element={

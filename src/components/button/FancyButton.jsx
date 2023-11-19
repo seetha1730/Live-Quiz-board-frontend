@@ -3,10 +3,10 @@ import "./FancyButton.css"
 function FancyButton({text,option, answerClick}) {
   return (
  
-<div className='w-100' onClick={() => answerClick(option)}>
+<div className='w-100 ' onClick={() => answerClick(option)}>
    
 
-    <a className=" animated-button" href="#">
+    <a className=" rounded-lg animated-button" href="#">
     
     <span></span>
   <span></span>

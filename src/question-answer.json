@@ -1,0 +1,769 @@
+[
+    {
+      "id": 1,
+      "category": "React",
+      "questionText": "What is React?",
+      "options": ["A programming language", "A front-end library", "A database management system", "A server-side framework"],
+      "correctOption": 1
+    },
+    {
+      "id": 2,
+      "category": "HTML",
+      "questionText": "What does HTML stand for?",
+      "options": ["Hyper Text Markup Language", "High Tech Markup Language", "Hyperlink and Text Markup Language", "Home Tool Markup Language"],
+      "correctOption": 0
+    },
+    {
+      "id": 3,
+      "category": "CSS",
+      "questionText": "How can you include an external CSS file in an HTML document?",
+      "options": ["<css> tag", "<style> tag", "<link> tag", "<script> tag"],
+      "correctOption": 2
+    },
+    {
+      "id": 4,
+      "category": "MongoDB",
+      "questionText": "Which of the following is a NoSQL database?",
+      "options": ["MySQL", "PostgreSQL", "SQLite", "MongoDB"],
+      "correctOption": 3
+    },
+    {
+      "id": 5,
+      "category": "Mongoose",
+      "questionText": "What is Mongoose used for in the context of MongoDB?",
+      "options": ["A front-end library", "An object modeling tool", "A server-side framework", "A version control system"],
+      "correctOption": 1
+    },
+    {
+      "id": 6,
+      "category": "Handlebars",
+      "questionText": "What type of template engine is Handlebars?",
+      "options": ["Front-end", "Back-end", "Both front-end and back-end", "Database management"],
+      "correctOption": 2
+    },
+    {
+      "id": 7,
+      "category": "React",
+      "questionText": "Which lifecycle method is called once the component is added to the DOM?",
+      "options": ["componentDidMount", "componentDidUpdate", "componentWillMount", "render"],
+      "correctOption": 0
+    },
+    {
+      "id": 8,
+      "category": "HTML",
+      "questionText": "What is the purpose of the 'alt' attribute in an HTML image tag?",
+      "options": ["Align the image", "Alternative text for browsers that cannot display the image", "Define image width", "Link to another page"],
+      "correctOption": 1
+    },
+    {
+      "id": 9,
+      "category": "CSS",
+      "questionText": "What does CSS stand for?",
+      "options": ["Computer Style Sheets", "Creative Style Sheets", "Cascading Style Sheets", "Colorful Style Sheets"],
+      "correctOption": 2
+    },
+    {
+      "id": 10,
+      "category": "MongoDB",
+      "questionText": "Which of the following is a BSON data type in MongoDB?",
+      "options": ["Boolean", "String", "Binary data", "All of the above"],
+      "correctOption": 3
+    },
+    {
+        "id": 11,
+        "category": "React",
+        "questionText": "What is JSX in React?",
+        "options": ["JavaScript XML", "Java XML", "JavaScript Extension", "Java Extension"],
+        "correctOption": 0
+      },
+      {
+        "id": 12,
+        "category": "HTML",
+        "questionText": "What is the purpose of the 'meta' tag in HTML?",
+        "options": ["Define a paragraph", "Specify character encoding", "Create a hyperlink", "Style the text"],
+        "correctOption": 1
+      },
+      {
+        "id": 13,
+        "category": "CSS",
+        "questionText": "What is the box model in CSS?",
+        "options": ["A way to design layouts with boxes", "A model for responsive design", "A model for managing database queries", "A model for organizing code"],
+        "correctOption": 0
+      },
+      {
+        "id": 14,
+        "category": "MongoDB",
+        "questionText": "Which of the following is not a valid data type in MongoDB?",
+        "options": ["Number", "Decimal128", "Timestamp", "Currency"],
+        "correctOption": 3
+      },
+      {
+        "id": 15,
+        "category": "Mongoose",
+        "questionText": "How do you define a Mongoose schema?",
+        "options": ["Using the Schema class", "Using the Model class", "Using the Document class", "Using the Connection class"],
+        "correctOption": 0
+      },
+      {
+        "id": 16,
+        "category": "Handlebars",
+        "questionText": "What is the syntax for a Handlebars expression?",
+        "options": ["{{ expression }}", "{ expression }", "[ expression ]", "( expression )"],
+        "correctOption": 0
+      },
+      {
+        "id": 17,
+        "category": "React",
+        "questionText": "What is the purpose of the 'useState' hook in React?",
+        "options": ["To fetch data from an API", "To handle state in functional components", "To create a class component", "To define routing in a React app"],
+        "correctOption": 1
+      },
+      {
+        "id": 18,
+        "category": "HTML",
+        "questionText": "Which HTML tag is used for creating an unordered list?",
+        "options": ["<ul>", "<ol>", "<li>", "<dl>"],
+        "correctOption": 0
+      },
+      {
+        "id": 19,
+        "category": "CSS",
+        "questionText": "What is the 'box-sizing' property in CSS used for?",
+        "options": ["To set the background color of a box", "To define the size of a box", "To specify the border of a box", "To control the sizing behavior of the box model"],
+        "correctOption": 3
+      },
+      {
+        "id": 20,
+        "category": "MongoDB",
+        "questionText": "Which command is used to create a new database in MongoDB?",
+        "options": ["use", "create", "db", "add"],
+        "correctOption": 0
+      },
+      {
+        "id": 21,
+        "category": "Mongoose",
+        "questionText": "How do you define a Mongoose model?",
+        "options": ["Using the Model class", "Using the Schema class", "Using the Connection class", "Using the Document class"],
+        "correctOption": 0
+      },
+      {
+        "id": 22,
+        "category": "Handlebars",
+        "questionText": "What is a partial in Handlebars?",
+        "options": ["A complete HTML document", "A reusable template", "A database query", "A CSS style"],
+        "correctOption": 1
+      },
+      {
+        "id": 23,
+        "category": "React",
+        "questionText": "What is the purpose of the 'useEffect' hook in React?",
+        "options": ["To manage state in functional components", "To perform side effects in functional components", "To create a class component", "To define routing in a React app"],
+        "correctOption": 1
+      },
+      {
+        "id": 24,
+        "category": "HTML",
+        "questionText": "Which HTML tag is used for creating a hyperlink?",
+        "options": ["<link>", "<a>", "<href>", "<url>"],
+        "correctOption": 1
+      },
+      {
+        "id": 25,
+        "category": "CSS",
+        "questionText": "What is the purpose of the 'position' property in CSS?",
+        "options": ["To set the color of text", "To define the size of a box", "To specify the border of a box", "To control the positioning of an element"],
+        "correctOption": 3
+      },
+      {
+        "id": 26,
+        "category": "MongoDB",
+        "questionText": "Which operator is used for equality in MongoDB queries?",
+        "options": ["$eq", "$ne", "$gt", "$lt"],
+        "correctOption": 0
+      },
+      {
+        "id": 27,
+        "category": "React",
+        "questionText": "What is the purpose of the 'props' object in React?",
+        "options": ["To manage state in functional components", "To pass data between components", "To create a class component", "To define routing in a React app"],
+        "correctOption": 1
+      },
+      {
+        "id": 28,
+        "category": "HTML",
+        "questionText": "What is the purpose of the 'DOCTYPE' declaration in HTML?",
+        "options": ["To define a document type", "To create a hyperlink", "To set the background color", "To specify the border of a box"],
+        "correctOption": 0
+      },
+      {
+        "id": 29,
+        "category": "CSS",
+        "questionText": "What is the 'float' property in CSS used for?",
+        "options": ["To move an element to the right", "To move an element to the left", "To create a floating effect", "To control the positioning of an element"],
+        "correctOption": 3
+      },
+      {
+        "id": 30,
+        "category": "MongoDB",
+        "questionText": "Which command is used to insert documents into a MongoDB collection?",
+        "options": ["insert", "add", "create", "insertOne"],
+        "correctOption": 3
+      },
+      {
+        "id": 31,
+        "category": "React",
+        "questionText": "What is the purpose of the 'useReducer' hook in React?",
+        "options": ["To manage state in functional components", "To perform side effects in functional components", "To handle complex state logic", "To define routing in a React app"],
+        "correctOption": 2
+      },
+      {
+        "id": 32,
+        "category": "HTML",
+        "questionText": "Which HTML tag is used for creating an ordered list?",
+        "options": ["<ul>", "<ol>", "<li>", "<dl>"],
+        "correctOption": 1
+      },
+      {
+        "id": 33,
+        "category": "CSS",
+        "questionText": "What is the 'z-index' property in CSS used for?",
+        "options": ["To set the color of text", "To define the size of a box", "To specify the border of a box", "To control the stacking order of elements"],
+        "correctOption": 3
+      },
+      {
+        "id": 34,
+        "category": "MongoDB",
+        "questionText": "Which operator is used for greater than or equal to in MongoDB queries?",
+        "options": ["$gte", "$lte", "$gt", "$lt"],
+        "correctOption": 0
+      },
+      {
+        "id": 35,
+        "category": "Mongoose",
+        "questionText": "How do you perform a find operation with conditions using Mongoose?",
+        "options": ["Model.find()", "Model.filter()", "Model.search()", "Model.query()"],
+        "correctOption": 0
+      },
+      {
+        "id": 36,
+        "category": "Handlebars",
+        "questionText": "What is a helper function in Handlebars?",
+        "options": ["A function that helps with debugging", "A reusable template", "A function used in templates to perform logic", "A function to manage CSS styles"],
+        "correctOption": 2
+      },
+      {
+        "id": 37,
+        "category": "React",
+        "questionText": "What is the purpose of the 'useContext' hook in React?",
+        "options": ["To manage state in functional components", "To perform side effects in functional components", "To access values from the context without prop drilling", "To define routing in a React app"],
+        "correctOption": 2
+      },
+      {
+        "id": 38,
+        "category": "HTML",
+        "questionText": "Which HTML attribute is used to specify the source of an external script?",
+        "options": ["src", "href", "link", "script"],
+        "correctOption": 0
+      },
+      {
+        "id": 39,
+        "category": "CSS",
+        "questionText": "What is the 'flexbox' layout in CSS used for?",
+        "options": ["To create a grid-based layout", "To style text content", "To specify the border of a box", "To design flexible and efficient layout structures"],
+        "correctOption": 3
+      },
+      {
+        "id": 40,
+        "category": "MongoDB",
+        "questionText": "Which operator is used for matching elements in an array in MongoDB queries?",
+        "options": ["$elemMatch", "$arrayMatch", "$matchArray", "$in"],
+        "correctOption": 0
+      },{
+        "id": 41,
+        "category": "Tailwind CSS",
+        "questionText": "What is Tailwind CSS?",
+        "options": ["A JavaScript framework", "A front-end library", "A CSS framework", "A server-side framework"],
+        "correctOption": 2
+      },
+      {
+        "id": 42,
+        "category": "Express",
+        "questionText": "What is Express.js?",
+        "options": ["A front-end library", "A database management system", "A back-end web application framework", "A server-side rendering tool"],
+        "correctOption": 2
+      },
+      {
+        "id": 43,
+        "category": "Node.js",
+        "questionText": "What is Node.js?",
+        "options": ["A front-end library", "A back-end web application framework", "A database management system", "A version control system"],
+        "correctOption": 1
+      },
+      {
+        "id": 44,
+        "category": "jQuery",
+        "questionText": "What is jQuery?",
+        "options": ["A front-end library", "A back-end web application framework", "A version control system", "A CSS framework"],
+        "correctOption": 0
+      },
+      {
+        "id": 45,
+        "category": "JavaScript",
+        "questionText": "What is the 'typeof' operator used for in JavaScript?",
+        "options": ["To check the type of a variable or expression", "To define the type of a variable", "To create a new variable", "To perform a type conversion"],
+        "correctOption": 0
+      },
+      {
+        "id": 46,
+        "category": "HTML",
+        "questionText": "What does the 'async' attribute in the 'script' tag do?",
+        "options": ["Specifies that the script should be executed asynchronously", "Specifies that the script should be executed synchronously", "Defines a hyperlink to an external script", "Indicates a deprecated feature"],
+        "correctOption": 0
+      },
+      {
+        "id": 47,
+        "category": "CSS",
+        "questionText": "What is the purpose of the 'transition' property in CSS?",
+        "options": ["To create a smooth transition between different property values", "To set the background color of an element", "To define the size of a box", "To control the positioning of an element"],
+        "correctOption": 0
+      },
+      {
+        "id": 48,
+        "category": "Bootstrap",
+        "questionText": "What is Bootstrap?",
+        "options": ["A programming language", "A front-end library", "A CSS framework", "A server-side framework"],
+        "correctOption": 2
+      },
+      {
+        "id": 49,
+        "category": "Handlebars",
+        "questionText": "How do you include a partial in a Handlebars template?",
+        "options": ["{{ partial }}", "{{> partial }}", "{ partial }", "[ partial ]"],
+        "correctOption": 1
+      },
+      {
+        "id": 50,
+        "category": "React",
+        "questionText": "What is the purpose of the 'props.children' in React?",
+        "options": ["To pass data between components", "To manage state in functional components", "To access child components", "To create a class component"],
+        "correctOption": 0
+      },{
+        "id": 51,
+        "category": "React",
+        "questionText": "What is a React component?",
+        "options": ["A functional programming concept", "A reusable piece of UI", "A version control system", "A CSS framework"],
+        "correctOption": 1
+      },
+      {
+        "id": 52,
+        "category": "Tailwind CSS",
+        "questionText": "How do you install Tailwind CSS in a project?",
+        "options": ["npm install tailwind-css", "yarn add tailwind-css", "npm install tailwindcss", "yarn add tailwindcss"],
+        "correctOption": 2
+      },
+      {
+        "id": 53,
+        "category": "Express",
+        "questionText": "What is middleware in Express.js?",
+        "options": ["A database management system", "A function that has access to the request and response objects", "A front-end library", "A version control system"],
+        "correctOption": 1
+      },
+      {
+        "id": 54,
+        "category": "Node.js",
+        "questionText": "Which engine does Node.js use to execute JavaScript code?",
+        "options": ["V8", "SpiderMonkey", "Chakra", "Rhino"],
+        "correctOption": 0
+      },
+      {
+        "id": 55,
+        "category": "jQuery",
+        "questionText": "What does the '$' symbol represent in jQuery?",
+        "options": ["Variable declaration", "Function declaration", "Selector", "Property"],
+        "correctOption": 2
+      },
+      {
+        "id": 56,
+        "category": "JavaScript",
+        "questionText": "What is the purpose of the 'map' function in JavaScript?",
+        "options": ["To modify existing array elements", "To iterate over an array and create a new array", "To filter array elements", "To sort array elements"],
+        "correctOption": 1
+      },
+      {
+        "id": 57,
+        "category": "HTML",
+        "questionText": "Which HTML tag is used for creating a form?",
+        "options": ["<form>", "<input>", "<submit>", "<button>"],
+        "correctOption": 0
+      },
+      {
+        "id": 58,
+        "category": "CSS",
+        "questionText": "What is the 'box-shadow' property in CSS used for?",
+        "options": ["To set the color of text", "To create a shadow effect around an element", "To define the size of a box", "To control the positioning of an element"],
+        "correctOption": 1
+      },
+      {
+        "id": 59,
+        "category": "Bootstrap",
+        "questionText": "What is the Bootstrap grid system used for?",
+        "options": ["To create animations", "To organize and structure page content", "To define the size of a box", "To style text content"],
+        "correctOption": 1
+      },
+      {
+        "id": 60,
+        "category": "Handlebars",
+        "questionText": "What is a block helper in Handlebars?",
+        "options": ["A helper function for manipulating blocks of text", "A function used in templates to perform logic", "A reusable template", "A function to manage CSS styles"],
+        "correctOption": 1
+      },
+      {
+        "id": 61,
+        "category": "React",
+        "questionText": "What is the purpose of the 'useMemo' hook in React?",
+        "options": ["To manage state in functional components", "To perform side effects in functional components", "To memoize values and avoid unnecessary computations", "To define routing in a React app"],
+        "correctOption": 2
+      },
+      {
+        "id": 62,
+        "category": "Tailwind CSS",
+        "questionText": "How do you customize the default color palette in Tailwind CSS?",
+        "options": ["By modifying the core configuration file", "By adding custom CSS styles", "By using a different CSS framework", "By installing a Tailwind plugin"],
+        "correctOption": 0
+      },
+      {
+        "id": 63,
+        "category": "Express",
+        "questionText": "What is routing in Express.js?",
+        "options": ["A method for tracking requests", "A way to define URL patterns and associate them with functions", "A front-end library", "A version control system"],
+        "correctOption": 1
+      },
+      {
+        "id": 64,
+        "category": "Node.js",
+        "questionText": "What is the purpose of the 'npm' command in Node.js?",
+        "options": ["To install packages and manage dependencies", "To execute JavaScript code", "To create a new Node.js project", "To start the Node.js server"],
+        "correctOption": 0
+      },
+      {
+        "id": 65,
+        "category": "jQuery",
+        "questionText": "Which method is used to perform asynchronous operations in jQuery?",
+        "options": ["$.ajax()", "$.async()", "$.getAsync()", "$.asyncRequest()"],
+        "correctOption": 0
+      },
+      {
+        "id": 66,
+        "category": "JavaScript",
+        "questionText": "What is a closure in JavaScript?",
+        "options": ["A way to close a function", "A way to create private variables", "A method for opening and closing HTML tags", "A built-in JavaScript function"],
+        "correctOption": 1
+      },
+      {
+        "id": 67,
+        "category": "HTML",
+        "questionText": "What does the 'placeholder' attribute in an input tag do?",
+        "options": ["Defines the default value displayed in an empty input field", "Specifies the position of the input field on the page", "Sets the font style for the input text", "Creates a placeholder image inside the input field"],
+        "correctOption": 0
+      },
+      {
+        "id": 68,
+        "category": "CSS",
+        "questionText": "How can you center an element horizontally in CSS?",
+        "options": ["text-align: center;", "margin: auto;", "align: center;", "position: center;"],
+        "correctOption": 1
+      },
+      {
+        "id": 69,
+        "category": "Bootstrap",
+        "questionText": "What is the purpose of the 'container' class in Bootstrap?",
+        "options": ["To create a container for storing data", "To define the size of a box", "To organize and structure page content", "To style text content"],
+        "correctOption": 2
+      },
+      {
+        "id": 70,
+        "category": "Handlebars",
+        "questionText": "How do you iterate over an array in a Handlebars template?",
+        "options": ["{{ for item in array }}", "{{ each array as item }}", "{{ iterate array as item }}", "{{ loop array as item }}"],
+        "correctOption": 1
+      },{
+        "id": 71,
+        "category": "React",
+        "questionText": "What is React Router used for?",
+        "options": ["To manage state in React components", "To create dynamic routes in React applications", "To handle HTTP requests in React", "To style React components"],
+        "correctOption": 1
+      },
+      {
+        "id": 72,
+        "category": "Tailwind CSS",
+        "questionText": "How do you apply custom styles in Tailwind CSS?",
+        "options": ["By modifying the core configuration file", "By using inline styles in HTML", "By writing custom CSS files", "By installing a Tailwind plugin"],
+        "correctOption": 0
+      },
+      {
+        "id": 73,
+        "category": "Express",
+        "questionText": "What is middleware in the context of Express.js?",
+        "options": ["A way to create middleware functions", "A function that runs after the route handler", "A database management system", "A front-end library"],
+        "correctOption": 0
+      },
+      {
+        "id": 74,
+        "category": "Node.js",
+        "questionText": "What is the Node Package Manager (NPM) used for?",
+        "options": ["To manage server configuration", "To install and manage project dependencies", "To create a new Node.js project", "To define the structure of a Node.js application"],
+        "correctOption": 1
+      },
+      {
+        "id": 75,
+        "category": "jQuery",
+        "questionText": "Which method is used to fade out an element in jQuery?",
+        "options": ["fadeOut()", "hide()", "fadeToggle()", "slideUp()"],
+        "correctOption": 0
+      },
+      {
+        "id": 76,
+        "category": "JavaScript",
+        "questionText": "What is the purpose of the 'let' keyword in JavaScript?",
+        "options": ["To declare a block-scoped variable", "To define a constant variable", "To create a function", "To declare a global variable"],
+        "correctOption": 0
+      },
+      {
+        "id": 77,
+        "category": "HTML",
+        "questionText": "What is the semantic meaning of the 'article' tag in HTML?",
+        "options": ["Defines a section that contains navigation links", "Represents a self-contained piece of content", "Defines a list item", "Specifies a section with a heading"],
+        "correctOption": 1
+      },
+      {
+        "id": 78,
+        "category": "CSS",
+        "questionText": "What is the purpose of the 'flex-direction' property in CSS Flexbox?",
+        "options": ["To set the order of flex items", "To define the size of a box", "To control the positioning of an element", "To establish the main axis of the flex container"],
+        "correctOption": 3
+      },
+      {
+        "id": 79,
+        "category": "Bootstrap",
+        "questionText": "What is the purpose of the 'jumbotron' component in Bootstrap?",
+        "options": ["To create a responsive navigation bar", "To display prominent content on a page", "To style form elements", "To define the size of a box"],
+        "correctOption": 1
+      },
+      {
+        "id": 80,
+        "category": "Handlebars",
+        "questionText": "What is the purpose of the 'unless' block helper in Handlebars?",
+        "options": ["To iterate over an array", "To conditionally render content when the expression is false", "To define a reusable template", "To manage CSS styles"],
+        "correctOption": 1
+      },
+      {
+        "id": 81,
+        "category": "React",
+        "questionText": "What is the significance of the 'key' prop in React lists?",
+        "options": ["To specify a unique identifier for each list item", "To style the list items", "To define the order of the list items", "To create a new list"],
+        "correctOption": 0
+      },
+      {
+        "id": 82,
+        "category": "Tailwind CSS",
+        "questionText": "How do you add a background color to an element in Tailwind CSS?",
+        "options": ["bg-color", "bg", "background-color", "bg-color-fill"],
+        "correctOption": 1
+      },
+      {
+        "id": 83,
+        "category": "Express",
+        "questionText": "What is the purpose of the 'res.json()' method in an Express route?",
+        "options": ["To send an HTML response", "To send a JSON response", "To redirect to another route", "To set a cookie"],
+        "correctOption": 1
+      },
+      {
+        "id": 84,
+        "category": "Node.js",
+        "questionText": "How can you handle asynchronous operations in Node.js?",
+        "options": ["Using callbacks", "Using promises", "Using async/await", "All of the above"],
+        "correctOption": 3
+      },
+      {
+        "id": 85,
+        "category": "jQuery",
+        "questionText": "What is the purpose of the 'slideDown()' method in jQuery?",
+        "options": ["To show an element with a sliding motion", "To hide an element with a sliding motion", "To toggle between showing and hiding", "To fade in an element"],
+        "correctOption": 0
+      },
+      {
+        "id": 86,
+        "category": "JavaScript",
+        "questionText": "What is the 'arrow function' syntax in JavaScript?",
+        "options": ["function() { }", "() => { }", "=> { }", "function => { }"],
+        "correctOption": 1
+      },
+      {
+        "id": 87,
+        "category": "HTML",
+        "questionText": "What is the purpose of the 'figcaption' element in HTML?",
+        "options": ["To define a figure caption", "To create a hyperlink", "To set the background color of an element", "To define the size of a box"],
+        "correctOption": 0
+      },
+      {
+        "id": 88,
+        "category": "CSS",
+        "questionText": "How can you select all paragraphs with a class of 'intro' in CSS?",
+        "options": [".paragraph.intro", "p[class=intro]", "p.intro", "#intro p"],
+        "correctOption": 2
+      },
+      {
+        "id": 89,
+        "category": "Bootstrap",
+        "questionText": "What is the purpose of the 'navbar' component in Bootstrap?",
+        "options": ["To create a responsive grid system", "To define the size of a box", "To style form elements", "To create a navigation bar"],
+        "correctOption": 3
+      },
+      {
+        "id": 90,
+        "category": "Handlebars",
+        "questionText": "How do you include a variable in a Handlebars template?",
+        "options": ["{{ variable }}", "$variable", "{ variable }", "[ variable ]"],
+        "correctOption": 0
+      },{
+        "id": 91,
+        "category": "React",
+        "questionText": "What is the purpose of React Hooks?",
+        "options": ["To create custom hooks for authentication", "To manage state and side effects in functional components", "To define routes in a React app", "To style React components"],
+        "correctOption": 1
+      },
+      {
+        "id": 92,
+        "category": "Tailwind CSS",
+        "questionText": "How do you apply responsive styles in Tailwind CSS?",
+        "options": ["Using media queries in CSS", "By adding custom JavaScript code", "By using the 'responsive' utility classes", "By defining custom breakpoints in the configuration file"],
+        "correctOption": 2
+      },
+      {
+        "id": 93,
+        "category": "Express",
+        "questionText": "What is the purpose of the 'app.use()' method in Express.js?",
+        "options": ["To define a route handler", "To include middleware functions", "To set the view engine", "To create a new Express application"],
+        "correctOption": 1
+      },
+      {
+        "id": 94,
+        "category": "Node.js",
+        "questionText": "What is the 'Event Loop' in Node.js?",
+        "options": ["A function that handles events in the DOM", "A process that handles asynchronous operations", "A loop that iterates through an array", "A built-in Node.js module"],
+        "correctOption": 1
+      },
+      {
+        "id": 95,
+        "category": "jQuery",
+        "questionText": "What is the purpose of the 'toggleClass()' method in jQuery?",
+        "options": ["To add a class to an element", "To remove a class from an element", "To toggle between adding and removing a class", "To check if an element has a specific class"],
+        "correctOption": 2
+      },
+      {
+        "id": 96,
+        "category": "JavaScript",
+        "questionText": "What is the 'Promise' object in JavaScript?",
+        "options": ["A way to handle asynchronous operations", "A method for creating arrays", "A built-in JavaScript function", "A function to declare variables"],
+        "correctOption": 0
+      },
+      {
+        "id": 97,
+        "category": "HTML",
+        "questionText": "What does the 'aside' element represent in HTML?",
+        "options": ["Defines additional information that is tangentially related to the content", "Represents a block of code", "Defines a navigation menu", "Specifies a section with a heading"],
+        "correctOption": 0
+      },
+      {
+        "id": 98,
+        "category": "CSS",
+        "questionText": "What is the purpose of the 'transform' property in CSS?",
+        "options": ["To define the size of a box", "To create a 3D effect or animation", "To set the color of text", "To control the positioning of an element"],
+        "correctOption": 1
+      },
+      {
+        "id": 99,
+        "category": "Bootstrap",
+        "questionText": "What is the Bootstrap grid system based on?",
+        "options": ["Flexbox", "CSS Grid", "Table layout", "Floats"],
+        "correctOption": 0
+      },
+      {
+        "id": 100,
+        "category": "Handlebars",
+        "questionText": "How do you comment out content in a Handlebars template?",
+        "options": ["<!-- Comment -->", "{{! Comment }}", "{# Comment #}", "{{# Comment #}}"],
+        "correctOption": 1
+      },
+      {
+        "id": 101,
+        "category": "React",
+        "questionText": "What is the purpose of the 'useEffect' hook in React?",
+        "options": ["To manage state in functional components", "To perform side effects in functional components", "To memoize values and avoid unnecessary computations", "To define routing in a React app"],
+        "correctOption": 1
+      },
+      {
+        "id": 102,
+        "category": "Tailwind CSS",
+        "questionText": "How do you create a custom color palette in Tailwind CSS?",
+        "options": ["By modifying the core configuration file", "By using inline styles in HTML", "By adding custom CSS files", "By installing a Tailwind plugin"],
+        "correctOption": 0
+      },
+      {
+        "id": 103,
+        "category": "Express",
+        "questionText": "What is the purpose of the 'req.params' object in an Express route?",
+        "options": ["To parse query parameters", "To access route parameters", "To set HTTP headers", "To store session data"],
+        "correctOption": 1
+      },
+      {
+        "id": 104,
+        "category": "Node.js",
+        "questionText": "How can you read data from a file using Node.js?",
+        "options": ["Using the 'fs.write' method", "Using the 'fs.read' method", "Using the 'fs.readFile' method", "Using the 'file.read' method"],
+        "correctOption": 2
+      },
+      {
+        "id": 105,
+        "category": "jQuery",
+        "questionText": "What is the purpose of the 'ajax()' method in jQuery?",
+        "options": ["To add a class to an element", "To perform asynchronous HTTP requests", "To hide an element with a sliding motion", "To toggle between showing and hiding a class"],
+        "correctOption": 1
+      },
+      {
+        "id": 106,
+        "category": "JavaScript",
+        "questionText": "What is the 'Spread Operator' in JavaScript used for?",
+        "options": ["To concatenate strings", "To spread elements of an array or object", "To create a function", "To declare a constant variable"],
+        "correctOption": 1
+      },
+      {
+        "id": 107,
+        "category": "HTML",
+        "questionText": "What is the purpose of the 'nav' element in HTML?",
+        "options": ["To define a navigation menu", "To create a hyperlink", "To specify a section with a heading", "To define a figure caption"],
+        "correctOption": 0
+      },
+      {
+        "id": 108,
+        "category": "CSS",
+        "questionText": "How can you select all elements with a class of 'active' within a parent element in CSS?",
+        "options": [".active", "parent.active", "parent .active", "#active"],
+        "correctOption": 2
+      },
+      {
+        "id": 109,
+        "category": "Bootstrap",
+        "questionText": "Which class is used to create a responsive, full-width container in Bootstrap?",
+        "options": ["container", "container-fluid", "container-full", "full-width"],
+        "correctOption": 1
+      },
+      {
+        "id": 110,
+        "category": "Handlebars",
+        "questionText": "How do you include an external Handlebars partial in a template?",
+        "options": ["{{ include 'partialName' }}", "{{ partial 'partialName' }}", "{{ external 'partialName' }}", "{{ extend 'partialName' }}"],
+        "correctOption": 1
+      }
+  ]
+  

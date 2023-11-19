@@ -9,7 +9,7 @@ function Room({ buttonEvt, title,socket }) {
 
   return (
     <>
-      <div className=" grid col-span-6 bg-[#eef4f4] p-5 rounded-[12px] bg-#1B1B23 ">
+      <div className=" grid col-span-6  p-5 rounded-[12px] bg-white ">
         <div className="">
           <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-[#008489]">
             {title} Quiz Room
@@ -30,7 +30,7 @@ function Room({ buttonEvt, title,socket }) {
                   onChange={(e) => setName(e.target.value)} 
                   required
                 
-                  className="block w-full px-2  rounded-md border-[#008489] border bg-white p-1.5 text-white-900 shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400 focus:ring-2 focus:ring-inset focus:ring-white-600 sm:text-sm sm:leading-6"
+                  className="block w-full px-2  rounded-md border-[#008489] border bg-white p-1.5 shadow-sm ring-1 placeholder:text-[#008489] text-gray-700 "
                 />
               </div>
             </div>
@@ -46,7 +46,7 @@ function Room({ buttonEvt, title,socket }) {
                   type="text"
                   onChange={(e) => setRoomName(e.target.value)}
                   required
-                  className="block w-full rounded-md border-[#008489] border p-1.5  bg-white text-white-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full px-2  rounded-md border-[#008489] border bg-white p-1.5 shadow-sm ring-1 placeholder:text-[#008489] text-gray-700 "
                 />
               </div>
             </div>

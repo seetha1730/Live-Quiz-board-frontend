@@ -14,6 +14,7 @@
   -webkit-text-size-adjust: 100%;
 }
 
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -25,7 +26,9 @@ a:hover {
 
 body {
   margin: 0;
-}
+  background:url("../public/240_F_362572396_7m4bza1L5UGWYeII0fH45Z2amx19IA7G.jpg");
+
+background-size:100%}
 
 h1 {
   font-size: 3.2em;
@@ -58,7 +61,6 @@ button:focus-visible {
   padding: 30px;
   text-align: center;
   border-radius: 4px;
-  background: #e9c46a;
     color: rgb(46, 44, 44);
 }
 
@@ -93,6 +95,7 @@ button:focus-visible {
 .animated-box.in:after {
   animation: frame-enter 1s forwards ease-in-out reverse, gradient-animation 4s ease-in-out infinite;
 }
+
 
 /* motion */
 @keyframes gradient-animation {

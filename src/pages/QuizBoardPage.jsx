@@ -43,14 +43,8 @@ function QuizBoardPage() {
   if (!isLoggedIn) return <Navigate to="/error" />;
 
   return (
-    <div className="h-screen" style={{ backgroundImage: 'url("/public/istockphoto-857045822-612x612.jpg")', backgroundSize: 'cover' }}>
-      <header className="bg-white shadow">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-            Live Quiz board
-          </h1>
-        </div>
-      </header>
+    <div className="h-screen">
+   
       <main className="flex items-center h-screen">
         <div className="grid grid-cols-12 gap-12 mx-auto w-1/2 ">
           <Room type="Create" buttonEvt={create} title="Create" />
