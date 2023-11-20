@@ -1,17 +1,20 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --clr-bg-dark: #1f2937; /* gray-800 */
+  --clr-bg-light: #fafafa; /* zinc-50 */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --clr-text-dark: #1f2937; /* gray-200 */
+  --clr-text-light: #fafafa; /* zinc-50 */
+ 
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.dark {
+  background-color: var(--clr-bg-dark);
+  color: var(--clr-text-dark);
+}
+
+.light {
+  background-color: var(--clr-bg-light);
+  color: var(--clr-text-light);
 }
 
 
@@ -26,9 +29,9 @@ a:hover {
 
 body {
   margin: 0;
-  background:url("../public/240_F_362572396_7m4bza1L5UGWYeII0fH45Z2amx19IA7G.jpg");
+  
 
-background-size:100%}
+background-size:cover}
 
 h1 {
   font-size: 3.2em;
@@ -53,6 +56,44 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+/***theme css**/
+.theme-btn {
+  padding: 2px 15px;
+  font-size: 1rem;
+  text-align: center;
+}
+.light {
+  background-color: #efeded;
+
+}
+
+.dark {
+  background-color: #18191a;
+}
+
+.Navbar.light {
+  background-color: #ffffff;
+}
+
+.Navbar.dark {
+  background-color: #252526;
+}
+
+.light a,
+.light p,
+.light h1,
+.light h3 {
+  color: #000000;
+}
+
+.dark a,
+.dark p,
+.dark h1,
+.dark h3 {
+  color: #ffffff;
+}
+
+/***theme css**/
 
 /***background  style for get question **/
 .animated-box {

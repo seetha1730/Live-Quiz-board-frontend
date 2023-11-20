@@ -8,6 +8,7 @@ function PlayerQuestion() {
   const [answerSubmitted, setAnswerSubmitted] = useState(false);
   const [timer, setTimer] = useState(0);
   const { playerDetail } = useContext(GameContext);
+  const [score, setScore] = useState([]);
 
   useEffect(() => {
     socket.on("question", (question) => {
@@ -20,9 +21,11 @@ function PlayerQuestion() {
   }, []);
 
   useEffect(() => {
-    console.log("Timer:", timer, "Answer Submitted:", answerSubmitted);
+    console.log("Answer Submitted:", answerSubmitted);
     let timerInterval;
-
+    socket.on("result", (data) => {
+      setScore(data);
+    });
     if (timer > 0 && !answerSubmitted) {
       timerInterval = setInterval(() => {
         setTimer((prevTimer) => prevTimer - 1);
@@ -36,11 +39,13 @@ function PlayerQuestion() {
     };
   }, [timer, answerSubmitted]);
 
-  const handleAnswerClick = (selectedOption) => {
-    console.log("Answer Clicked:", selectedOption);
+  const handleAnswerClick = (selectedOption, index) => {
+    console.log("Answer Clicked:", index);
+
     if (!answerSubmitted) {
       setAnswerSubmitted(true);
-      if (selectedOption === question.answer) {
+      console.log("correct answer ", question.correctOption);
+      if (index === question.correctOption) {
         socket.emit("submitAnswer", { playerDetail });
       }
     }
@@ -57,21 +62,18 @@ function PlayerQuestion() {
     <>
       {!answerSubmitted && question ? (
         <div className="flex flex-col px-5 bg-grey text-gray-700">
-        <div className="animated-box bg-[#717ec3] in">
-  <h1 className="text-white">{question.question}</h1>
-
-</div>
-      {["A", "B", "C", "D"].map((option, index) => (
-  <div key={`${index}-${option}`}>
-    <FancyButton
-      className={`${selectedAnswer === option ? "bg-green-300" : ""}`}
-      option={option}
-      text={question[`option${option}`]}
-      answerClick={(option) => handleAnswerClick(option)}
-    />
-  </div>
-))}
-         
+          <div className="animated-box bg-[#717ec3] in">
+            <h1 className="text-white">{question.questionText}</h1>
+          </div>
+          {question.options.map((option, index) => (
+            <div key={`${index}`}>
+              <FancyButton
+                className={`${selectedAnswer === option ? "bg-green-300" : ""}`}
+                text={option}
+                answerClick={(option) => handleAnswerClick(option, index)}
+              />
+            </div>
+          ))}
 
           <div>
             <span className="countdown font-mono text-6xl">
@@ -80,12 +82,20 @@ function PlayerQuestion() {
           </div>
         </div>
       ) : (
-        <p>
-          {question
+        !score.length &&
+        (<p>
+          {question 
             ? "Answer submitted. Please wait for the next question."
             : "Waiting for the questions..."}
-        </p>
+        </p>)
       )}
+      <>
+        {
+          score && score.map((item, index) => (
+            <p key={index}>{item.userName} - {item.score}</p>
+          ))
+        }
+      </>
     </>
   );
 }

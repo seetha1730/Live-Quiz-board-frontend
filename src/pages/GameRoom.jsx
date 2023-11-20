@@ -9,13 +9,10 @@ import FancyButton from '../components/button/FancyButton';
 function GameRoom() {
   const { gameContext } = useContext(GameContext);
   const { playerDetail } = useContext(GameContext);
-  const [score,setScore]=useState("")
+  
 
   useEffect(() => {
-    socket.on('result', (data) => {
-      console.log(data);
-      setScore(data);
-    });
+   
 
     return () => {
       socket.off('result');

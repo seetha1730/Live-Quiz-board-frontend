@@ -9,8 +9,8 @@ function Room({ buttonEvt, title,socket }) {
 
   return (
     <>
-      <div className=" grid col-span-6  p-5 rounded-[12px] bg-white ">
-        <div className="">
+      <div className=" max-w-lg mx-auto md:grid md:col-span-6  sm:col-span-12  p-5 rounded-[12px] bg-white ">
+        <div className="sm:col-span-12 ">
           <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-[#008489]">
             {title} Quiz Room
           </h2>
@@ -35,7 +35,7 @@ function Room({ buttonEvt, title,socket }) {
               </div>
             </div>
 
-            <div>
+            <div className="sm:col-span-12 ">
               <label htmlFor="roomName" className="block text-sm font-medium leading-6 text-[#008489]">
                 Room Name
               </label>

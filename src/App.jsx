@@ -1,4 +1,4 @@
-import Navbar from './components/Navbar1'
+import Navbar from './components/Navbar'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import QuizBoardPage from './pages/QuizBoardPage';
@@ -6,15 +6,15 @@ import GameRoom from './pages/GameRoom';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignUpPage';
 import IsAnon from "./components/isAnon";
-import { GameContextWrapper } from './context/game.context';
+
 import CreateQuestion from './pages/CreateQuestion';
+
 
 function App() {
 
-
-
   return (
-    <GameContextWrapper>
+ 
+  
       <div className="min-h-full">
         <Navbar />
       
@@ -31,7 +31,7 @@ function App() {
           } />
         </Routes>
       </div>
-      </GameContextWrapper>
+  
   );
 }
 

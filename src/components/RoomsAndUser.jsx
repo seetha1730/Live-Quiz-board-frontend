@@ -13,9 +13,6 @@ function RoomAndUsers() {
       console.log(data);
       setRoomUsers(data);
     });
-
-    
-
   
 
     return () => {
