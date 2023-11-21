@@ -9,7 +9,7 @@ function Room({ buttonEvt, title,socket }) {
 
   return (
     <>
-      <div className=" max-w-lg mx-auto md:grid md:col-span-6  sm:col-span-12  p-5 rounded-[12px] bg-white ">
+      <div className=" max-w-lg mt-10 mx-auto w-11/12 col-span-12 md:grid md:col-span-6 md:9/12 md:gap-2 sm:col-span-12  p-5 rounded-[12px] bg-white ">
         <div className="sm:col-span-12 ">
           <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-[#008489]">
             {title} Quiz Room

@@ -16,7 +16,13 @@
   background-color: var(--clr-bg-light);
   color: var(--clr-text-light);
 }
-
+html.dark {
+  background:url('./../../public/240_F_362572396_7m4bza1L5UGWYeII0fH45Z2amx19IA7G.jpg');
+ 
+  background-size:cover;
+  min-height:100vh
+}
+/* //bg-[url('./../../public/835e8b4a-6aad-48b9-a105-cff386b3afc3.jpg')] dark:bg-cover dark:bg-[url('./../../public/240_F_362572396_7m4bza1L5UGWYeII0fH45Z2amx19IA7G.jpg')] */
 
 a {
   font-weight: 500;
@@ -27,11 +33,12 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  
+html {
 
-background-size:cover}
+  background:url('./../../public/835e8b4a-6aad-48b9-a105-cff386b3afc3.jpg');
+background-size:cover;
+
+min-height: 100vh;}
 
 h1 {
   font-size: 3.2em;

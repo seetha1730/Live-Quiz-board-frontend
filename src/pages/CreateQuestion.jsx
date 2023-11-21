@@ -49,7 +49,7 @@ function CreateQuestion() {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-8 p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+    <div className="max-w-lg mx-auto w-11/12 my-8 p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
       <h2 className="text-2xl font-bold mb-4 text-[#008489] dark:text-[#008489]">Create a New Question</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
