@@ -47,7 +47,7 @@ function SendQuestion() {
           <div
             key={index}
             className={`flex flex-col p-5 m-5 bg-white rounded-lg text-gray-700 ${
-              sentQuestion.includes(index) ? "grayscale -inset-1.5" : ""
+              sentQuestion.includes(index) ? "grayscale -inset" : ""
             }`}
           >
             <select>

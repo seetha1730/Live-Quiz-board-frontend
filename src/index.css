@@ -16,13 +16,25 @@
   background-color: var(--clr-bg-light);
   color: var(--clr-text-light);
 }
+
+
+
 html.dark {
-  background:url('./../../public/240_F_362572396_7m4bza1L5UGWYeII0fH45Z2amx19IA7G.jpg');
- 
+  background:url('./../../dark-bg.jpg');
   background-size:cover;
-  min-height:100vh
+  min-height:90vh
 }
-/* //bg-[url('./../../public/835e8b4a-6aad-48b9-a105-cff386b3afc3.jpg')] dark:bg-cover dark:bg-[url('./../../public/240_F_362572396_7m4bza1L5UGWYeII0fH45Z2amx19IA7G.jpg')] */
+html{
+
+  background:url('./../../public/light-bg.jpg');
+
+  min-height:90vh;
+background-size: cover; 
+}
+.my-screen{
+  height: 90vh;
+}
+
 
 a {
   font-weight: 500;
@@ -33,12 +45,6 @@ a:hover {
   color: #535bf2;
 }
 
-html {
-
-  background:url('./../../public/835e8b4a-6aad-48b9-a105-cff386b3afc3.jpg');
-background-size:cover;
-
-min-height: 100vh;}
 
 h1 {
   font-size: 3.2em;

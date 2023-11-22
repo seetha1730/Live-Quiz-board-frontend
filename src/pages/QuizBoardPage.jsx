@@ -39,11 +39,6 @@ function QuizBoardPage() {
     handleJoin(roomName,name);
     navigate(`/room/${roomName}`);
   }
- 
-
-  // const backgroundImageUrl = isDarkMode
-  // ? "./../../public/240_F_362572396_7m4bza1L5UGWYeII0fH45Z2amx19IA7G.jpg"
-  // : "../public/light-mode-background.jpg";
 
   if (!isLoggedIn) return <Navigate to="/error" />;
 

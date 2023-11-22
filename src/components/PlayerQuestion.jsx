@@ -12,7 +12,7 @@ function PlayerQuestion() {
 
   useEffect(() => {
     socket.on("question", (question) => {
-      console.log("Received question:", question);
+    
       setQuestion(question);
       setSelectedAnswer(null);
       setAnswerSubmitted(false);
@@ -21,11 +21,12 @@ function PlayerQuestion() {
   }, []);
 
   useEffect(() => {
-    console.log("Answer Submitted:", answerSubmitted);
+
     let timerInterval;
     socket.on("result", (data) => {
       setScore(data);
     });
+    
     if (timer > 0 && !answerSubmitted) {
       timerInterval = setInterval(() => {
         setTimer((prevTimer) => prevTimer - 1);
@@ -40,23 +41,17 @@ function PlayerQuestion() {
   }, [timer, answerSubmitted]);
 
   const handleAnswerClick = (selectedOption, index) => {
-    console.log("Answer Clicked:", index);
+   
 
     if (!answerSubmitted) {
       setAnswerSubmitted(true);
-      console.log("correct answer ", question.correctOption);
+
       if (index === question.correctOption) {
         socket.emit("submitAnswer", { playerDetail });
       }
     }
   };
 
-  console.log(
-    "Rendering with Answer Submitted:",
-    answerSubmitted,
-    "Question:",
-    question
-  );
 
   return (
     <>

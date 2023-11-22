@@ -31,27 +31,29 @@ function SignupPage(props) {
 
   return (
 
-    <div className="max-w-md mx-auto mt-8">
-    <form onSubmit={handleSubmit} className="bg-white p-8 shadow-md rounded-md">
-      <h2 className="text-2xl font-semibold text-gray-700  mb-4">Sign up to your Account</h2>
+    <div className="flex my-screen items-center">
+        <div className="max-w-lg  mx-auto w-11/12 my-8 p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+
+    <form onSubmit={handleSubmit} className="text-2xl font-bold mb-4 text-[#008489] dark:text-[#008489]">
+      <h2 className="text-2xl font-semibold mb-4 text-center">Sign up to your Account</h2>
 
       <div className="mb-4">
-        <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+        <label htmlFor="email" className="block text-sm font-medium text-[#008489] dark:text-white">
           Name
         </label>
         <input
-          type="name"
+          type="text"
           id="name"
           name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full p-2 border rounded-md"
+          className="w-full mt-1 p-2 border rounded-md"
           required
         />
       </div>
 
       <div className="mb-4">
-        <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+        <label htmlFor="email" className="block text-sm font-medium text-[#008489] dark:text-white">
           Email
         </label>
         <input
@@ -60,13 +62,13 @@ function SignupPage(props) {
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-2 border rounded-md"
+          className="w-full mt-1 p-2 border rounded-md"
           required
         />
       </div>
       
       <div className="mb-6">
-        <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">
+        <label htmlFor="password" className="block text-sm font-medium text-[#008489] dark:text-white">
           Password
         </label>
         <div className="relative">
@@ -75,7 +77,7 @@ function SignupPage(props) {
           name="password"
           value={password}
           onChange={(e)=>setPassword(e.target.value)}
-          className="w-full p-2 border rounded-md"
+          className="w-full mt-1 p-2 border rounded-md"
           required
         />
        <button 
@@ -96,15 +98,16 @@ function SignupPage(props) {
       <div className="flex items-center justify-between">
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+          className="bg-[#008489]  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
         >
           Signup
         </button>
-        <a href="/forgot-password" className="text-blue-500 hover:underline">
+        <a href="/forgot-password" className="text-gray-900 text-sm hover:underline">
           Forgot Password?
         </a>
       </div>
     </form>
+    </div>
   </div>
 );
 }
