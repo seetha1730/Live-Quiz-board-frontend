@@ -1,7 +1,7 @@
 import React, { useState, useEffect,useContext } from 'react';
 import RoomAndUsers from "../components/RoomsAndUser";
 import { GameContext } from '../context/game.context';
-import SendQuestion from '../components/sendQuestion';
+import CreatorRoom from '../components/CreatorRoom';
 import PlayerQuestion from '../components/PlayerQuestion';
 import { socket } from "../services/socket.service";
 import Dots from '../components/Dots';
@@ -12,14 +12,13 @@ function GameRoom() {
   
 
   useEffect(() => {
-   
+
 
     return () => {
       socket.off('result');
     };
   }, []);
 
-  
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 min-h-screen grid grid-cols-12">
@@ -35,8 +34,8 @@ function GameRoom() {
             <div className="container">
             
             <Dots/>
-            <div className="content h-screen w-full w-2/4  overflow-y-scroll">
-            <SendQuestion  />
+            <div className="content h-screen w-full overflow-y-scroll">
+            <CreatorRoom  />
             </div>
           </div>
             

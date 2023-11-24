@@ -26,6 +26,7 @@ function CreateQuestion() {
     }));
   };
 
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -54,7 +55,7 @@ function CreateQuestion() {
       <h2 className="text-2xl font-bold mb-4 text-[#008489] dark:text-[#008489]">Create a New Question</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-[#008489] dark:text-white">
+          <label className="block text-sm font-medium text-[#008489] dark:text-[#008489]">
             Category:
           </label>
           <input

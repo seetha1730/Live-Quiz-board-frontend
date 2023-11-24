@@ -12,7 +12,7 @@ function PlayerQuestion() {
 
   useEffect(() => {
     socket.on("question", (question) => {
-    
+    console.log(question)
       setQuestion(question);
       setSelectedAnswer(null);
       setAnswerSubmitted(false);

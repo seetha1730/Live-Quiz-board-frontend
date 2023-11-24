@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext,useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import Room from "../components/Room";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,7 @@ function QuizBoardPage() {
   
   const navigate = useNavigate();
 
+
   function handleCreate(roomName,userName) {
     manageContext('creator',userName, roomName)
     if (socket && socket.connected) {
@@ -20,7 +21,10 @@ function QuizBoardPage() {
         roomName: roomName, 
         userName: userName 
       });
+     
     }
+   
+
   }
 
   function handleJoin(roomName,name) {
@@ -28,6 +32,7 @@ function QuizBoardPage() {
     if (socket && socket.connected) {
       socket.emit("join-room", { roomName,name });
     }
+   
   }
 
   function create(roomName,name) {
