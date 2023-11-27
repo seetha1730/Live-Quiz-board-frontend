@@ -10,7 +10,7 @@ import IsAnon from "./components/isAnon";
 import CreateQuestion from './pages/CreateQuestion';
 import ForgotPassword from './pages/ForgotPasswordpage';
 import ResetPassWordPage from './pages/ResetPasswordPage';
-
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
 
@@ -28,6 +28,7 @@ function App() {
         <Route path="/" element={ <QuizBoardPage />} />
         <Route path="/forgot-password" element={ <ForgotPassword/>} />
         <Route path="/reset-password" element={ <ResetPassWordPage/>} />
+        <Route path="/profile/:userId" element={ <ProfilePage/>} />
           <Route path={`/room/:roomName`} element={
             
           <GameRoom />

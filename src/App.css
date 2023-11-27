@@ -72,7 +72,21 @@
   font-style: italic;
   color: #888;
 }
-
+.bg-gradient-blue{
+  background: linear-gradient(219.99deg,#12c2ea -54.14%,#7c00fa 86.87%);
+}
+.bg-base-purple {
+  --tw-bg-opacity: 1;
+  background-color: rgb(32 13 73/var(--tw-bg-opacity));
+}
+.bg-gradient-orange{
+background: #ff9d7e;
+    background-image: url(/_next/static/media/bg-img-integrates.6a528bc7.png),linear-gradient(249.73deg,#ff9d7e 2.87%,#8c54fd 89.48%);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 40%,auto,cover;
+    border-radius: 10px;
+}
 .card {
   padding: 2em;
 }

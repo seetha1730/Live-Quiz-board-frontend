@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { socket } from "../services/socket.service";
 import { GameContext } from "../context/game.context";
 import FancyButton from "./button/FancyButton";
+
 function PlayerQuestion() {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -9,7 +10,9 @@ function PlayerQuestion() {
   const [timer, setTimer] = useState(0);
   const { playerDetail } = useContext(GameContext);
   const [score, setScore] = useState([]);
-
+  const [gameEnded, setGameEnded] = useState(false); 
+  const {manageContext} = useContext(GameContext)
+console.log(playerDetail)
   useEffect(() => {
     socket.on("question", (question) => {
     console.log(question)
@@ -25,6 +28,7 @@ function PlayerQuestion() {
     let timerInterval;
     socket.on("result", (data) => {
       setScore(data);
+      setGameEnded(true);
     });
     
     if (timer > 0 && !answerSubmitted) {
@@ -85,14 +89,50 @@ function PlayerQuestion() {
         </p>)
       )}
       <>
-        {
-          score && score.map((item, index) => (
-            <p key={index}>{item.userName} - {item.score}</p>
-          ))
-        }
+      { gameEnded && score.length > 0 && (
+      //  manageContext('creator',userName, roomName)
+      <section className="bg-[#008489] rounded-lg " id="leaderboard">
+   <div className="row   ">
+    <div className="block  w-full  text-white grid content-start">
+     <h2 className="py-5 ">
+      Current Leaderboard
+    
+     </h2>
+     {score.map((item, index) => (
+     <p key={index}>Created by {item[0].userName}</p>
+       ) )}
+     <div className="m-5 bg-white text-[#008489] ">
+     <table className="table-auto items-center w-full bg-transparent border-collapse">
+      <thead>
+       <tr>
+       <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center ">Rank</th>
+       <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center ">Name</th>
+       <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center ">Score</th>
+
+       </tr>
+      </thead>
+      <tbody  id="leaderboardTableBody">
+      {score
+        .sort((a, b) => b.score - a.score) // Sort in descending order based on scores
+        .map((item, index) => (
+      <tr key={index} >
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{index+1}</td>
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{item.userName}</td>
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{item.score}</td>
+              </tr>
+              ))}
+      </tbody>
+     </table>
+     </div>
+     </div>
+     </div>
+   </section>
+      )}
+       
       </>
     </>
   );
 }
 
 export default PlayerQuestion;
+

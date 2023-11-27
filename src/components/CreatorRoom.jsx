@@ -192,7 +192,7 @@ function CreatorRoom() {
         <p>Waiting for the questions...</p>
       )}
 
-      { isOpen && (
+       { isOpen && (
           <>
          <UpdateQuestion updateQuestion={EditQuestion} question={selectedQuestion} close={closeButton}/>
          </>
