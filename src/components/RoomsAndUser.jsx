@@ -6,6 +6,7 @@ import { socket } from "../services/socket.service";
 import Button from './button/Button';
 function RoomAndUsers() {
   const [roomUsers, setRoomUsers] = useState([]);
+
   const { gameContext } = useContext(GameContext);
 
    const { playerDetail } = useContext(GameContext);
@@ -14,7 +15,7 @@ function RoomAndUsers() {
 
   useEffect(() => {
     socket.on('userJoined', (data) => {
-
+console.log(data)
       setRoomUsers(data);
     });
   
@@ -42,8 +43,8 @@ function RoomAndUsers() {
       <h5 className='text-gray-500 text-center p-2' >Users:</h5>
       {roomUsers.length > 0}
       <ul role="list" className="divide-y divide-gray-100">
-        {roomUsers.map((user) => (
-          <li key={user}>
+        {roomUsers.map((user,index) => (
+          <li key={index}>
             <div className=" p-2 flex min-h-56 items-center cursor-pointer my-1 hover:bg-blue-lightest rounded grid grid-cols-12">
               <div className=" col-span-2 text-center py-1">
                 <img className=" h-12 w-14 flex-none rounded-full bg-gray-50" alt="" />

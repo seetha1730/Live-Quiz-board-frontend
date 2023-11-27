@@ -7,18 +7,27 @@ import { socket } from "../services/socket.service";
 import Dots from '../components/Dots';
 
 function GameRoom() {
-  const { gameContext } = useContext(GameContext);
-
+  const { gameContext, manageContext} = useContext(GameContext);
+ // const [localGameContext, setLocalGameContext] = useState(null);
   
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   const storedGameContext = JSON.parse(localStorage.getItem('gameContext'));
 
+  //   if (storedGameContext) {
+  //     manageContext(storedGameContext.role, storedGameContext.name, storedGameContext.roomName);
+  //     setLocalGameContext(storedGameContext.role);
+  //     setLocalGameContext('creator');
 
-    return () => {
-      socket.off('result');
-    };
-  }, []);
+  //   } else {
+  //     manageContext(storedGameContext.role, storedGameContext.name, storedGameContext.roomName);
+  //     setLocalGameContext('player');
+  //   }
 
+  //   return () => {
+  //     socket.off('result');
+  //   };
+  // }, [manageContext]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 min-h-screen grid grid-cols-12">
@@ -53,7 +62,7 @@ function GameRoom() {
           <div className="container rounded-lg">
           
           <Dots/>
-          <div className="content  m-3 w-2/4  overflow-hidden">
+          <div className="content h-screen w-full  overflow-hidden">
           <PlayerQuestion />
           </div>
         </div>

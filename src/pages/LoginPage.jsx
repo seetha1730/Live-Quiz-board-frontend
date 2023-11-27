@@ -34,6 +34,10 @@ function LoginPage(props) {
       });
   };
 
+
+
+
+
   return (
     <div className="flex my-screen items-center">
     <div className="max-w-lg  mx-auto w-11/12 my-8 p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
@@ -74,8 +78,11 @@ function LoginPage(props) {
           >
             Login
           </button>
-          <a href="/forgot-password" className="text-gray-900 text-sm hover:underline">
+          <Link to="/forgot-password" className="text-gray-900 text-sm hover:underline">
             Forgot Password?
+          </Link>
+          <a href="/" id="guest" className="text-gray-900 text-sm hover:underline">
+            Guest User
           </a>
         </div>
       </form>

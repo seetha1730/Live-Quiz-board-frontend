@@ -9,10 +9,18 @@ import { GameContext} from "../context/game.context";
 
 function QuizBoardPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+ 
   const {manageContext} = useContext(GameContext)
   
   const navigate = useNavigate();
+useEffect(() => {
 
+  const storedGameContext = JSON.parse(localStorage.getItem('gameContext'));
+  console.log(storedGameContext)
+
+
+},[])
 
   function handleCreate(roomName,userName) {
     manageContext('creator',userName, roomName)
@@ -21,9 +29,9 @@ function QuizBoardPage() {
         roomName: roomName, 
         userName: userName 
       });
-     
+      localStorage.setItem('gameContext', JSON.stringify({ name:userName,roomName,role:"creator" }));
+
     }
-   
 
   }
 
@@ -32,7 +40,7 @@ function QuizBoardPage() {
     if (socket && socket.connected) {
       socket.emit("join-room", { roomName,name });
     }
-   
+    localStorage.setItem('gameContext', JSON.stringify({ name,roomName,role:"player" }));
   }
 
   function create(roomName,name) {

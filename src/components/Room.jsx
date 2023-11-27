@@ -1,11 +1,17 @@
-import  {useState} from "react";
-
+import  {useState,useContext, useEffect} from "react";
+import { AuthContext } from "../context/auth.context";
 
 function Room({ buttonEvt, title,socket }) {
 
   const [roomName, setRoomName] = useState('');
   const [name,setName] = useState('')
-  
+  const { isLoggedIn, user } = useContext(AuthContext);
+
+useEffect(() => {
+  if(isLoggedIn){
+    setName(user.name)
+  }
+},[user, isLoggedIn])
 
   return (
     <>
@@ -21,10 +27,12 @@ function Room({ buttonEvt, title,socket }) {
                   Name
                 </label>
               </div>
-              <div className="mt-2">
+              
+                
+                <div className="mt-2">
                 <input
                   id="name"
-                  value={name}
+                value={name}
                   type="text"
                   autoComplete="name"
                   onChange={(e) => setName(e.target.value)} 
@@ -33,7 +41,11 @@ function Room({ buttonEvt, title,socket }) {
                   className="block w-full px-2  rounded-md border-[#008489] border bg-white p-1.5 shadow-sm ring-1 placeholder:text-[#008489] text-gray-700 "
                 />
               </div>
-            </div>
+           
+
+           
+          
+             </div>
 
             <div className="sm:col-span-12 ">
               <label htmlFor="roomName" className="block text-sm font-medium leading-6 text-[#008489]">

@@ -8,6 +8,8 @@ import SignupPage from './pages/SignUpPage';
 import IsAnon from "./components/isAnon";
 
 import CreateQuestion from './pages/CreateQuestion';
+import ForgotPassword from './pages/ForgotPasswordpage';
+import ResetPassWordPage from './pages/ResetPasswordPage';
 
 
 function App() {
@@ -19,11 +21,13 @@ function App() {
         <Navbar />
       
         <Routes>
+        
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>  } />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
         <Route path="/question-answers" element={<CreateQuestion /> } />
-          <Route path="/" element={
-          <QuizBoardPage />} />
+        <Route path="/" element={ <QuizBoardPage />} />
+        <Route path="/forgot-password" element={ <ForgotPassword/>} />
+        <Route path="/reset-password" element={ <ResetPassWordPage/>} />
           <Route path={`/room/:roomName`} element={
             
           <GameRoom />
