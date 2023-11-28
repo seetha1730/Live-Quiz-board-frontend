@@ -11,7 +11,7 @@ function PlayerQuestion() {
   const { playerDetail } = useContext(GameContext);
   const [score, setScore] = useState([]);
   const [gameEnded, setGameEnded] = useState(false); 
-  const {manageContext} = useContext(GameContext)
+
 console.log(playerDetail)
   useEffect(() => {
     socket.on("question", (question) => {
@@ -19,7 +19,7 @@ console.log(playerDetail)
       setQuestion(question);
       setSelectedAnswer(null);
       setAnswerSubmitted(false);
-      setTimer(500);
+      setTimer(30);
     });
   }, []);
 
@@ -75,7 +75,7 @@ console.log(playerDetail)
           ))}
 
           <div>
-            <span className="countdown font-mono text-6xl">
+            <span className="countdown  bg-black-900 text-white font-mono text-6xl">
               <span style={{ "--value": timer }}></span>
             </span>
           </div>
@@ -98,9 +98,9 @@ console.log(playerDetail)
       Current Leaderboard
     
      </h2>
-     {score.map((item, index) => (
-     <p key={index}>Created by {item[0].userName}</p>
-       ) )}
+     
+     <p>Created by {score[0].userName}</p>
+      
      <div className="m-5 bg-white text-[#008489] ">
      <table className="table-auto items-center w-full bg-transparent border-collapse">
       <thead>
@@ -113,13 +113,16 @@ console.log(playerDetail)
       </thead>
       <tbody  id="leaderboardTableBody">
       {score
-        .sort((a, b) => b.score - a.score) // Sort in descending order based on scores
+        .sort((a, b) => b.score - a.score)
         .map((item, index) => (
+          item.score && (
       <tr key={index} >
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{index+1}</td>
+               
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{index}</td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{item.userName}</td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{item.score}</td>
-              </tr>
+              
+                </tr>)
               ))}
       </tbody>
      </table>

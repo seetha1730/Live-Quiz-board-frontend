@@ -4,12 +4,11 @@ import ThemeSwitcher from './ThemeSwitcher';
 import { NavLink } from "react-router-dom";
 import { Collapse } from 'flowbite';
 
+
 const Navbar = () => {
 
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
-
- 
+  const { isLoggedIn, user,logOutUser } = useContext(AuthContext);
 
   useEffect(() => {
     const $triggerEl = document.getElementById('user-menu-button');
@@ -49,7 +48,7 @@ const Navbar = () => {
             data-dropdown-placement="bottom"
           >
             <span className="sr-only">Open user menu</span>
-            <img className="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="user photo" />
+            <img className="w-8 h-8 rounded-full" src={user && user.image} alt="user photo"  />
           </button>
           {/* Dropdown menu */}
          
@@ -74,22 +73,8 @@ const Navbar = () => {
                   Profile
                 </NavLink>
               </li>
-              <li>
-              <NavLink to="/settings"
-                 
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >
-                  Settings
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/score"
-                
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >
-                  Score
-                </NavLink>
-              </li>
+             
+             
               <li>
                 <NavLink onClick={logOutUser}
                  
@@ -172,10 +157,10 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                href="#"
+                to={`/history/${user?._id}`}
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#008489] md:p-0 dark:text-white md:dark:hover:text-[#008489] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
-                Services
+                History
               </NavLink>
             </li>
             <li>

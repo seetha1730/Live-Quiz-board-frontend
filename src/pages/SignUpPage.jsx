@@ -9,14 +9,18 @@ function SignupPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [lastName, setLastName] = useState(""); 
+  const [dateOfBirth, setDateOfBirth] = useState(""); 
+  const [gender, setGender] = useState(""); 
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
-  const [showPassword, setShowPassword] = useState(false); // Add this line
+  const [showPassword, setShowPassword] = useState(false); 
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { email, password, name };
+    const requestBody = { email, password, name, lastName, dateOfBirth, gender, phoneNumber };
 
     axios.post(`${API_URL}/auth/signup`, requestBody)
     .then((response) => {
@@ -39,7 +43,7 @@ function SignupPage(props) {
 
       <div className="mb-4">
         <label htmlFor="email" className="block text-sm font-medium text-[#008489] dark:text-white">
-          Name
+          First Name
         </label>
         <input
           type="text"
@@ -51,6 +55,20 @@ function SignupPage(props) {
           required
         />
       </div>
+      <div className="mb-4">
+            <label htmlFor="lastName" className="block text-sm font-medium text-[#008489] dark:text-white">
+              Last Name
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              className="w-full mt-1 p-2 border rounded-md"
+              required
+            />
+          </div>
 
       <div className="mb-4">
         <label htmlFor="email" className="block text-sm font-medium text-[#008489] dark:text-white">
@@ -95,6 +113,54 @@ function SignupPage(props) {
 
         
       </div>
+
+      <div className="mb-4">
+            <label htmlFor="dateOfBirth" className="block text-sm font-medium text-[#008489] dark:text-white">
+              Date of Birth
+            </label>
+            <input
+              type="date"
+              id="dateOfBirth"
+              name="dateOfBirth"
+              value={dateOfBirth}
+              onChange={(e) => setDateOfBirth(e.target.value)}
+              className="w-full mt-1 p-2 border rounded-md"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="gender" className="block text-sm font-medium text-[#008489] dark:text-white">
+              Gender
+            </label>
+            <select
+              id="gender"
+              name="gender"
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+              className="w-full mt-1 p-2 border rounded-md"
+              required
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="phoneNumber" className="block text-sm font-medium text-[#008489] dark:text-white">
+              Phone Number
+            </label>
+            <input
+              type="text"
+              id="phoneNumber"
+              name="phoneNumber"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              className="w-full mt-1 p-2 border rounded-md"
+              required
+            />
+          </div>
       <div className="flex items-center justify-between">
         <button
           type="submit"

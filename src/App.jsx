@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar'
 import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import QuizBoardPage from './pages/QuizBoardPage';
 import GameRoom from './pages/GameRoom';
 import LoginPage from './pages/LoginPage';
@@ -11,24 +11,23 @@ import CreateQuestion from './pages/CreateQuestion';
 import ForgotPassword from './pages/ForgotPasswordpage';
 import ResetPassWordPage from './pages/ResetPasswordPage';
 import ProfilePage from './pages/ProfilePage';
+import GameHistory from "./pages/GameHistoryPage"
 
 function App() {
 
   return (
- 
-  
       <div className="min-h-screen">
         <Navbar />
-      
-        <Routes>
-        
+        <Routes>      
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>  } />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
         <Route path="/question-answers" element={<CreateQuestion /> } />
+        <Route path="/history/:userId" element={<GameHistory /> } />
         <Route path="/" element={ <QuizBoardPage />} />
         <Route path="/forgot-password" element={ <ForgotPassword/>} />
         <Route path="/reset-password" element={ <ResetPassWordPage/>} />
         <Route path="/profile/:userId" element={ <ProfilePage/>} />
+        
           <Route path={`/room/:roomName`} element={
             
           <GameRoom />

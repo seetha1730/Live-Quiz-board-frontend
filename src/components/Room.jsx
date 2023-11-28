@@ -6,6 +6,7 @@ function Room({ buttonEvt, title,socket }) {
   const [roomName, setRoomName] = useState('');
   const [name,setName] = useState('')
   const { isLoggedIn, user } = useContext(AuthContext);
+  console.log(user)
 
 useEffect(() => {
   if(isLoggedIn){
@@ -65,7 +66,7 @@ useEffect(() => {
 
             <div>
               <button
-                onClick={() => buttonEvt(roomName,name)}
+                onClick={() => buttonEvt(roomName,name,user.email)}
                 className="flex w-full justify-center bg-[#008489] rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#01C1C2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#01C1C2]"
               >
                 {title} Room

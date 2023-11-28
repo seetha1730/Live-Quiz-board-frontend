@@ -22,34 +22,36 @@ useEffect(() => {
 
 },[])
 
-  function handleCreate(roomName,userName) {
-    manageContext('creator',userName, roomName)
+  function handleCreate(roomName,userName,email) {
+    manageContext('creator',userName, roomName,email)
     if (socket && socket.connected) {
       socket.emit("create-room", { 
         roomName: roomName, 
-        userName: userName 
+        userName: userName ,
+        email:email
+
       });
-      localStorage.setItem('gameContext', JSON.stringify({ name:userName,roomName,role:"creator" }));
+      localStorage.setItem('gameContext', JSON.stringify({ name:userName,email,roomName,role:"creator" }));
 
     }
 
   }
 
-  function handleJoin(roomName,name) {
-    manageContext('player',name, roomName)
+  function handleJoin(roomName,name,email) {
+    manageContext('player',name, roomName,email)
     if (socket && socket.connected) {
-      socket.emit("join-room", { roomName,name });
+      socket.emit("join-room", { roomName,name ,email});
     }
     localStorage.setItem('gameContext', JSON.stringify({ name,roomName,role:"player" }));
   }
 
-  function create(roomName,name) {
-    handleCreate(roomName,name);
+  function create(roomName,name,email) {
+    handleCreate(roomName,name,email);
     navigate(`/room/${roomName}`);
   }
 
-  function join(roomName,name) {
-    handleJoin(roomName,name);
+  function join(roomName,name,email) {
+    handleJoin(roomName,name,email);
     navigate(`/room/${roomName}`);
   }
 
