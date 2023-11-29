@@ -8,7 +8,7 @@ import SignupPage from './pages/SignUpPage';
 import IsAnon from "./components/isAnon";
 
 import CreateQuestion from './pages/CreateQuestion';
-import ForgotPassword from './pages/ForgotPasswordpage';
+// import ForgotPassword from './pages/ForgotPasswordpage';
 import ResetPassWordPage from './pages/ResetPasswordPage';
 import ProfilePage from './pages/ProfilePage';
 import GameHistory from "./pages/GameHistoryPage"
@@ -27,7 +27,7 @@ function App() {
         <Route path="/question-answers" element={<CreateQuestion /> } />
         <Route path="/history/:userId" element={<GameHistory /> } />
         <Route path="/" element={ <QuizBoardPage />} />
-        <Route path="/forgot-password" element={ <ForgotPassword/>} />
+        {/* <Route path="/forgot-password" element={ <ForgotPassword/>} /> */}
         <Route path="/reset-password" element={ <ResetPassWordPage/>} />
         <Route path="/profile/:userId" element={ <ProfilePage/>} />
         
