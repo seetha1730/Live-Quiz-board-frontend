@@ -62,8 +62,8 @@ useEffect(() => {
    
       <main className="flex items-center mx-auto md:w-11/12 pb-10 ">
         <div className="grid grid-cols-12 mx-auto w-full md:gap-2">
-          <Room type="Create" buttonEvt={create}  title="Create" />
-          <Room type="Join" buttonEvt={join}  title="Join" />
+          <Room type="Create" background="bg-gradient-1" buttonEvt={create}  title="Create" />
+          <Room type="Join"  background="bg-gradient-2" buttonEvt={join}  title="Join" />
         </div>
       </main>
       </div>

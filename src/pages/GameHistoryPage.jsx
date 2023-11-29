@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Accordion from '../components/Accordion';
 import { useParams } from "react-router-dom";
+
 function GameHistoryPage() {
   const [scoreHistory, setScoreHistory] = useState([]);
   const { userId } = useParams();

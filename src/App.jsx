@@ -12,11 +12,14 @@ import ForgotPassword from './pages/ForgotPasswordpage';
 import ResetPassWordPage from './pages/ResetPasswordPage';
 import ProfilePage from './pages/ProfilePage';
 import GameHistory from "./pages/GameHistoryPage"
+import { ThemeContext } from './context/theme.context';
+import { useContext} from 'react';
 
 function App() {
+  const { theme } = useContext(ThemeContext);
 
   return (
-      <div className="min-h-screen">
+      <div className={theme === 'dark' ? ' bg-gray-900 min-h-screen': 'bg-base-purple min-h-screen' }>
         <Navbar />
         <Routes>      
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>  } />

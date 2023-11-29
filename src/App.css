@@ -103,3 +103,41 @@ background: #ff9d7e;
   z-index: 10;
   display: flex;
 }
+.bg-gradient-main{
+background: linear-gradient(135deg,rgb(69,22,222) 6%,rgb(155,81,224) 100%);
+}
+.bg-gradient-1{
+  background:linear-gradient(249.73deg,#5487f4 2.87%,#8c54fd 89.48%)
+}
+.bg-gradient-2{
+  background:linear-gradient(249.73deg,#ff9d7e 2.87%,#8c54fd 89.48%);
+}
+.gradient-button{
+  background:linear-gradient(74.34deg, #BE7EFF 10.95%, #2B81FF 89.21%)
+}
+.border-light-purple {
+  --tw-border-opacity: 1;
+  border-color: rgb(87 57 171/var(--tw-border-opacity));
+}
+.purple-button{
+
+    height: 45px;
+ 
+    background: rgba(87, 57, 171, 0.8);
+    padding: 8px;
+    font-size: 14px;
+    line-height: 24px;
+    color: white;
+    font-weight: bold;
+}
+.bg-base-purple {
+  --tw-bg-opacity: 1;
+  background-color: rgb(32 13 73/var(--tw-bg-opacity));
+}
+
+body{
+padding: 0;
+margin: 0;
+
+background-color: #11042a;
+}
