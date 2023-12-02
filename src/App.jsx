@@ -8,12 +8,12 @@ import SignupPage from './pages/SignUpPage';
 import IsAnon from "./components/isAnon";
 
 import CreateQuestion from './pages/CreateQuestion';
-import ForgotPasswordpage from './pages/ForgotPasswordpage';
 import ResetPassWordPage from './pages/ResetPasswordPage';
 import ProfilePage from './pages/ProfilePage';
 import GameHistory from "./pages/GameHistoryPage"
 import { ThemeContext } from './context/theme.context';
 import { useContext} from 'react';
+import ForgotPassword from './pages/ForgotPassword';
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -27,7 +27,7 @@ function App() {
         <Route path="/question-answers" element={<CreateQuestion /> } />
         <Route path="/history/:userId" element={<GameHistory /> } />
         <Route path="/" element={ <QuizBoardPage />} />
-        <Route path="/forgot-password" element={ <ForgotPasswordpage/>} />
+        <Route path="/forgot-password" element={ <ForgotPassword/>} />
         <Route path="/reset-password" element={ <ResetPassWordPage/>} />
         <Route path="/profile/:userId" element={ <ProfilePage/>} />
         

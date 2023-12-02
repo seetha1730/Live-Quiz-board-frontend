@@ -3,7 +3,7 @@ import axios from "axios";
 import { ThemeContext } from "../context/theme.context";
 
 
-function ForgotPasswordPage() {
+function ForgotPassword() {
   const [email, setEmail] = useState("");
   const { theme } = useContext(ThemeContext);
 
@@ -51,15 +51,8 @@ function ForgotPasswordPage() {
           </form>
         </div>
         </div>
-      );
-    }
-    
 
+  )
+}
 
-export default ForgotPasswordPage;
-
-
-
-
- 
-
+export default ForgotPassword
