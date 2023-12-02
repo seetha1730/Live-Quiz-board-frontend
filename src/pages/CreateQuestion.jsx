@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState ,useContext} from 'react';
 import axios from 'axios';
-
+import { ThemeContext } from '../context/theme.context';
 function CreateQuestion() {
+  const { theme } = useContext(ThemeContext);
   const [formData, setFormData] = useState({
     category: '',
     questionText: '',
@@ -32,7 +33,7 @@ function CreateQuestion() {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/question-answers/create',
+        `${import.meta.env.VITE_BASE_URL_API}/question-answers/create`,
         formData
       );
 
@@ -51,11 +52,13 @@ function CreateQuestion() {
 
   return (
     <div className="flex my-screen items-center">
-    <div className="max-w-lg mx-auto w-11/12 my-8 p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
-      <h2 className="text-2xl font-bold mb-4 text-[#008489] dark:text-[#008489]">Create a New Question</h2>
+        <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } max-w-lg mx-auto w-11/12 my-8 p-6  text-white-900 shadow-lg rounded-lg `}>
+
+   {/* </div> <div className=""> */}
+      <h2 className={` ${theme === 'dark' ? ' bg-gray-700' :'text-gradient '} text-2xl font-bold mb-4 text-center `}>Create a New Question</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-[#008489] dark:text-[#008489]">
+          <label className="block text-sm font-medium  ">
             Category:
           </label>
           <input
@@ -67,7 +70,7 @@ function CreateQuestion() {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-[#008489] dark:text-[#008489]">
+          <label className="block text-sm font-medium ">
             Question Text:
           </label>
           <textarea
@@ -81,7 +84,7 @@ function CreateQuestion() {
           
           {formData.options.map((option, index) => (
             <>
-            <label className="block text-sm font-medium text-[#008489] dark:text-[#008489]">
+            <label className="block text-sm font-medium ">
             Options:{index+1}
           </label>
             <div key={index} className="mb-2">
@@ -96,7 +99,7 @@ function CreateQuestion() {
           ))}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium  text-[#008489] dark:text-[#008489]">
+          <label className="block text-sm font-medium  ">
             Correct Option:
           </label>
           <select
@@ -112,9 +115,10 @@ function CreateQuestion() {
             ))}
           </select>
         </div>
+        
         <button
           type="submit"
-          className="bg-[#008489] mx-auto flex hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+          className={` ${theme === 'dark' ? ' bg-gray-800 border-white ' : 'gradient-button' }  text-white mx-auto flex   font-bold py-2 px-4 rounded-3xl focus:outline-none `}
         >
           Create Question
         </button>

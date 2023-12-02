@@ -21,7 +21,7 @@ function CreatorRoom() {
     try {
 
       const response = await axios.get(
-        "http://localhost:3000/question-answers/allQuestionAnswer"
+        `${import.meta.env.VITE_BASE_URL_API}/question-answers/allQuestionAnswer`
       );
       setQuestions(response.data);
       setFilteredQuestions(response.data);
@@ -70,8 +70,8 @@ function CreatorRoom() {
     const deleteQuestion = async (id, index) => {
 
       try {
-       
-        await axios.delete(`http://localhost:3000/question-answers/${id}/delete`);
+     
+        await axios.delete(`${import.meta.env.VITE_BASE_URL_API}/question-answers/${id}/delete`);
 
         setSentQuestion(sentQuestion.filter((sentIndex) => sentIndex !== index));
     
@@ -104,7 +104,7 @@ function CreatorRoom() {
     const EditQuestion = async (id,formData) => {
       try {
         const response = await axios.post(
-          `http://localhost:3000/question-answers/${id}/update`,
+          `http://149.100.138.125:4141/question-answers/${id}/update`,
           formData 
         );
     

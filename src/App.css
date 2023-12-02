@@ -118,7 +118,17 @@ background: linear-gradient(135deg,rgb(69,22,222) 6%,rgb(155,81,224) 100%);
 .border-light-purple {
   --tw-border-opacity: 1;
   border-color: rgb(87 57 171/var(--tw-border-opacity));
+  border-width: 1px;
+
 }
+.text-gradient {
+  background: -webkit-linear-gradient(226.65deg,#12c2ea 5.28%,#be7eff 68.63%);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 2px;
+}
+.bg-purple{background-color: #11042a;}
 .purple-button{
 
     height: 45px;

@@ -19,7 +19,7 @@ function App() {
   const { theme } = useContext(ThemeContext);
 
   return (
-      <div className={theme === 'dark' ? ' bg-gray-900 min-h-screen': 'bg-base-purple min-h-screen' }>
+      <div className={theme === 'dark' ? ' bg-gray-900 min-h-screen': 'bg-purple min-h-screen' }>
         <Navbar />
         <Routes>      
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>  } />
