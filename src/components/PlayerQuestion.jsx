@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { socket } from "../services/socket.service";
 import { GameContext } from "../context/game.context";
 import FancyButton from "./button/FancyButton";
+import { ThemeContext } from '../context/theme.context';
 
 function PlayerQuestion() {
   const [question, setQuestion] = useState(null);
@@ -11,6 +12,7 @@ function PlayerQuestion() {
   const { playerDetail } = useContext(GameContext);
   const [score, setScore] = useState([]);
   const [gameEnded, setGameEnded] = useState(false); 
+  const { theme } = useContext(ThemeContext);
 
 console.log(playerDetail)
   useEffect(() => {
@@ -19,7 +21,7 @@ console.log(playerDetail)
       setQuestion(question);
       setSelectedAnswer(null);
       setAnswerSubmitted(false);
-      setTimer(30);
+      setTimer(50);
     });
   }, []);
 
@@ -60,40 +62,42 @@ console.log(playerDetail)
   return (
     <>
       {!answerSubmitted && question ? (
-        <div className="flex flex-col px-5 bg-grey text-gray-700">
-          <div className="animated-box bg-[#717ec3] in">
-            <h1 className="text-white">{question.questionText}</h1>
+        <div className={` ${theme === 'dark' ? ' bg-gray-700' :' bg-base-purple border-light-purple '} flex flex-col rounded-2xl px-5 text-white `}>
+         <div className="p-5 rounded-2xl">
+          <h2 className={` ${theme === 'dark' ? ' bg-gray-700' :' text-gradient '} text-2xl   font-bold text-center `}>{question.questionText}</h2>
           </div>
           {question.options.map((option, index) => (
             <div key={`${index}`}>
               <FancyButton
-                className={`${selectedAnswer === option ? "bg-green-300" : ""}`}
+                className={`${selectedAnswer === option ? "bg-green-300" : ""} ${theme === 'dark' ? ' bg-gray-700' :' bg-base-purple border-light-purple '} text-center `}
                 text={option}
                 answerClick={(option) => handleAnswerClick(option, index)}
               />
             </div>
           ))}
 
-          <div>
-            <span className="countdown  bg-black-900 text-white font-mono text-6xl">
+          <div>   
+            <span className="countdown  bg-black-900 text-white font-mono text-6xl w-3/12 p-5 mb-3 rounded-2xl mx-auto border-white-800 border-solid border-2">
+      
               <span style={{ "--value": timer }}></span>
             </span>
           </div>
         </div>
       ) : (
         !score.length &&
-        (<p>
+        (
+          <div className={` ${theme === 'dark' ? ' bg-gray-700 border-solid border-2 border-white-500' :'bg-dull-purple border-light-purple' } gap-3 text-white p-7 col-span-4 m-5 rounded-lg top-[3.8125rem]`}>
+
           {question 
             ? "Answer submitted. Please wait for the next question."
             : "Waiting for the questions..."}
-        </p>)
+        </div>)
       )}
       <>
       { gameEnded && score.length > 0 && (
-      //  manageContext('creator',userName, roomName)
-      <section className="bg-[#008489] rounded-lg " id="leaderboard">
+      <section className=" rounded-lg w-full   " id="leaderboard">
    <div className="row   ">
-    <div className="block  w-full  text-white grid content-start">
+    <div className="block  w-full  text-white ">
      <h2 className="py-5 ">
       Current Leaderboard
     
@@ -101,7 +105,7 @@ console.log(playerDetail)
      
      <p>Created by {score[0].userName}</p>
       
-     <div className="m-5 bg-white text-[#008489] ">
+     <div className="m-5 ">
      <table className="table-auto items-center w-full bg-transparent border-collapse">
       <thead>
        <tr>
@@ -118,7 +122,7 @@ console.log(playerDetail)
           item.score && (
       <tr key={index} >
                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{index}</td>
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{index+1}</td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{item.userName}</td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{item.score}</td>
               

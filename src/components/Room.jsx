@@ -42,10 +42,7 @@ useEffect(() => {
                   className={` ${theme === 'dark' ? ' bg-gray-500 text-gray-200' : 'text-gray-700  placeholder:text-white  bg-white'} block w-full px-2  rounded-md border  p-1.5 shadow-sm  placeholder:text-white `}
                 />
               </div>
-           
-
-           
-          
+        
              </div>
 
             <div className="sm:col-span-12 ">
@@ -68,8 +65,6 @@ useEffect(() => {
               <button
                 onClick={() => buttonEvt(roomName,name,user.email)}
                   className={` ${theme === 'dark' ? ' bg-gray-800 border-white' : 'purple-button border-light-purple '}  flex mx-auto w-6/12 md:w-4/12 rounded-3xl  text-white text-gray-200 justify-center px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#01C1C2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#01C1C2]`}
-
-                // className=""
               >
                 {title} Room
               </button>

@@ -87,6 +87,10 @@ background: #ff9d7e;
     background-size: 40%,auto,cover;
     border-radius: 10px;
 }
+.bg-dull-purple{
+  --tw-bg-opacity: 1;
+    background-color: rgb(48 40 98/var(--tw-bg-opacity));
+}
 .card {
   padding: 2em;
 }

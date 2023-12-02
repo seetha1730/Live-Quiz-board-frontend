@@ -1,12 +1,13 @@
 // RoomsAndUser.jsx
-import React, { useState, useEffect,useContext } from 'react';
+import { useState, useEffect,useContext } from 'react';
 import { GameContext } from '../context/game.context';
 import { useNavigate } from 'react-router-dom';
 import { socket } from "../services/socket.service";
+import { ThemeContext } from '../context/theme.context';
 import Button from './button/Button';
 function RoomAndUsers() {
   const [roomUsers, setRoomUsers] = useState([]);
-
+  const { theme } = useContext(ThemeContext);
   const { gameContext } = useContext(GameContext);
 
    const { playerDetail } = useContext(GameContext);
@@ -40,18 +41,20 @@ console.log(data)
   return (
 
     <>
-      <h5 className='text-gray-500 text-center p-2' >Users:</h5>
+          <h2 className={` ${theme === 'dark' ? ' bg-gray-700' :' text-gradient '} mt-2 text-2xl font-bold mb-4 text-center `}>Users</h2>
+
+  
       {roomUsers.length > 0}
       <ul role="list" className="divide-y divide-gray-100">
         {roomUsers.map((user,index) => (
           <li key={index}>
             <div className=" p-2 flex min-h-56 items-center cursor-pointer my-1 hover:bg-blue-lightest rounded grid grid-cols-12">
               <div className=" col-span-2 text-center py-1">
-                <img className=" h-12 w-14 flex-none rounded-full bg-gray-50" alt="" />
+                <img className=" h-12 w-12 flex-none rounded-full bg-gray-50" alt="" />
               </div>
               <div className=" flex items-center col-span-7 h-10 px-1">
 
-                <p className=" hover:text-blue-dark text-sm font-semibold text-gray-900 text-wrap">{user.userName}</p>
+                <p className=" hover:text-blue-dark text-sm font-semibold text-wrap">{user.userName}</p>
               </div>
               <div className="col-span-3 h-10 text-right flex p-3">
                 <div className="flex-none rounded-full bg-emerald-500/20 p-1 mr-2">
@@ -66,14 +69,14 @@ console.log(data)
     
       {gameContext && gameContext === "creator" ? ( 
         <>
-        <Button color1="bg-[#208288]" color2="bg-[#83c5be]" clickFunction={() => leaveRoom()} text="Leave Room"/>
-        <Button color1="bg-red-500" color2="bg-red-900" clickFunction={() => endGame(playerDetail.room)} text="End Game"/>
+        <Button color1="purple-button"  clickFunction={() => leaveRoom()} text="Leave Room"/>
+        <Button color2="gradient-button" clickFunction={() => endGame(playerDetail.room)} text="End Game"/>
 
       
         </>):(
 
           <>
-          <Button color1="bg-[#208288]" color2="bg-[#83c5be]" clickFunction={() => leaveRoom()} text="Leave Room"/>
+          <Button color1="purple-button"  clickFunction={() => leaveRoom()} text="Leave Room"/>
           </>
         )}
       </div>

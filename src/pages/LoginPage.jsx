@@ -6,7 +6,7 @@ import { ThemeContext } from '../context/theme.context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-const API_URL = "http://149.100.138.125:4141";
+
 
 function LoginPage(props) {
   const [email, setEmail] = useState("");
@@ -24,7 +24,7 @@ function LoginPage(props) {
     const requestBody = { email, password };
 
     axios
-      .post(`${API_URL}/auth/login`, requestBody)
+      .post(`${import.meta.env.VITE_BASE_URL_API}/auth/login`, requestBody)
       .then((response) => {
 
         console.log("JWT token", response.data.authToken);

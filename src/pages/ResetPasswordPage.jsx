@@ -34,7 +34,7 @@ function ResetPassWordPage() {
 
     try {
 
-      const response = await axios.post("http://149.100.138.125:4141/auth/reset-password", {
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL_API}/auth/reset-password`, {
         password: password,
         email: email
       });

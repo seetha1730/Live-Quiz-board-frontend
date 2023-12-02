@@ -1,45 +1,27 @@
-import React, { useState, useEffect,useContext } from 'react';
+import { useContext } from 'react';
 import RoomAndUsers from "../components/RoomsAndUser";
 import { GameContext } from '../context/game.context';
 import CreatorRoom from '../components/CreatorRoom';
 import PlayerQuestion from '../components/PlayerQuestion';
-import { socket } from "../services/socket.service";
 import Dots from '../components/Dots';
-
+import { ThemeContext } from '../context/theme.context';
 function GameRoom() {
-  const { gameContext, manageContext} = useContext(GameContext);
- // const [localGameContext, setLocalGameContext] = useState(null);
-  
-
-  // useEffect(() => {
-  //   const storedGameContext = JSON.parse(localStorage.getItem('gameContext'));
-
-  //   if (storedGameContext) {
-  //     manageContext(storedGameContext.role, storedGameContext.name, storedGameContext.roomName);
-  //     setLocalGameContext(storedGameContext.role);
-  //     setLocalGameContext('creator');
-
-  //   } else {
-  //     manageContext(storedGameContext.role, storedGameContext.name, storedGameContext.roomName);
-  //     setLocalGameContext('player');
-  //   }
-
-  //   return () => {
-  //     socket.off('result');
-  //   };
-  // }, [manageContext]);
+  const { theme } = useContext(ThemeContext);
+  const { gameContext} = useContext(GameContext);
+ 
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 min-h-screen grid grid-cols-12">
       {gameContext && gameContext === "creator" ? (
         <>
-          <div className="gap-3 col-span-4 m-5 rounded-lg bg-white top-[3.8125rem]">
+
+          <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } gap-3 col-span-4 m-5 rounded-lg top-[3.8125rem]`}>
             <RoomAndUsers />
           </div>
 
           
          
-          <div className="gap-3 col-span-8 m-5 rounded-lg  bg-gray ">
+          <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } gap-3 col-span-8 m-5 rounded-lg`}>
             <div className="container">
             
             <Dots/>
@@ -54,11 +36,10 @@ function GameRoom() {
         </>
       ) : (
         <>
-          <div className="gap-3 col-span-4 m-5 rounded-lg bg-white top-[3.8125rem]">
+        <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } gap-3 col-span-4 m-5 rounded-lg top-[3.8125rem]`}>
             <RoomAndUsers />
           </div>
-
-          <div className="gap-3 col-span-8 m-5 rounded-lg">
+          <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } gap-3 col-span-8 m-5 rounded-lg`}>
           <div className="container rounded-lg">
           
           <Dots/>

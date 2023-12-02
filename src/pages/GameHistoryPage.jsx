@@ -14,7 +14,7 @@ function GameHistoryPage() {
 
   const fetchScoreHistory = async () => {
     try {
-      const response = await axios.get(`http://149.100.138.125:4141/game/scoreHistory/${userId}`);
+      const response = await axios.get(`${import.meta.env.VITE_BASE_URL_API}/game/scoreHistory/${userId}`);
       setScoreHistory(response.data);
 
     } catch (error) {

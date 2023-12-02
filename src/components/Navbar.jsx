@@ -54,8 +54,7 @@ const { theme } = useContext(ThemeContext);
             <span className="sr-only">Open user menu</span>
             <img className="w-8 h-8 rounded-full" src={user && user.image} alt="user photo"  />
           </button>
-          {/* Dropdown menu */}
-         
+      
           <div
             className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
             id="user-dropdown"

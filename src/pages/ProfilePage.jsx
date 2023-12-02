@@ -9,7 +9,8 @@ function ProfilePage (){
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get(`http://149.100.138.125:4141/profile/${userId}`);
+        
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL_API}/profile/${userId}`);
         setProfile(response.data);
       } catch (error) {
         console.error(error);
@@ -33,7 +34,7 @@ function ProfilePage (){
       formData.append('phoneNumber', profile.phoneNumber);
       formData.append('image', profileImage); // Append the image file
   
-      const response = await axios.put(`http://149.100.138.125:4141/profile/${userId}`, formData, {
+      const response = await axios.put(`${import.meta.env.VITE_BASE_URL_API}/profile/${userId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Set the content type to multipart/form-data
         },

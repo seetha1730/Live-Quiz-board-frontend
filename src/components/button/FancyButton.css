@@ -1,5 +1,9 @@
 
-
+.bg-gray-700 .animated-button {
+  background: linear-gradient(-30deg,gray 50%, gray 50%);
+  color:white
+}
+.animated-button  {color:gray}
 .animated-button {
   background: linear-gradient(-30deg, white 50%, white 50%);
   padding: 20px 40px;
@@ -9,7 +13,6 @@
   -webkit-transform: translate(0%, 0%);
           transform: translate(0%, 0%);
   overflow: hidden;
-  color: #006d77;
   font-size: 20px;
   letter-spacing: 2.5px;
   text-align: center;
@@ -34,9 +37,13 @@
 
 .animated-button:hover {
   
-  background:#006d77;
-  box-shadow: 10px 10px 0 #FBC638;
-  color:#FBC638
+  background:linear-gradient(249.73deg,#ff9d7e 2.87%,#8c54fd 89.48%);
+ color:white
+}
+.bg-gray-700 .animated-button:hover {
+  
+  background:linear-gradient(249.73deg,white 2.87%,gray 89.48%);
+ color:white
 }
 
 .animated-button span {
@@ -48,8 +55,8 @@
   left: 0px;
   width: 100%;
   height: 4px;
-  background: -webkit-gradient(linear, right top, left top, from(rgba(8, 20, 43, 0)), to(#2662d9));
-  background: linear-gradient(to left, rgba(8, 20, 43, 0), #2662d9);
+  background: -webkit-gradient(linear, right top, left top, from(rgba(8, 20, 43, 0)), to(#ff9d7e));
+  background: linear-gradient(to left, rgba(8, 20, 43, 0), #8c54fd);
   -webkit-animation: 2s animateTop linear infinite;
           animation: 2s animateTop linear infinite;
 }
@@ -81,8 +88,8 @@
   right: 0px;
   height: 100%;
   width: 4px;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 20, 43, 0)), to(#2662d9));
-  background: linear-gradient(to top, rgba(8, 20, 43, 0), #2662d9);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 20, 43, 0)), to(#ff9d7e));
+  background: linear-gradient(to top, rgba(8, 20, 43, 0), #8c54fd);
   -webkit-animation: 2s animateRight linear -1s infinite;
           animation: 2s animateRight linear -1s infinite;
 }
@@ -114,8 +121,8 @@
   left: 0px;
   width: 100%;
   height: 4px;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(8, 20, 43, 0)), to(#2662d9));
-  background: linear-gradient(to right, rgba(8, 20, 43, 0), #2662d9);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(8, 20, 43, 0)), to(#ff9d7e));
+  background: linear-gradient(to right, rgba(8, 20, 43, 0), #8c54fd);
   -webkit-animation: 2s animateBottom linear infinite;
           animation: 2s animateBottom linear infinite;
 }
@@ -141,14 +148,32 @@
             transform: translateX(100%);
   }
 }
+.bg-gray-700 .animated-button span:nth-child(4){
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 20, 43, 0)), to(gray));
+  background: linear-gradient(to bottom, rgba(8, 20, 43, 0), white);
+}
 
+.bg-gray-700 .animated-button span:nth-child(3)
+{
+  background: -webkit-gradient(linear, left top, right top, from(rgba(8, 20, 43, 0)), to(gray));
+  background: linear-gradient(to right, rgba(8, 20, 43, 0), white);
+} 
+.bg-gray-700  .animated-button span:nth-child(2){
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 20, 43, 0)), to(gray));
+  background: linear-gradient(to top, rgba(8, 20, 43, 0),white);
+}
+.animated-button span:nth-child(1){
+  background: -webkit-gradient(linear, right top, left top, from(rgba(8, 20, 43, 0)), to(gray));
+  background: linear-gradient(to left, rgba(8, 20, 43, 0), white);
+ 
+}
 .animated-button span:nth-child(4) {
   top: 0px;
   left: 0px;
   height: 100%;
   width: 4px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 20, 43, 0)), to(#2662d9));
-  background: linear-gradient(to bottom, rgba(8, 20, 43, 0), #2662d9);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 20, 43, 0)), to(#ff9d7e));
+  background: linear-gradient(to bottom, rgba(8, 20, 43, 0), #8c54fd);
   -webkit-animation: 2s animateLeft linear -1s infinite;
           animation: 2s animateLeft linear -1s infinite;
 }

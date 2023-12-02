@@ -4,7 +4,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { ThemeContext } from "../context/theme.context";
-const API_URL = "http://149.100.138.125:4141";
+
 
 function SignupPage(props) {
   const [email, setEmail] = useState("");
@@ -23,7 +23,7 @@ function SignupPage(props) {
     e.preventDefault();
     const requestBody = { email, password, name, lastName, dateOfBirth, gender, phoneNumber };
 
-    axios.post(`${API_URL}/auth/signup`, requestBody)
+    axios.post(`${import.meta.env.VITE_BASE_URL_API}/auth/signup`, requestBody)
     .then((response) => {
       navigate('/login');
     })

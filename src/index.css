@@ -7,37 +7,6 @@
  
 }
 
-
-
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-
-
-
-/* 
-html.dark {
-  background:url('./../../dark-bg.jpg');
-  background-size:cover;
-  min-height:90vh
-}
-html{
-
-  background:url('./../../public/light-bg.jpg');
-
-  min-height:90vh;
-background-size: cover; 
-} */
 .my-screen{
   height: 90vh;
 }
@@ -115,80 +84,6 @@ button:focus-visible {
 
 /***theme css**/
 
-/***background  style for get question **/
-.animated-box {
-  font-family: 'Lato';
-  color: #ffffff;
-  padding: 30px;
-  text-align: center;
-  border-radius: 4px;
-    color: rgb(46, 44, 44);
-}
-
-.animated-box h1 {
-  font-weight: 200;
-  font-size: 40px;
-  text-transform: uppercase;
-}
-
-.animated-box p {
-  font-weight: 200;
-}
-
-/* The animation starts here */
-.animated-box {
-  position: relative;
-}
-
-.animated-box:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 4px;
-  background: linear-gradient(120deg, #00F260, #0575E6, #00F260);
-  background-size: 300% 300%;
-  clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
-}
-
-.animated-box.in:after {
-  animation: frame-enter 1s forwards ease-in-out reverse, gradient-animation 4s ease-in-out infinite;
-}
-
-
-/* motion */
-@keyframes gradient-animation {
-  0% {
-    background-position: 15% 0%;
-  }
-  50% {
-    background-position: 85% 100%;
-  }
-  100% {
-    background-position: 15% 0%;
-  }
-}
-
-@keyframes frame-enter {
-  0% {
-    clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
-  }
-  25% {
-    clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, 100% 100%, 100% 0%, 0% 0%);
-  }
-  50% {
-    clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, 100% 0%, 0% 0%);
-  }
-  75% {
-    -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 0%, 0% 0%);
-  }
-  100% {
-    -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 0% 100%);
-  }
-}
-
 
 
 /***button style for get question **/
@@ -214,13 +109,13 @@ button:focus-visible {
   overflow: hidden;
   background-color: #201c29;
 }
-.container::before, .container::after {
+.container::before, .container::after , .dots-gray .container {
   position: absolute;
   width: 250px;
   height: 250px;
   content: "";
   border-radius: 54% 46% 42% 58%/60% 58% 42% 40%;
-  background-image: linear-gradient(45deg, #006d77, #83c5be);
+  background-image: linear-gradient(74.34deg, #BE7EFF 10.95%, #2B81FF 89.21%);
   animation: vawe 5s linear infinite;
 }
 .container::before {
@@ -238,10 +133,14 @@ button:focus-visible {
   bottom: 0;
   left: 0;
 }
+.container .dots-gray.dots span,.bg-gray-700 .container::after,.bg-gray-700 .container::before {
+  background-image:linear-gradient(74.34deg, #000 10.95%, #d2d2d2 89.21%);
+
+}
 .container .dots span {
   position: absolute;
   border-radius: 50%;
-  background-image: linear-gradient(45deg, #006d77, #83c5be);
+  background-image:linear-gradient(74.34deg, #BE7EFF 10.95%, #2B81FF 89.21%);
   border-radius: 38% 62% 55% 45%/32% 53% 47% 68%;
   animation: vawe 7s linear infinite;
 }

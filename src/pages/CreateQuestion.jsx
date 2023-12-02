@@ -1,4 +1,4 @@
-import React, { useState ,useContext} from 'react';
+import { useState ,useContext} from 'react';
 import axios from 'axios';
 import { ThemeContext } from '../context/theme.context';
 function CreateQuestion() {
@@ -54,8 +54,7 @@ function CreateQuestion() {
     <div className="flex my-screen items-center">
         <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } max-w-lg mx-auto w-11/12 my-8 p-6  text-white-900 shadow-lg rounded-lg `}>
 
-   {/* </div> <div className=""> */}
-      <h2 className={` ${theme === 'dark' ? ' bg-gray-700' :'text-gradient '} text-2xl font-bold mb-4 text-center `}>Create a New Question</h2>
+      <h2 className={` ${theme === 'dark' ? ' bg-gray-700' :' text-gradient '} text-2xl font-bold mb-4 text-center `}>Create a New Question</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-sm font-medium  ">

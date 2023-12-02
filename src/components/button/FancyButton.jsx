@@ -1,12 +1,12 @@
 import React from 'react'
-import "./FancyButton.css"
+
 function FancyButton({text,option, answerClick}) {
   return (
  
 <div className='w-100 ' onClick={() => answerClick(option)}>
    
 
-    <a className=" rounded-lg animated-button" href="#">
+    <a className=" rounded-lg animated-button text-center" href="#">
     
     <span></span>
   <span></span>

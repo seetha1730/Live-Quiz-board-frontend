@@ -12,7 +12,8 @@ function ForgotPassword() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://149.100.138.125:4141/auth/forgot-password", { email });
+      
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL_API}/auth/forgot-password`, { email });
 
       console.log("Server response:", response.data);
     } catch (error) {

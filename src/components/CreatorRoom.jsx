@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useContext,useEffect } from "react";
 import { socket } from "../services/socket.service";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -6,7 +6,9 @@ import Button from "./button/Button";
 import DeleteButton from "./button/DeleteButton";
 import EditButton from "./button/EditButton";
 import UpdateQuestion from "./UpdateQuestion";
+import { ThemeContext } from '../context/theme.context';
 function CreatorRoom() {
+  const { theme } = useContext(ThemeContext);
   const { roomName } = useParams();
   const [questions, setQuestions] = useState([]);
   const [sentQuestion, setSentQuestion] = useState([]);
@@ -15,7 +17,6 @@ function CreatorRoom() {
   const [filteredQuestions, setFilteredQuestions] = useState([]);
   const[isOpen,setIsOpen] = useState(false)
   const [selectedQuestion, setSelectedQuestion] = useState({});
-
 
   const fetchQuestions = async () => {
     try {
@@ -104,7 +105,7 @@ function CreatorRoom() {
     const EditQuestion = async (id,formData) => {
       try {
         const response = await axios.post(
-          `http://149.100.138.125:4141/question-answers/${id}/update`,
+          `${import.meta.env.VITE_BASE_URL_API}/question-answers/${id}/update`,
           formData 
         );
     
@@ -135,9 +136,10 @@ function CreatorRoom() {
   id="category"
   value={selectedCategory}
   onChange={handleOnChange}
-  className="bg-[#208288] border border-green-300 text-white text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+
+  className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } border  text-white text-lg rounded-lg  block w-full p-2.5 `}
 >
-  <option className="ml-2" value="Choose a category">
+  <option className="ml-2 text-gradient" value="Choose a category">
     Choose a category
   </option>
   {category.slice()
@@ -153,16 +155,15 @@ function CreatorRoom() {
         filteredQuestions.map((question, index) => (
           <div
             key={index}
-            className={`flex flex-col p-5 mt-5 bg-white rounded-lg text-gray-700 border-2 border-gray-200 ${
+            className={`${theme === 'dark' ? ' bg-gray-700' :'bg-dull-purple border-light-purple' } flex flex-col p-5 mt-5 text-white rounded-lg text-gray-700 border-2 border-gray-200 ${
               sentQuestion.includes(index) ? "grayscale -inset" : ""
             }`}
           >
           
+          <h2 className={` ${theme === 'dark' ? ' bg-gray-700' :'text-gradient '} text-2xl font-bold mb-4 text-center `}> <span>{index + 1} </span>
+              {question.questionText}</h2>
 
-            <h3 className=" p-3 bg-[#83c5be]">
-              <span>{index + 1} </span>
-              {question.questionText}
-            </h3>
+           
             <ul>
         {question.options.map((option, i) => (
           <li key={i} className="p-3 text-left">
@@ -173,7 +174,7 @@ function CreatorRoom() {
       </ul>
      <div className="  grid grid-cols-5 gap-4 flex items-center justify-center">
      <div className="col-span-3">
-     <Button  color1="bg-[#208288]" color2="bg-[#212E3D]" clickFunction={() => sendQuestion(question, index)} text="Send Question"/>
+     <Button color2="gradient-button" clickFunction={() => sendQuestion(question, index)} text="Send Question"/>
      </div>
      <div className="">
            <DeleteButton onDelete={() => deleteQuestion(question._id, index)}/>
