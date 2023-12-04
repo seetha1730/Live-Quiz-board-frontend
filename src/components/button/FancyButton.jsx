@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./FancyButton.css"
 function FancyButton({text,option, answerClick}) {
   return (
  

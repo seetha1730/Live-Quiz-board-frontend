@@ -1,21 +1,50 @@
-import { useContext } from 'react';
+import { useContext ,useEffect, useState} from 'react';
 import RoomAndUsers from "../components/RoomsAndUser";
 import { GameContext } from '../context/game.context';
 import CreatorRoom from '../components/CreatorRoom';
 import PlayerQuestion from '../components/PlayerQuestion';
 import Dots from '../components/Dots';
 import { ThemeContext } from '../context/theme.context';
+import { useParams } from "react-router-dom";
+import { AuthContext } from '../context/auth.context';
+import { socket } from '../services/socket.service';
+
 function GameRoom() {
   const { theme } = useContext(ThemeContext);
-  const { gameContext} = useContext(GameContext);
- 
+  const { gameContext, manageContext, playerDetail} = useContext(GameContext);
+  const {roomName} = useParams();
+  const [users, setUsers] = useState([]) 
+  const [hotLinkUser, setHotLinkUser] = useState(false)
+
+  useEffect(()=>{
+    if(!gameContext){
+      manageContext('player','guest',roomName);
+      setHotLinkUser(true)
+    }
+  },[])
+
+  useEffect(() => {
+    if(hotLinkUser){
+      if(gameContext === 'player' && playerDetail){
+        socket.emit("join-room", { roomName,name:playerDetail.userName ,email:''});
+      }
+      if(roomName){
+        socket.emit('getUsers',{room: roomName},(users) => {
+          setUsers(users)
+        })
+      }
+    }
+   
+
+  },[gameContext, roomName,playerDetail, hotLinkUser])
+
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 min-h-screen grid grid-cols-12">
       {gameContext && gameContext === "creator" ? (
         <>
 
-          <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } gap-3 col-span-4 m-5 rounded-lg top-[3.8125rem]`}>
+          <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-dull-purple border-light-purple' } gap-3 col-span-4 m-5 rounded-lg top-[3.8125rem]`}>
             <RoomAndUsers />
           </div>
 
@@ -36,8 +65,8 @@ function GameRoom() {
         </>
       ) : (
         <>
-        <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } gap-3 col-span-4 m-5 rounded-lg top-[3.8125rem]`}>
-            <RoomAndUsers />
+        <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-dull-purple border-light-purple' } gap-3 col-span-4 m-5 rounded-lg top-[3.8125rem]`}>
+            <RoomAndUsers users={users} />
           </div>
           <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } gap-3 col-span-8 m-5 rounded-lg`}>
           <div className="container rounded-lg">

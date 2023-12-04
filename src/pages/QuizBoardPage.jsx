@@ -32,7 +32,7 @@ useEffect(() => {
 
       });
       localStorage.setItem('gameContext', JSON.stringify({ name:userName,email,roomName,role:"creator" }));
-
+    
     }
 
   }
@@ -43,6 +43,7 @@ useEffect(() => {
       socket.emit("join-room", { roomName,name ,email});
     }
     localStorage.setItem('gameContext', JSON.stringify({ name,roomName,role:"player" }));
+ 
   }
 
   function create(roomName,name,email) {

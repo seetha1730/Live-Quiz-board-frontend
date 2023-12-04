@@ -1,5 +1,5 @@
 import io from "socket.io-client";
 
-const socket = io("http://149.100.138.125:4141");
+const socket = io("http://localhost:3000");
 
 export { socket}

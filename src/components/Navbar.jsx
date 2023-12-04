@@ -23,16 +23,12 @@ const { theme } = useContext(ThemeContext);
         override: true,
       };
 
-      const collapse = new Collapse($targetEl, $triggerEl, $navbarEl, instanceOptions);
-
-     
-    collapse.expand();
+      new Collapse($targetEl, $triggerEl, $navbarEl, instanceOptions);
     
  
   }, []);
 
   useEffect(() => {
-      console.log(theme)
   },[theme])
   return (
     <nav className={theme === 'dark' ? 'bg-gray-800' : 'bg-gradient-main border-gray-200'}>
@@ -42,7 +38,7 @@ const { theme } = useContext(ThemeContext);
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Live Quiz</span>
         </a>
        
-        <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className="flex items-center mr-4 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button 
             type="button"
             className="flex text-sm  p-0 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -52,11 +48,17 @@ const { theme } = useContext(ThemeContext);
             data-dropdown-placement="bottom"
           >
             <span className="sr-only">Open user menu</span>
-            <img className="w-8 h-8 rounded-full" src={user && user.image} alt="user photo"  />
+            {isLoggedIn ? (
+            <img className="w-12 h-12 rounded-full" src={user && user.image} alt="user photo"  />
+            ): (
+              <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+            <svg className="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
+           </div>
+              )}
           </button>
       
           <div
-            className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+            className="z-50  hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
             id="user-dropdown"
           > {isLoggedIn && (
             <div className="px-4 py-3">

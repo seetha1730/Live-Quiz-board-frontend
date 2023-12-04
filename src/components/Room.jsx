@@ -1,13 +1,21 @@
 import  {useState,useContext, useEffect} from "react";
 import { AuthContext } from "../context/auth.context";
 import { ThemeContext } from '../context/theme.context';
-function Room({ buttonEvt, title,socket ,background}) {
+import { socket } from "../services/socket.service";
+
+function Room({ buttonEvt, title ,background}) {
   const { theme } = useContext(ThemeContext);
   const [roomName, setRoomName] = useState('');
   const [name,setName] = useState('')
   const { isLoggedIn, user } = useContext(AuthContext);
-  console.log(user)
 
+
+useEffect(() => {
+  socket.on("result", (data) => {
+    console.log("Received result:", data);
+   
+  });
+},[])
 useEffect(() => {
   if(isLoggedIn){
     setName(user.name)
@@ -63,7 +71,7 @@ useEffect(() => {
 
             <div>
               <button
-                onClick={() => buttonEvt(roomName,name,user.email)}
+                onClick={() => buttonEvt(roomName,name,user?.email || "")}
                   className={` ${theme === 'dark' ? ' bg-gray-800 border-white' : 'purple-button border-light-purple '}  flex mx-auto w-6/12 md:w-4/12 rounded-3xl  text-white text-gray-200 justify-center px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#01C1C2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#01C1C2]`}
               >
                 {title} Room

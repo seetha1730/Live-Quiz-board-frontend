@@ -5,22 +5,25 @@ import { useNavigate } from 'react-router-dom';
 import { socket } from "../services/socket.service";
 import { ThemeContext } from '../context/theme.context';
 import Button from './button/Button';
-function RoomAndUsers() {
+function RoomAndUsers({users}) {
   const [roomUsers, setRoomUsers] = useState([]);
   const { theme } = useContext(ThemeContext);
-  const { gameContext } = useContext(GameContext);
-
+  const { gameContext, setResult } = useContext(GameContext);
+  const [endButtonVisible, setEndButtonVisible] = useState(true); 
    const { playerDetail } = useContext(GameContext);
   const navigate = useNavigate();
 
 
+ useEffect(() => {
+  if(users){
+    setRoomUsers(users)
+  }
+ },[users])  
   useEffect(() => {
     socket.on('userJoined', (data) => {
-console.log(data)
       setRoomUsers(data);
     });
   
-
     return () => {
       socket.off('userJoined');
       socket.off('result');
@@ -34,23 +37,29 @@ console.log(data)
 
    const endGame = (roomData) => {
     if (socket && socket.connected) {
-      socket.emit("endGame", { roomName:roomData }); 
+      socket.emit("endGame", { roomName:roomData }, (score) => {
+        setResult(score)
+        setEndButtonVisible(false)
+      }); 
     }
 
   }
   return (
 
     <>
-          <h2 className={` ${theme === 'dark' ? ' bg-gray-700' :' text-gradient '} mt-2 text-2xl font-bold mb-4 text-center `}>Users</h2>
-
-  
+          <h2 className={` ${theme === 'dark' ? ' bg-gray-700' :' text-gradient '} mt-2 text-2xl font-bold mb-4 text-center `}>Users</h2>  
       {roomUsers.length > 0}
-      <ul role="list" className="divide-y divide-gray-100">
+      <ul role="list" className="mb-6 ">
         {roomUsers.map((user,index) => (
-          <li key={index}>
+          <li key={index} className=" border-b border-purple-400">
             <div className=" p-2 flex min-h-56 items-center cursor-pointer my-1 hover:bg-blue-lightest rounded grid grid-cols-12">
               <div className=" col-span-2 text-center py-1">
-                <img className=" h-12 w-12 flex-none rounded-full bg-gray-50" alt="" />
+
+             
+              <div className="relative w-10 h-10 overflow-hidden bg-blue-100 rounded-full dark:bg-gray-600">
+            <svg className="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
+           </div>
+             
               </div>
               <div className=" flex items-center col-span-7 h-10 px-1">
 
@@ -70,7 +79,7 @@ console.log(data)
       {gameContext && gameContext === "creator" ? ( 
         <>
         <Button color1="purple-button"  clickFunction={() => leaveRoom()} text="Leave Room"/>
-        <Button color2="gradient-button" clickFunction={() => endGame(playerDetail.room)} text="End Game"/>
+         {endButtonVisible && <Button color2="gradient-button" clickFunction={() => endGame(playerDetail.room)} text="End Game"/> }
 
       
         </>):(
