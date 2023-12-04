@@ -102,7 +102,7 @@ function SignupPage(props) {
        <button 
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+            className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 border-0"
           >
             {showPassword ? (
               <FontAwesomeIcon icon={faEyeSlash} className="h-6 text-gray-600" />

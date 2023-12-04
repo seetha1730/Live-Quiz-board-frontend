@@ -8,7 +8,8 @@ import EditButton from "./button/EditButton";
 import UpdateQuestion from "./UpdateQuestion";
 import { ThemeContext } from "../context/theme.context";
 import { GameContext } from "../context/game.context";
-
+import trophyImage from '/public/trophy-icon.png';
+import Leaderboard from "./LeaderBoard";
 function CreatorRoom() {
   const { theme } = useContext(ThemeContext);
   const { roomName } = useParams();
@@ -224,57 +225,8 @@ function CreatorRoom() {
       </>
       <>
         {result.length && (
-          <section className=" rounded-lg w-full   " id="leaderboard">
-            <div className="row   ">
-              <div className="block  w-full  text-white ">
-                <h2
-                  className={` ${
-                    theme === "dark" ? " bg-gray-700" : " text-gradient "
-                  } text-2xl font-bold mb-4 text-center `}
-                >
-                  Current Leaderboard{" "}
-                  <p className="capitilize">Created by {result[0].userName}</p>
-                </h2>
-                <div className="m-5 ">
-                  <table className="table-auto items-start w-full bg-transparent border-collapse">
-                    <thead>
-                      <tr>
-                        <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center ">
-                          Rank
-                        </th>
-                        <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center ">
-                          Name
-                        </th>
-                        <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center ">
-                          Score
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody id="leaderboardTableBody">
-                      {result
-                        .sort((a, b) => b.score - a.score)
-                        .map(
-                          (item, index) =>
-                            item.score && (
-                              <tr key={index}>
-                                <td className="p-3 bg-dull-purple align-middle">
-                                  {index + 1}
-                                </td>
-                                <td className="p-3 bg-dull-purple align-middle capitilize">
-                                  {item.userName}
-                                </td>
-                                <td className="p-3 bg-dull-purple align-middle">
-                                  {item.score}
-                                </td>
-                              </tr>
-                            )
-                        )}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </section>
+          <Leaderboard score={result} theme={theme} trophyImage={trophyImage} />
+
         )}
       </>
     </div>

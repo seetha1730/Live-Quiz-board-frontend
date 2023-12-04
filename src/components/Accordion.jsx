@@ -11,12 +11,16 @@ const Accordion = ({ items }) => {
   return (
     <div>
       {items.map((item, index) => (
-        <div key={index} className="accordion-item">
-          <div
+        <div key={index} className="accordion-item bg-base-purple border-light-purple m-2 rounded-md">
+          <div 
             className={`accordion-header ${openIndex === index ? 'open' : ''}`}
             onClick={() => handleItemClick(index)}
           >
+          
+           
             {item.title}
+      
+            
           </div>
           {openIndex === index && (
             <div className="accordion-content">
