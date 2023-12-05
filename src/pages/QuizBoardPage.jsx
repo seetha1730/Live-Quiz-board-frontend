@@ -15,7 +15,7 @@ function QuizBoardPage() {
   
   const navigate = useNavigate();
 useEffect(() => {
-
+  setIsLoggedIn(true);
   const storedGameContext = JSON.parse(localStorage.getItem('gameContext'));
   console.log(storedGameContext)
 

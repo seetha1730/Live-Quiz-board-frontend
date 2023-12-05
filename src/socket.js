@@ -6,3 +6,4 @@ const URL = import.meta.env.NODE_ENV === 'production' ? undefined : import.meta.
 export const socket = io(URL, {
     autoConnect: false
   });
+
