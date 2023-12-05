@@ -67,12 +67,7 @@ function AuthProviderWrapper(props) {
     authenticateUser();
     setIsLoggedIn(false);
   }    
-useEffect(()=>{
-  if (!isLoggedIn) {
-    navigate("/login");
-  }
 
-},[isLoggedIn,navigate])
 
   useEffect(() => {
     // Run the function after the initial render,

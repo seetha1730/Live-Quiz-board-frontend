@@ -2,6 +2,7 @@
 
 import { ThemeContext } from '../context/theme.context';
 import { useContext} from 'react';
+import { Link } from 'react-router-dom';
 function HomePage() {
  const { theme } = useContext(ThemeContext);
 
@@ -34,7 +35,7 @@ function HomePage() {
           type="submit"
           className={` ${theme === 'dark' ? ' bg-gray-800 border-white ' : 'gradient-button' }  text-white mx-auto flex  mt-4 w-4/12 justify-center font-bold py-2 px-4 rounded-3xl focus:outline-none `}
         >
-          Join 
+         <Link className="text-white " to="/room">Join </Link> 
         </button>
 
         </div>
