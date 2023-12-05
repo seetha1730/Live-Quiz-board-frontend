@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import PropTypes from 'prop-types';
 import { useNavigate } from "react-router-dom";
 
 const AuthContext = React.createContext();
@@ -72,7 +72,7 @@ useEffect(()=>{
     navigate("/login");
   }
 
-},[isLoggedIn])
+},[isLoggedIn,navigate])
 
   useEffect(() => {
     // Run the function after the initial render,
@@ -88,5 +88,8 @@ useEffect(()=>{
     </AuthContext.Provider>
   )
 }
+AuthProviderWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export { AuthProviderWrapper, AuthContext };

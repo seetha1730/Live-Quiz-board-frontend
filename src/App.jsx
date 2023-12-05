@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar'
 import './App.css'
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Routes, Route} from 'react-router-dom';
 import QuizBoardPage from './pages/QuizBoardPage';
 import GameRoom from './pages/GameRoom';
 import LoginPage from './pages/LoginPage';

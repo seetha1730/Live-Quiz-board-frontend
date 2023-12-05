@@ -1,4 +1,4 @@
-import React, { useEffect, useContext} from 'react';
+import { useEffect, useContext} from 'react';
 import { AuthContext } from '../context/auth.context';
 import ThemeSwitcher from './ThemeSwitcher';
 import { NavLink } from "react-router-dom";

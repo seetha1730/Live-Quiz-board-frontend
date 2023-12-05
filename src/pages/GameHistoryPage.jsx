@@ -1,5 +1,5 @@
 // components/GameHistoryPage.js
-import React, { useState, useEffect,useContext } from 'react';
+import { useState, useEffect,useContext } from 'react';
 import axios from 'axios';
 import Accordion from '../components/Accordion';
 import { useParams } from "react-router-dom";
@@ -13,7 +13,7 @@ function GameHistoryPage() {
   useEffect(() => {
     // Fetch score history when the component mounts
     fetchScoreHistory();
-  }, []);
+  });
 
   const fetchScoreHistory = async () => {
     try {

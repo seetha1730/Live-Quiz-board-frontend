@@ -1,5 +1,5 @@
 // Leaderboard.js
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const Leaderboard = ({ score, theme, trophyImage }) => {
   return (
@@ -47,5 +47,11 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
     </section>
   );
 };
+Leaderboard.propTypes = {
+    score: PropTypes.array.isRequired, 
+  theme: PropTypes.string.isRequired,
+  trophyImage: PropTypes.string.isRequired,
+  }
 
 export default Leaderboard;
+

@@ -1,5 +1,7 @@
 // components/Accordion.js
-import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
+import  { useState } from 'react';
 
 const Accordion = ({ items }) => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -32,5 +34,14 @@ const Accordion = ({ items }) => {
     </div>
   );
 };
+Accordion.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.node.isRequired,
+      content: PropTypes.node.isRequired,
+    })
+  ).isRequired,
+};
+
 
 export default Accordion;

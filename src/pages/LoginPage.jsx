@@ -8,7 +8,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 
 
-function LoginPage(props) {
+function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false); 
@@ -120,5 +120,6 @@ function LoginPage(props) {
     </div>
   );
 }
+
 
 export default LoginPage;

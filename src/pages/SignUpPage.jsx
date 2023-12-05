@@ -6,7 +6,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { ThemeContext } from "../context/theme.context";
 
 
-function SignupPage(props) {
+function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -185,5 +185,6 @@ function SignupPage(props) {
   </div>
 );
 }
+
 
 export default SignupPage;
