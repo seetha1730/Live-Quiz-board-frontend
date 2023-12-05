@@ -1,8 +1,9 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
 #root {
-  width:100%;
+  width: 100%;
 }
 
 .logo {
@@ -11,14 +12,16 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-#user-menu ~ #user-menu-dropdown {
+#user-menu~#user-menu-dropdown {
   --transform-translate-x: 0;
   --transform-translate-y: 0;
   --transform-rotate: 0;
@@ -34,7 +37,8 @@
   --transform-scale-y: 0;
 }
 
-#user-menu ~ #user-menu-dropdown:focus-within, #user-menu:focus ~ #user-menu-dropdown {
+#user-menu~#user-menu-dropdown:focus-within,
+#user-menu:focus~#user-menu-dropdown {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   transition-duration: 100ms;
   opacity: 1;
@@ -46,6 +50,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -72,25 +77,30 @@
   font-style: italic;
   color: #888;
 }
-.bg-gradient-blue{
-  background: linear-gradient(219.99deg,#12c2ea -54.14%,#7c00fa 86.87%);
+
+.bg-gradient-blue {
+  background: linear-gradient(219.99deg, #12c2ea -54.14%, #7c00fa 86.87%);
 }
+
 .bg-base-purple {
   --tw-bg-opacity: 1;
   background-color: rgb(32 13 73/var(--tw-bg-opacity));
 }
-.bg-gradient-orange{
-background: #ff9d7e;
-    background-image: url(/_next/static/media/bg-img-integrates.6a528bc7.png),linear-gradient(249.73deg,#ff9d7e 2.87%,#8c54fd 89.48%);
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
-    background-size: 40%,auto,cover;
-    border-radius: 10px;
+
+.bg-gradient-orange {
+  background: #ff9d7e;
+  background-image: url(/_next/static/media/bg-img-integrates.6a528bc7.png), linear-gradient(249.73deg, #ff9d7e 2.87%, #8c54fd 89.48%);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 40%, auto, cover;
+  border-radius: 10px;
 }
-.bg-dull-purple{
+
+.bg-dull-purple {
   --tw-bg-opacity: 1;
-    background-color: rgb(48 40 98/var(--tw-bg-opacity));
+  background-color: rgb(48 40 98/var(--tw-bg-opacity));
 }
+
 .card {
   padding: 2em;
 }
@@ -98,60 +108,72 @@ background: #ff9d7e;
 .read-the-docs {
   color: #888;
 }
-#select-modal{
+
+#select-modal {
   position: fixed;
   top: 50%;
   left: 50%;
-  background: rgba(0,0,0,.5);
-  transform: translate(-50%,-53%);
+  background: rgba(0, 0, 0, .5);
+  transform: translate(-50%, -53%);
   z-index: 10;
   display: flex;
 }
-.bg-gradient-main{
-background: linear-gradient(135deg,rgb(69,22,222) 6%,rgb(155,81,224) 100%);
+
+.bg-gradient-main {
+  background: linear-gradient(135deg, rgb(69, 22, 222) 6%, rgb(155, 81, 224) 100%);
 }
-.bg-gradient-1{
-  background:linear-gradient(249.73deg,#5487f4 2.87%,#8c54fd 89.48%)
+
+.bg-gradient-1 {
+  background: linear-gradient(249.73deg, #5487f4 2.87%, #8c54fd 89.48%)
 }
-.bg-gradient-2{
-  background:linear-gradient(249.73deg,#ff9d7e 2.87%,#8c54fd 89.48%);
+
+.bg-gradient-2 {
+  background: linear-gradient(249.73deg, #ff9d7e 2.87%, #8c54fd 89.48%);
 }
-.gradient-button{
-  background:linear-gradient(74.34deg, #BE7EFF 10.95%, #2B81FF 89.21%)
+
+.gradient-button {
+  background: linear-gradient(74.34deg, #BE7EFF 10.95%, #2B81FF 89.21%)
 }
+
 .border-light-purple {
   --tw-border-opacity: 1;
   border-color: rgb(87 57 171/var(--tw-border-opacity));
   border-width: 1px;
 
 }
+
 .text-gradient {
-  background: -webkit-linear-gradient(226.65deg,#12c2ea 5.28%,#be7eff 68.63%);
-  -webkit-background-clip: text; 
+  background: -webkit-linear-gradient(226.65deg, #12c2ea 5.28%, #be7eff 68.63%);
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   padding: 2px;
 }
-.bg-purple{background-color: #11042a;}
-.purple-button{
 
-    height: 45px;
- 
-    background: rgba(87, 57, 171, 0.8);
-    padding: 8px;
-    font-size: 14px;
-    line-height: 24px;
-    color: white;
-    font-weight: bold;
+.bg-purple {
+  background-color: #11042a;
 }
+
+.purple-button {
+
+  height: 45px;
+  background: rgba(87, 57, 171, 0.8);
+  padding: 8px;
+  font-size: 14px;
+  line-height: 24px;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+}
+
 .bg-base-purple {
   --tw-bg-opacity: 1;
   background-color: rgb(32 13 73/var(--tw-bg-opacity));
 }
 
-body{
-padding: 0;
-margin: 0;
+body {
+  padding: 0;
+  margin: 0;
 
-background-color: #11042a;
+  background-color: #11042a;
 }

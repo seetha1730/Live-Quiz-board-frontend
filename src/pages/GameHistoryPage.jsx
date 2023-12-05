@@ -29,8 +29,8 @@ function GameHistoryPage() {
   }
 
   return (
-    <div className="w-8/12 flex  mx-auto">
-                <h2 className={` ${theme === 'dark' ? ' bg-gray-700' : ' text-gradient '} text-2xl m-5 font-bold mb-4 text-center `}>
+    <div className="w-8/12 pb-8  mx-auto">
+  <h2 className={` ${theme === 'dark' ? ' bg-gray-700' : ' text-gradient '} text-2xl m-5 font-bold mb-4 text-center `}>
 Game History</h2>
       <Accordion
         items={scoreHistory.map((score, index) => ({

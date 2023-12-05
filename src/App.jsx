@@ -21,7 +21,7 @@ function App() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Router>
+   
       <div className={theme === 'dark' ? ' bg-gray-900 min-h-screen': 'bg-purple min-h-screen' }>
         <Navbar />
         <Routes>      
@@ -44,7 +44,7 @@ function App() {
           } />
         </Routes>
       </div>
-      </Router>
+     
   );
 }
 
