@@ -49,6 +49,7 @@ const { theme } = useContext(ThemeContext);
           >
             <span className="sr-only">Open user menu</span>
             {isLoggedIn ? (
+              
             <img className="w-12 h-12 rounded-full" src={user && user.image} alt="user photo"  />
             ): (
               <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
@@ -150,6 +151,17 @@ const { theme } = useContext(ThemeContext);
               >
                 Home
               </NavLink>
+  
+            </li>
+            <li>
+              <NavLink to="/room"
+            
+                className="block py-2 px-3  text-white rounded active"
+                aria-current="page"
+              >
+                Rooms
+              </NavLink>
+  
             </li>
             <li>
               <NavLink 
@@ -167,14 +179,7 @@ const { theme } = useContext(ThemeContext);
                 History
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                href="#"
-                className="block py-2 px-3  text-white rounded"
-              >
-                Pricing
-              </NavLink>
-            </li>
+           
             
           </ul>
         </div>

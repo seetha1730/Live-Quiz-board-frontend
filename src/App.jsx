@@ -14,6 +14,8 @@ import GameHistory from "./pages/GameHistoryPage"
 import { ThemeContext } from './context/theme.context';
 import { useContext} from 'react';
 import ForgotPassword from './pages/ForgotPassword';
+import HomePage from './pages/HomePage';
+
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -24,9 +26,12 @@ function App() {
         <Routes>      
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>  } />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
+       
         <Route path="/question-answers" element={<CreateQuestion /> } />
         <Route path="/history/:userId" element={<GameHistory /> } />
-        <Route path="/" element={ <QuizBoardPage />} />
+        <Route path="/" element={ <HomePage />} />
+        <Route path="/room" element={ <QuizBoardPage />} />
+
         <Route path="/forgot-password" element={ <ForgotPassword/>} />
         <Route path="/reset-password" element={ <ResetPassWordPage/>} />
         <Route path="/profile/:userId" element={ <ProfilePage/>} />

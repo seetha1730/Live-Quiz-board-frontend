@@ -25,12 +25,13 @@ function SignupPage(props) {
 
     axios.post(`${import.meta.env.VITE_BASE_URL_API}/auth/signup`, requestBody)
     .then((response) => {
+      console.log(response)
       navigate('/login');
     })
     .catch((error) => {
         console.log(error)
-     const errorDescription = error;
-     setErrorMessage(errorDescription);
+        const errorDescription = error.response.data.message || "An error occurred";
+        setErrorMessage(errorDescription);
     })
   };
 
@@ -44,7 +45,7 @@ function SignupPage(props) {
 
       <div className="mb-4">
         <label htmlFor="email" className="block text-sm font-medium ">
-          First Name
+          First Name <span className="p-1">*</span>
         </label>
         <input
           type="text"
@@ -67,13 +68,13 @@ function SignupPage(props) {
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               className="w-full mt-1 p-2 border rounded-md text-gray-600"
-              required
+              
             />
           </div>
 
       <div className="mb-4">
         <label htmlFor="email" className="block text-sm font-medium ">
-          Email
+          Email<span className="p-1">*</span>
         </label>
         <input
           type="email"
@@ -88,7 +89,7 @@ function SignupPage(props) {
       
       <div className="mb-4">
         <label htmlFor="password" className="block text-sm font-medium ">
-          Password
+          Password<span className="p-1">*</span>
         </label>
         <div className="relative">
         <input
@@ -117,7 +118,7 @@ function SignupPage(props) {
 
       <div className="mb-4">
             <label htmlFor="dateOfBirth" className="block text-sm font-medium ">
-              Date of Birth
+              Date of Birth<span className="p-1">*</span>
             </label>
             <input
               type="date"
@@ -132,7 +133,7 @@ function SignupPage(props) {
 
           <div className="mb-4">
             <label htmlFor="gender" className="block text-sm font-medium ">
-              Gender
+              Gender<span className="p-1">*</span>
             </label>
             <select
               id="gender"
@@ -159,9 +160,11 @@ function SignupPage(props) {
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               className="w-full mt-1 p-2 border rounded-md text-gray-600"
-              required
+              
             />
           </div>
+          {errorMessage && <p className="text-pink-700 text-center text-sm mb-4">{errorMessage}</p>}
+
       <div className="flex items-center justify-between">
         <button
           type="submit"
@@ -171,9 +174,12 @@ function SignupPage(props) {
         </button>
        
       </div>
-      <Link to="/forgot-password" className="flex justify-end mt-2 text-white underline mr-3 w-full text-sm hover:underline">
-            Forgot Password?
+      <div className="flex ">
+        
+        <Link to="/login" className=" mt-2 text-end  text-white underline mr-3 w-full text-sm hover:underline">
+            Login your Account 
           </Link>
+          </div>
     </form>
     </div>
   </div>

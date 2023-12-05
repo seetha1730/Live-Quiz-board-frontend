@@ -39,18 +39,15 @@ function LoginPage(props) {
       });
   };
 
-
-
-
-
   return (
     <div className="flex my-screen items-center">
     <div className={` ${theme === 'dark' ? ' bg-gray-700' : 'bg-gradient-1'} max-w-lg text-white mx-auto w-11/12 my-8 p-6  shadow-lg rounded-lg`}>
       <form onSubmit={handleSubmit} className="text-2xl font-bold mb-4  ">
+      
         <h2 className="text-2xl font-semibold mb-4 text-center">Login</h2>
         <div className="mb-4">
           <label htmlFor="email" className="block text-sm font-medium">
-            Email
+            Email<span className="p-1">*</span>
           </label>
           <input
             type="email"
@@ -64,7 +61,7 @@ function LoginPage(props) {
         </div>
         <div className="mb-4">
         <label htmlFor="password" className="block text-sm font-medium ">
-          Password
+          Password<span className="p-1">*</span>
         </label>
         <div className="relative">
         <input
@@ -90,6 +87,7 @@ function LoginPage(props) {
 
         
       </div>
+      {errorMessage && <p className="text-pink-700 text-center text-sm mb-4">{errorMessage}</p>}
         <div className="w-full flex flex-col  sm:flex-row items-center justify-between">
           <button
             type="submit"
@@ -109,10 +107,14 @@ function LoginPage(props) {
 
           
         </div>
-
-        <Link to="/forgot-password" className="flex justify-end mt-2 text-white underline mr-3 w-full text-sm hover:underline">
+        <div className="flex ">
+        <Link to="/signup" className=" mt-2 text-white text-start underline mr-3 w-full text-sm hover:underline">
+            Create New Account
+          </Link>
+        <Link to="/forgot-password" className=" mt-2 text-end  text-white underline mr-3 w-full text-sm hover:underline">
             Forgot Password?
           </Link>
+          </div>
       </form>
     </div>
     </div>
