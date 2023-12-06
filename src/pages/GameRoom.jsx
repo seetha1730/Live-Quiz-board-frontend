@@ -40,7 +40,7 @@ function GameRoom() {
 
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 min-h-screen grid grid-cols-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-5 min-h-screen grid grid-cols-12">
       {gameContext && gameContext === "creator" ? (
         <>
 

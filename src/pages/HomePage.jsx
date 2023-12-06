@@ -31,13 +31,14 @@ function HomePage() {
           <p className='mt-5'>
             Are you ready to challenge your knowledge? Join us on the Live Quiz Board and experience quizzes like never before. The leaderboard awaits you!
           </p>
+          <Link className="text-white " to="/room">
           <button
           type="submit"
           className={` ${theme === 'dark' ? ' bg-gray-800 border-white ' : 'gradient-button' }  text-white mx-auto flex  mt-4 w-4/12 justify-center font-bold py-2 px-4 rounded-3xl focus:outline-none `}
         >
-         <Link className="text-white " to="/room">Join </Link> 
+         Join 
         </button>
-
+    </Link>  
         </div>
       </div>
 
