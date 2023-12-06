@@ -11,6 +11,7 @@ function RoomAndUsers({users}) {
   const { gameContext, setResult } = useContext(GameContext);
   const [endButtonVisible, setEndButtonVisible] = useState(true); 
    const { playerDetail } = useContext(GameContext);
+   
   const navigate = useNavigate();
 
 
@@ -44,6 +45,8 @@ function RoomAndUsers({users}) {
     }
 
   }
+
+
   return (
 
     <>
@@ -61,11 +64,11 @@ function RoomAndUsers({users}) {
            </div>
              
               </div>
-              <div className=" flex items-center col-span-7 h-10 px-1">
+              <div className=" flex justify-start ml-3 items-center sm:col-span-6 md:col-span-6 h-10 px-1">
 
                 <p className=" hover:text-blue-dark text-sm font-semibold text-wrap">{user.userName}</p>
               </div>
-              <div className="col-span-3 h-10 text-right flex p-3">
+              <div className="sm:col-span-4 md:col-span-4 h-10 text-right flex p-3">
                 <div className="flex-none rounded-full bg-emerald-500/20 p-1 mr-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 </div> <p className="text-xs text-grey-dark leading-5 text-gray-500">Online</p>
@@ -78,15 +81,16 @@ function RoomAndUsers({users}) {
     
       {gameContext && gameContext === "creator" ? ( 
         <>
-        <Button color1="purple-button"  clickFunction={() => leaveRoom()} text="Leave Room"/>
+        
+        <Button color1="purple-button " clickFunction={() => leaveRoom()} text="Leave Room"/>
          {endButtonVisible && <Button color2="gradient-button" clickFunction={() => endGame(playerDetail.room)} text="End Game"/> }
 
       
         </>):(
 
-          <>
+          <div className="mt-2">
           <Button color1="purple-button"  clickFunction={() => leaveRoom()} text="Leave Room"/>
-          </>
+          </div>
         )}
       </div>
     </>

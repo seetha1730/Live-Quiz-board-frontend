@@ -5,7 +5,7 @@ function Dots() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={` ${theme === 'dark' ? ' bg-gray-700 dots-gray' :'bg-base-purple border-light-purple' } dots rounded-lg`}><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div className={` ${theme === 'dark' ? ' bg-gray-700 dots-gray' :'bg-base-purple ' } dots rounded-lg`}><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
   )
 }
 

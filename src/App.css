@@ -181,10 +181,17 @@ body {
 .my-screen{
   height: 90vh;
 }
-
-
+.mobile-toggle-button{
+position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 99;
+}
 @media  (max-width: 640px){
   .my-screen{
     height:auto;
   }
+}
+@media (min-width: 768px){
+  .purple-button{width:100%}
 }

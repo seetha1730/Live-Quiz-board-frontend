@@ -15,6 +15,7 @@ function GameRoom() {
   const {roomName} = useParams();
   const [users, setUsers] = useState([]) 
   const [hotLinkUser, setHotLinkUser] = useState(false)
+  const [isToggleVisible, setIsToggleVisible] = useState(false);
 
   useEffect(()=>{
     if(!gameContext){
@@ -38,19 +39,55 @@ function GameRoom() {
 
   },[gameContext, roomName,playerDetail, hotLinkUser])
 
+  const toggleVisibility = () => {
+    setIsToggleVisible(!isToggleVisible);
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-5 min-h-screen grid grid-cols-12">
       {gameContext && gameContext === "creator" ? (
         <>
 
-          <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-dull-purple border-light-purple' } gap-3 col-span-4 m-5 rounded-lg top-[3.8125rem]`}>
+          <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-dull-purple border-light-purple' } hidden md:block gap-3 col-span-4 m-5 mr-0 rounded-lg top-[3.8125rem]`}>
             <RoomAndUsers />
           </div>
+       
+          {isToggleVisible && (
+            <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-dull-purple border-light-purple' } md:hidden block  gap-3 col-span-12 m-5 h-screen absolute z-30 w-9/12 rounded-lg top-[4.8125rem]`}>
+            <RoomAndUsers />
+          </div>
+          
+          )}
+          
+          <button onClick={toggleVisibility} className="mobile-toggle-button md:hidden block">
+  {isToggleVisible ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      className="w-6 h-6"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  ) : (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      className="w-6 h-6"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+    </svg>
+  )}
+</button>
+
+          
 
           
          
-          <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } gap-3 col-span-8 m-5 rounded-lg`}>
+          <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } gap-3 col-span-12 md:col-span-8 m-5 rounded-lg`}>
             <div className="container">
             
             <Dots/>
@@ -65,10 +102,32 @@ function GameRoom() {
         </>
       ) : (
         <>
-        <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-dull-purple border-light-purple' } gap-3 col-span-4 m-5 rounded-lg top-[3.8125rem]`}>
-            <RoomAndUsers users={users} />
+        <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-dull-purple border-light-purple' } hidden md:block gap-3 col-span-4 m-5 rounded-lg top-[3.8125rem]`}>
+            <RoomAndUsers />
           </div>
-          <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } gap-3 col-span-8 m-5 rounded-lg`}>
+       
+          {isToggleVisible && (
+            <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-dull-purple border-light-purple' } md:hidden block  gap-3 col-span-12 h-screen absolute z-30 w-9/12 rounded-lg m-5 `}>
+            <RoomAndUsers />
+          </div>
+          
+          )}
+          <button onClick={toggleVisibility} className="mobile-toggle-button md:hidden text-gray-900 p-3 flex justify-center align-items-center rounded-full bg-white block">
+  {isToggleVisible ? (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+</svg>
+   
+
+  ) : (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+</svg>
+
+  )}
+</button>
+
+          <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } gap-3 col-span-12 md:col-span-8 m-5 rounded-lg`}>
           <div className="container rounded-lg">
           
           <Dots/>
