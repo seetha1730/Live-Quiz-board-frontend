@@ -23,7 +23,7 @@ function PlayerQuestion() {
       setQuestion(question);
       setSelectedAnswer(null);
       setAnswerSubmitted(false);
-      setTimer(500);
+      setTimer(50);
     });
   }, []);
 
