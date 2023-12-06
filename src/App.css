@@ -191,6 +191,9 @@ position: absolute;
   .my-screen{
     height:auto;
   }
+  .question.bg-base-purple.border-light-purple{
+    border:none;
+  }
 }
 @media (min-width: 768px){
   .purple-button{width:100%}

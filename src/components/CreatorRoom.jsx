@@ -10,6 +10,8 @@ import { ThemeContext } from "../context/theme.context";
 import { GameContext } from "../context/game.context";
 import trophyImage from '/public/trophy-icon.png';
 import Leaderboard from "./LeaderBoard";
+
+
 function CreatorRoom() {
   const { theme } = useContext(ThemeContext);
   const { roomName } = useParams();
@@ -191,20 +193,20 @@ function CreatorRoom() {
                 ))}
               </ul>
               <div className="  grid grid-cols-5 gap-4 flex items-center justify-center">
-                <div className="col-span-3">
+                <div className="col-span-12 w-full sm:w-content sm:col-span-6">
                   <Button
                     color2="gradient-button"
                     clickFunction={() => sendQuestion(question, index)}
                     text="Send Question"
                   />
                 </div>
-                <div className="">
+                <div className="col-span-6 sm:col-span-3">
                   <DeleteButton
                     onDelete={() => deleteQuestion(question._id, index)}
                   />
                 </div>
 
-                <div className="">
+                <div className="col-span-6 sm:col-span-3">
                   <EditButton
                     onEdit={() => handleEditClick(question._id, index)}
                   />

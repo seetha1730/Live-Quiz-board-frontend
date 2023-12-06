@@ -6,6 +6,7 @@ import { ThemeContext } from '../context/theme.context';
 import trophyImage from '/public/trophy-icon.png';
 import Leaderboard from "./LeaderBoard";
 
+
 function PlayerQuestion() {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -16,7 +17,7 @@ function PlayerQuestion() {
   const [gameEnded, setGameEnded] = useState(false);
   const { theme } = useContext(ThemeContext);
 
-  
+
   useEffect(() => {
     socket.on("question", (question) => {
       setQuestion(question);
@@ -67,7 +68,7 @@ function PlayerQuestion() {
   return (
     <>
       {!answerSubmitted && question ? (
-        <div className={` ${theme === 'dark' ? ' bg-gray-700' : ' bg-base-purple border-light-purple '} flex flex-col rounded-2xl px-5 text-white `}>
+        <div className={` ${theme === 'dark' ? ' bg-gray-700' : ' question bg-base-purple border-light-purple '} flex flex-col rounded-2xl px-5 text-white `}>
           <div className="p-5 rounded-2xl">
             <h2 className={` ${theme === 'dark' ? ' bg-gray-700' : ' text-gradient '} text-2xl   font-bold text-center `}>{question.questionText}</h2>
           </div>

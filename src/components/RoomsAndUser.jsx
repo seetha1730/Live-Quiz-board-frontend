@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { socket } from "../services/socket.service";
 import { ThemeContext } from '../context/theme.context';
 import Button from './button/Button';
-function RoomAndUsers({users}) {
+function RoomAndUsers() {
   const [roomUsers, setRoomUsers] = useState([]);
   const { theme } = useContext(ThemeContext);
   const { gameContext, setResult } = useContext(GameContext);
@@ -13,18 +13,12 @@ function RoomAndUsers({users}) {
    const { playerDetail } = useContext(GameContext);
    
   const navigate = useNavigate();
-
-
- useEffect(() => {
-  if(users){
-    setRoomUsers(users)
-  }
- },[users])  
+ 
   useEffect(() => {
     socket.on('userJoined', (data) => {
       setRoomUsers(data);
     });
-  
+
     return () => {
       socket.off('userJoined');
       socket.off('result');
@@ -50,7 +44,8 @@ function RoomAndUsers({users}) {
   return (
 
     <>
-          <h2 className={` ${theme === 'dark' ? ' bg-gray-700' :' text-gradient '} mt-2 text-2xl font-bold mb-4 text-center `}>Users</h2>  
+    <div className='p-2 m-2 sm:m-0 sm:p-0'>
+          <h2 className={` ${theme === 'dark' ? ' bg-gray-700' :' text-gradient '}  text-2xl font-bold mb-4 text-center `}>Users</h2>  
       {roomUsers.length > 0}
       <ul role="list" className="mb-6 ">
         {roomUsers.map((user,index) => (
@@ -64,11 +59,11 @@ function RoomAndUsers({users}) {
            </div>
              
               </div>
-              <div className=" flex justify-start ml-3 items-center sm:col-span-6 md:col-span-6 h-10 px-1">
+              <div className=" flex justify-start ml-3 items-center col-span-6 sm:col-span-6 md:col-span-6 h-10 px-1">
 
                 <p className=" hover:text-blue-dark text-sm font-semibold text-wrap">{user.userName}</p>
               </div>
-              <div className="sm:col-span-4 md:col-span-4 h-10 text-right flex p-3">
+              <div className="col-span-4 sm:col-span-4 md:col-span-4 h-10 text-right justify-end flex p-3">
                 <div className="flex-none rounded-full bg-emerald-500/20 p-1 mr-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 </div> <p className="text-xs text-grey-dark leading-5 text-gray-500">Online</p>
@@ -92,6 +87,7 @@ function RoomAndUsers({users}) {
           <Button color1="purple-button"  clickFunction={() => leaveRoom()} text="Leave Room"/>
           </div>
         )}
+      </div>
       </div>
     </>
   );
