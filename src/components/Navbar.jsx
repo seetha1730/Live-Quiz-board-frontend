@@ -6,7 +6,7 @@ import { Collapse } from 'flowbite';
 import { ThemeContext } from '../context/theme.context';
 const Navbar = () => {
 const { theme } = useContext(ThemeContext);
-const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+// const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const { isLoggedIn, user,logOutUser } = useContext(AuthContext);
 
@@ -31,9 +31,9 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   useEffect(() => {
   },[theme])
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  // const toggleMobileMenu = () => {
+  //   setIsMobileMenuOpen(!isMobileMenuOpen);
+  // };
 
   return (
     <nav className={theme === 'dark' ? 'bg-gray-800' : 'bg-gradient-main border-gray-200'}>
@@ -41,9 +41,9 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
        <NavLink to="/" className="flex items-center space-x-3">
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Live Quiz</span>
-         </NavLink>
+          </NavLink>
        
-        <div className="flex items-center mr-4 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className="flex items-center mr-2 sm:mr-4  md:order-2 space-x-1 sm:space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button 
             type="button"
             className="flex text-sm  p-0 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -51,12 +51,11 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
             aria-expanded="false"
             data-dropdown-toggle="user-dropdown"
             data-dropdown-placement="bottom"
-            onClick={toggleMobileMenu}
           >
             <span className="sr-only">Open user menu</span>
             {isLoggedIn ? (
               
-            <img className="w-12 h-12 rounded-full" src={user && user.image} alt="user photo"  />
+            <img className="w-8 sm:w-10 h-8 sm:h-10 rounded-full" src={user && user.image} alt="user photo"  />
             ): (
               <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
             <svg className="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
