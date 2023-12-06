@@ -147,11 +147,11 @@ const { theme } = useContext(ThemeContext);
           id="navbar-user"
         >
        
-          <ul className="flex flex-col text-white font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0   dark:border-gray-700">
+          <ul className="flex  flex-col text-white font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0   dark:border-gray-700">
             <li>
               <NavLink to="/"
             
-                className="block py-2 px-3  text-white rounded active"
+                className="block py-2 px-3  text-white rounded "
                 aria-current="page"
               >
                 Home
@@ -161,7 +161,7 @@ const { theme } = useContext(ThemeContext);
             <li>
               <NavLink to="/room"
             
-                className="block py-2 px-3  text-white rounded active"
+                className="block py-2 px-3  text-white rounded "
                 aria-current="page"
               >
                 Rooms

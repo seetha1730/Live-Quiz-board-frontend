@@ -182,6 +182,7 @@ body {
   height: 90vh;
 }
 
+
 @media  (max-width: 640px){
   .my-screen{
     height:auto;

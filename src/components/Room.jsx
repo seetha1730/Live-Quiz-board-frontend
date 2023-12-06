@@ -33,7 +33,7 @@ useEffect(() => {
             <div>
               <div className="flex items-center justify-between">
                 <label htmlFor="name" className=" text-white block text-sm font-medium leading-6">
-                  Name
+                  Name<span className="p-1">*</span>
                 </label>
               </div>
               
@@ -55,7 +55,7 @@ useEffect(() => {
 
             <div className="sm:col-span-12 ">
               <label htmlFor="roomName" className="block text-sm font-medium leading-6 text-white">
-                Room Name
+                Room Name<span className="p-1">*</span>
               </label>
               <div className="mt-2">
                 <input

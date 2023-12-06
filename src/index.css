@@ -10,14 +10,36 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #fff;
   text-decoration: inherit;
 }
-a:hover {
-  color: #535bf2;
+.bg-gradient-main #navbar-user a:hover{
+  color:rgb(0, 0, 0);
+  font-weight:600;
+  background:-webkit-linear-gradient(226.65deg, #12c2ea 5.28%, #be7eff 68.63%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+.bg-gradient-main #navbar-user a.active{
+  color:rgb(0, 0, 0);
+  font-weight:600;
+  background:-webkit-linear-gradient(226.65deg, #04cbf8 58.63%, #c184ff 25.63%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-gray-900 #navbar-user a.active{
+  color:#000;
+  font-weight:500;
+  background:white
 
+}
+.bg-gray-900 #navbar-user a:hover{
+  color:#bcb6b6;
+  font-weight:500;
+ 
+  border:1px solid white;
 
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
