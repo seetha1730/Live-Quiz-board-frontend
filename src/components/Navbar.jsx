@@ -6,27 +6,57 @@ import { Collapse } from 'flowbite';
 import { ThemeContext } from '../context/theme.context';
 const Navbar = () => {
 const { theme } = useContext(ThemeContext);
+const [hamburgerMenuStatus, setHMState] = useState(false)
+const [userMenuStatus, setUserMState] = useState(false)
 // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const { isLoggedIn, user,logOutUser } = useContext(AuthContext);
+  const options = {
+    onCollapse: () => {
+        console.log('element has been collapsed');
+    },
+    onExpand: () => {
+        console.log('element has been expanded');
+    },
+    onToggle: () => {
+        console.log('element has been toggled');
+    },
+};
 
-  useEffect(() => {
     const $triggerEl = document.getElementById('user-menu-button');
     const $targetEl  = document.getElementById('user-dropdown');
-
-
-    const $navbarEl = document.getElementById('navbar-user');
-
-
-      const instanceOptions = {
-        id: 'targetEl',
-        override: true,
-      };
-
-      new Collapse($targetEl, $triggerEl, $navbarEl, instanceOptions);
+    const instanceOptions = {
+      id: 'user-dropdown',
+      override: true
+    };
+    const hamInstanceOptions = {
+      id: 'navbar-user',
+      override: true
+    };
     
- 
-  }, []);
+    
+    const $hamburgerEl = document.getElementById('hamburger');
+    const $navbarEl = document.getElementById('navbar-user');
+     const userMenuCollapse =  new Collapse($targetEl, $triggerEl,options,instanceOptions);
+     const hamburgerCollapse = new Collapse($navbarEl, $hamburgerEl,options,hamInstanceOptions)
+
+     const handleHMclick = () => {
+      if(hamburgerMenuStatus){
+        hamburgerCollapse.collapse()
+      }else{
+        hamburgerCollapse.expand()
+      }
+      setHMState(!hamburgerMenuStatus)
+     }
+
+     const handleUserMclick = () => {
+      if(userMenuStatus){
+        userMenuCollapse.collapse()
+      }else{
+        userMenuCollapse.expand()
+      }
+      setUserMState(!userMenuStatus)
+     }
 
   useEffect(() => {
   },[theme])
@@ -46,6 +76,7 @@ const { theme } = useContext(ThemeContext);
         <div className="flex items-center mr-2 sm:mr-4  md:order-2 space-x-1 sm:space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button 
             type="button"
+            onClick={() => handleUserMclick()}
             className="flex text-sm  p-0 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
             id="user-menu-button"
             aria-expanded="false"
@@ -128,6 +159,8 @@ const { theme } = useContext(ThemeContext);
         
           <ThemeSwitcher/>
           <button
+          id='hamburger'
+          onClick={() => handleHMclick()}
             data-collapse-toggle="navbar-user"
             type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-200 rounded-lg md:hidden hover:bg-white-800 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"

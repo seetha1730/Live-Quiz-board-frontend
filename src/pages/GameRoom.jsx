@@ -10,7 +10,7 @@ function GameRoom() {
   const { theme } = useContext(ThemeContext);
   const { gameContext} = useContext(GameContext);
 
-  const [isToggleVisible, setIsToggleVisible] = useState(true);
+  const [isToggleVisible, setIsToggleVisible] = useState(false);
 
   const toggleVisibility = () => {
     setIsToggleVisible(!isToggleVisible);
