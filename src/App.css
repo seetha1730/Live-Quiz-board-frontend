@@ -177,3 +177,13 @@ body {
 
   background-color: #11042a;
 }
+
+.my-screen{
+  height: 90vh;
+}
+
+@media  (max-width: 640px){
+  .my-screen{
+    height:auto;
+  }
+}
