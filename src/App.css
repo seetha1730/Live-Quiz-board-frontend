@@ -199,6 +199,11 @@ position: absolute;
   .question.bg-base-purple.border-light-purple{
     border:none;
   }
+  .animated-button {
+    padding: 10px;
+    font-size: 14px;
+}
+
 }
 @media (min-width: 768px){
   .purple-button{width:100%}
