@@ -77,7 +77,7 @@ const [userMenuStatus, setUserMState] = useState(false)
           <button 
             type="button"
             onClick={() => handleUserMclick()}
-            className="flex text-sm position relative p-0 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+            className="flex text-sm relative p-0 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
             id="user-menu-button"
             aria-expanded="false"
             data-dropdown-toggle="user-dropdown"
@@ -95,7 +95,7 @@ const [userMenuStatus, setUserMState] = useState(false)
           </button>
       
           <div
-            className="z-50  hidden   top-[1rem] my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+            className="z-50  hidden absolute  top-[1rem] my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
             id="user-dropdown"
           > {isLoggedIn && (
             <div className="px-4 py-3">

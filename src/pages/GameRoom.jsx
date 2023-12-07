@@ -2,7 +2,7 @@ import { useContext ,useEffect, useState} from 'react';
 import RoomAndUsers from "../components/RoomsAndUser";
 import { GameContext } from '../context/game.context';
 import CreatorRoom from '../components/CreatorRoom';
-import PlayerQuestion from '../components/PlayerQuestion';
+import PlayerRoom from '../components/PlayerRoom';
 import Dots from '../components/Dots';
 import { ThemeContext } from '../context/theme.context';
 
@@ -100,7 +100,7 @@ function GameRoom() {
           
           <Dots/>
           <div className="content h-screen w-full  flex items-center justify-center overflow-hidden">
-          <PlayerQuestion />
+          <PlayerRoom />
           </div>
         </div>
 

@@ -7,7 +7,7 @@ import trophyImage from '/public/trophy-icon.png';
 import Leaderboard from "./LeaderBoard";
 
 
-function PlayerQuestion() {
+function PlayerRoom() {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answerSubmitted, setAnswerSubmitted] = useState(false);
@@ -110,5 +110,5 @@ function PlayerQuestion() {
   );
 }
 
-export default PlayerQuestion;
+export default PlayerRoom;
 
