@@ -77,7 +77,7 @@ const [userMenuStatus, setUserMState] = useState(false)
           <button 
             type="button"
             onClick={() => handleUserMclick()}
-            className="flex text-sm  p-0 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+            className="flex text-sm position relative p-0 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
             id="user-menu-button"
             aria-expanded="false"
             data-dropdown-toggle="user-dropdown"
@@ -89,13 +89,13 @@ const [userMenuStatus, setUserMState] = useState(false)
             <img className="w-8 sm:w-10 h-8 sm:h-10 rounded-full" src={user && user.image} alt="user photo"  />
             ): (
               <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-            <svg className="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
+            <svg className=" absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
            </div>
               )}
           </button>
       
           <div
-            className="z-50  hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+            className="z-50  hidden   top-[1rem] my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
             id="user-dropdown"
           > {isLoggedIn && (
             <div className="px-4 py-3">
@@ -110,7 +110,7 @@ const [userMenuStatus, setUserMState] = useState(false)
               <li>
               <NavLink to={`/profile/${user._id}`}
                  
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                  className="block px-4 py-2 text-sm text-gray-700   hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                 >
                   Profile
                 </NavLink>
