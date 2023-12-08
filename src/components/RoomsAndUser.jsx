@@ -62,7 +62,7 @@ function RoomAndUsers() {
               </div>
               <div className=" flex justify-start ml-3 items-center col-span-6 sm:col-span-6 md:col-span-6 h-10 px-1">
 
-                <p className="text-sm text-gray-400 font-semibold text-wrap">{user.userName}</p>
+                <p className="text-sm text-gray-300 font-semibold text-wrap">{user.userName}</p>
               </div>
               <div className="col-span-4 sm:col-span-4 md:col-span-4 h-10 text-right justify-end flex p-3">
                 <div className="flex-none rounded-full bg-emerald-500/20 p-1 mr-2">

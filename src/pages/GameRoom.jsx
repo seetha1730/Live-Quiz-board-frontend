@@ -57,7 +57,7 @@ function GameRoom() {
             <div className="container">
             
             <Dots/>
-            <div className="content h-screen w-full overflow-y-scroll">
+            <div className="content h-screen w-full ">
             <CreatorRoom  />
             </div>
           </div>
@@ -99,7 +99,7 @@ function GameRoom() {
           <div className="container rounded-lg">
           
           <Dots/>
-          <div className="content h-screen w-full  flex items-center justify-center overflow-y-scroll">
+          <div className="content h-screen w-full  flex items-center justify-center ">
           <PlayerRoom />
           </div>
         </div>

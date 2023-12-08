@@ -109,7 +109,7 @@ const response = await fetch(`${ import.meta.env.VITE_BASE_URL_API}/feedback/use
             </div>
             {score
               .sort((a, b) => b.score - a.score)
-              .map((item, index) => item.score && (
+              .map((item, index) => item.score >= 0 && (
                 <div key={index} className="grid p-5 grid-cols-12 items-center bg-dull-purple border-light-purple m-0 sm:m-3">
                   <div className="col-span-2 flex flex-row items-center">
                     {index <= 3 && (
@@ -118,7 +118,7 @@ const response = await fetch(`${ import.meta.env.VITE_BASE_URL_API}/feedback/use
                     {index}
                   </div>
                   <div className="col-span-8">
-                    <p className='capitalize'>{item.userName}</p>
+                    <p className='capitalize'> {item.userName}</p>
                     <p className="text-xs text-gray-500">{item.email}</p>
                   </div>
                   <div className="col-span-2">
