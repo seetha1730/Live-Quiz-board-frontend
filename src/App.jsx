@@ -1,20 +1,20 @@
 import Navbar from './components/Navbar'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { ThemeContext } from './context/theme.context';
+import { useContext} from 'react';
 import QuizBoardPage from './pages/QuizBoardPage';
 import GameRoom from './pages/GameRoom';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignUpPage';
 import IsAnon from "./components/isAnon";
-
 import CreateQuestion from './pages/CreateQuestion';
 import ResetPassWordPage from './pages/ResetPasswordPage';
 import ProfilePage from './pages/ProfilePage';
 import GameHistory from "./pages/GameHistoryPage"
-import { ThemeContext } from './context/theme.context';
-import { useContext} from 'react';
 import ForgotPassword from './pages/ForgotPassword';
 import HomePage from './pages/HomePage';
+import FeedbackPage from "./pages/FeedbackPage"
 
 
 function App() {
@@ -32,12 +32,11 @@ function App() {
         <Route path="/history/:userId" element={<GameHistory /> } />
         <Route path="/" element={ <HomePage />} />
         <Route path="/room" element={ <QuizBoardPage />} />
-
+        <Route path="/feedback" element={ <FeedbackPage/>} />
         <Route path="/forgot-password" element={ <ForgotPassword/>} />
         <Route path="/reset-password" element={ <ResetPassWordPage/>} />
         <Route path="/profile/:userId" element={ <ProfilePage/>} />
-        
-          <Route path={`/room/:roomName`} element={
+        <Route path={`/room/:roomName`} element={
             
           <GameRoom />
          

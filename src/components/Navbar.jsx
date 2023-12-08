@@ -214,6 +214,16 @@ const Navbar = () => {
                 History
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/feedback"
+
+                className="block py-2 px-3  text-white rounded "
+                aria-current="page"
+              >
+                Comments
+              </NavLink>
+
+            </li>
 
 
           </ul>
