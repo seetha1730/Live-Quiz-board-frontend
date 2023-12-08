@@ -99,7 +99,7 @@ function GameRoom() {
           <div className="container rounded-lg">
           
           <Dots/>
-          <div className="content h-screen w-full  flex items-center justify-center overflow-hidden">
+          <div className="content h-screen w-full  flex items-center justify-center overflow-y-scroll">
           <PlayerRoom />
           </div>
         </div>

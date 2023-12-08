@@ -128,7 +128,7 @@ const response = await fetch(`${ import.meta.env.VITE_BASE_URL_API}/feedback/use
               ))}
           </div>
           {showRating && score.length > 0 && (
-          <div className="bg-white text-gray-700 border-light-purple rounded-lg p-5">
+          <div className="bg-white text-gray-700  mt-2 border-light-purple rounded-lg p-5">
       <h5>Game Feedback</h5>
       <p>Your Rating: {selectedRating}</p>
       <Rating onRate={handleRate} 
