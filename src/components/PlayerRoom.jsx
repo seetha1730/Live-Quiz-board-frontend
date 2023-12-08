@@ -1,10 +1,12 @@
 import { useState, useEffect, useContext } from "react";
+
 import { socket } from "../services/socket.service";
 import { GameContext } from "../context/game.context";
 import FancyButton from "./button/FancyButton";
 import { ThemeContext } from '../context/theme.context';
 import trophyImage from '/public/trophy-icon.png';
 import Leaderboard from "./LeaderBoard";
+
 
 
 function PlayerRoom() {
@@ -18,6 +20,8 @@ function PlayerRoom() {
   const { theme } = useContext(ThemeContext);
 
 
+
+
   useEffect(() => {
     socket.on("question", (question) => {
       setQuestion(question);
@@ -25,7 +29,9 @@ function PlayerRoom() {
       setAnswerSubmitted(false);
       setTimer(40);
     });
+
   }, []);
+
 
   useEffect(() => {
 
@@ -51,6 +57,8 @@ function PlayerRoom() {
       setGameEnded(true);
     });
   },[answerSubmitted])
+
+  
 
   const handleAnswerClick = (selectedOption, index) => {
 

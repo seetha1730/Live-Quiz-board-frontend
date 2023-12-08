@@ -1,79 +1,71 @@
 ## Links
-
 # Slides presentation :https://slides.com/seetharaj/decks/project-3
-# Github repository : https://github.com/seetha1730/Live-Quiz-board-frontend
-# App deployed with Cyclic: https://candid-mousse-99e5c1.netlify.app
+# Github repository : https://github.com/seetha1730/Live-quiz-board-backend-
+# App deployed with Cyclic: https://live-backend-259f2dd4dcb2.herokuapp.com/
+# Live Quiz Board Frontend
 
-# Live Quiz Board
-The Live Quiz Board is an interactive quiz game board built using React, Tailwind CSS, and WebSocket.io. Engage in quiz games with real-time updates and interactive features. Create and join quiz rooms for an immersive quiz experience.
+The Live Quiz Board Frontend is a dynamic and interactive quiz game board built using React, Tailwind CSS, and WebSocket.io. Engage in real-time quiz games with a seamless and responsive user interface.
 
 ## Table of Contents
-    Features
-    Getting Started
-    Prerequisites
-    Installation
-    Usage
-    Built With
-    Contributing
-    License
-    Acknowledgments
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Built With](#built-with)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Contact Information](#contact-information)
 
 ## Features
-Room Creation:
-
-Create a new quiz room and become the room creator.
-Room Joining:
-
-Join existing quiz rooms as a player.
-Responsive Design:
-
-Responsive layout for a seamless experience on various devices.
-WebSocket.io Integration:
-
-Real-time updates and interactions through WebSocket.io.
+- **Room Creation:** Create a new quiz room and become the room creator.
+- **Room Joining:** Join existing quiz rooms as a player.
+- **Responsive Design:** Seamlessly experience the quiz on various devices.
+- **WebSocket.io Integration:** Enjoy real-time updates and interactions during the quiz.
 
 ## Getting Started
 
-To get started with the B2B Grocery Store POS System, follow these steps:
+### Prerequisites
+Make sure you have Node.js installed on your machine.
 
-# Prerequisites
-Node.js is installed on your machine.
-# Installation
-1. Fork the Repository:
-Click the "Fork" button at the top right corner of this repository's page. This will create a copy of the project in your GitHub account.
+### Installation
+1. **Fork the Repository:**
+   Click the "Fork" button at the top right corner of this repository's page. This will create a copy of the project in your GitHub account.
 
-2. Clone the Repository:
-Open your terminal and navigate to the directory where you want to store the project.
-Use the following command to clone the repository to your local machine, replacing <your-username> with your GitHub username:
-$ git clone https://github.com/seetha1730/Live-Quiz-board-frontend.git
+2. **Clone the Repository:**
+   Open your terminal and navigate to the directory where you want to store the project.
+   Use the following command to clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/seetha1730/Live-Quiz-board-frontend.git
 
-3. Navigate to the Project Directory:
+3. **Navigate to the Project Directory:**
 Enter the project directory using the following command:
-$ cd Live-Quiz-board-frontend
+   $ cd Live-Quiz-board-frontend
 
-4. Install Dependencies:
+4. **Install Dependencies:**
 To install the necessary dependencies for the project, run:
 $ npm install
 
-Start the Application:
+5. **Start the Application:**
 After the installation is complete, start the application with the following command:
 $ npm start
 
-5. Access the Application:
+6. **Access the Application:**
 Open your web browser and navigate to http://localhost:3000 to access the Live-Quiz-board-frontend.
 
  
 ## Usage
 
-1. Run the Application:
+1. **Run the Application:**
 $ npm start
 This will start the development server, and you can access the Home Page at http://localhost:3000.
 
-2. Explore Options:
+2. **Explore Options:**
 Create a Quiz Room: Click on the "Create" option to create a new quiz room.
 Join a Quiz Room: Click on the "Join" option to join an existing quiz room.
 
-3. Interact with the Quiz Board:
+3. **Interact with the Quiz Board:**
 Engage in quiz games with interactive features.
 Enjoy a dynamic quiz experience with WebSocket.io integration.
 

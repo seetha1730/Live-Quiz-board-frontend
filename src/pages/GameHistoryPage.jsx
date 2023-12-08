@@ -14,7 +14,7 @@ function GameHistoryPage() {
   useEffect(() => {
     // Fetch score history when the component mounts
     fetchScoreHistory();
-  });
+  },[]);
 
   const fetchScoreHistory = async () => {
     try {

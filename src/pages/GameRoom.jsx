@@ -1,20 +1,31 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import RoomAndUsers from "../components/RoomsAndUser";
 import { GameContext } from "../context/game.context";
 import CreatorRoom from "../components/CreatorRoom";
 import PlayerRoom from "../components/PlayerRoom";
 import Dots from "../components/Dots";
 import { ThemeContext } from "../context/theme.context";
+import { useBeforeunload } from "react-beforeunload";
+
 
 function GameRoom() {
   const { theme } = useContext(ThemeContext);
   const { gameContext } = useContext(GameContext);
   const [isToggleVisible, setIsToggleVisible] = useState(false);
-
   const toggleVisibility = () => {
     setIsToggleVisible(!isToggleVisible);
   };
+ 
+  useBeforeunload((event) => {
+    event.preventDefault();
+    window.confirm('Are you sure! You will exiting the game..')
+  });
 
+  useEffect( () => () => window.onpopstate = () => {
+    window.confirm('Are you sure! You will exiting the game..')
+ }, [] );
+  
+  
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-5 min-h-screen grid grid-cols-12">
       {gameContext && gameContext === "creator" ? (
