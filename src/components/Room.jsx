@@ -88,7 +88,7 @@ useEffect(() => {
 }
 Room.propTypes = {
   title: PropTypes.node.isRequired,
-  buttonEvt: PropTypes.node.isRequired,
+  buttonEvt: PropTypes.func.isRequired,
   background: PropTypes.node.isRequired,
 };
 export default Room;

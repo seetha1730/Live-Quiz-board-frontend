@@ -4,6 +4,7 @@ const GameContext = createContext(null);
 
 const GameContextWrapper = ({children}) => {
     const [gameContext, setGameContext] = useState('')
+
     const [playerDetail, setplayerDetail]=useState({userName:'', room: ''})
     const [result, setResult] = useState([])
 
@@ -13,7 +14,7 @@ const GameContextWrapper = ({children}) => {
     }
 
     return (
-     <GameContext.Provider value={{manageContext,gameContext,playerDetail, setResult,result }}>
+     <GameContext.Provider value={{manageContext,gameContext,playerDetail, setResult,result}}>
         {children}
      </GameContext.Provider>
     )

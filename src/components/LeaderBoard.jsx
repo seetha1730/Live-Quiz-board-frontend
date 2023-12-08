@@ -1,17 +1,38 @@
 // Leaderboard.js
-import { useState,useEffect } from "react";
+import { useState,useEffect,useContext } from "react";
 import PropTypes from 'prop-types';
 import Rating from './Rating';
+import { GameContext} from "../context/game.context";
 const Leaderboard = ({ score, theme, trophyImage }) => {
   const [showRating, setShowRating] = useState(false);
   const [selectedRating, setSelectedRating] = useState(0);
   const [comment, setComment] = useState("");
+  const [overallRating, setOverallRating] = useState(0);
+  const [difficultyRating, setDifficultyRating] = useState(0);
+  const [enjoymentRating, setEnjoymentRating] = useState(0);
+  const { playerDetail } = useContext(GameContext)
+
+
+
+  const handleOverallRate = (value) => {
+    setOverallRating(value);
+  };
+
+  const handleEnjoymentRate = (value) => {
+    setEnjoymentRating(value);
+  };
+
+  const handleDifficultyRate = (value) => {
+    setDifficultyRating(value);
+  };
+
+  const handleCommentChange = (value) => {
+    setComment(value);
+  };
   const handleRate = (value) => {
     setSelectedRating(value);
   };
-  const handleComment = (commentValue) => {
-    setComment(commentValue);
-  };
+ 
   useEffect(() => {
     let ratingTimeout;
 
@@ -27,6 +48,36 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
       clearTimeout(ratingTimeout);
     };
   }, []);
+
+ 
+    const handleSumbit = async () => {
+      try {
+        
+ 
+const response = await fetch(`${ import.meta.env.VITE_BASE_URL_API}/feedback/user`, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                  game:playerDetail.room,
+                  player:playerDetail.userName,
+                  feedbackText: comment,
+                  rating: {
+                      overall: overallRating,
+                      difficulty: difficultyRating ,
+                      enjoyment: enjoymentRating,
+                  },
+              }),
+          });
+  
+          const data = await response.json();
+          console.log('Feedback submitted:', data);
+      } catch (error) {
+          console.error('Error submitting feedback:', error);
+      }
+  };
+
 
 
   return (
@@ -58,7 +109,7 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
                       <img className="w-10 mr-2" src={trophyImage} alt="Trophy" />
                     )}
                     {index}
-                  </div>
+                  </div>Update
                   <div className="col-span-8">
                     <p className='capitalize'>{item.userName}</p>
                     <p className="text-xs text-gray-500">{item.email}</p>
@@ -73,7 +124,17 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
           <div className="bg-white text-gray-700 border-light-purple rounded-lg p-5">
       <h5>Game Feedback</h5>
       <p>Your Rating: {selectedRating}</p>
-      <Rating onRate={handleRate}  onComment={handleComment} />
+      <Rating onRate={handleRate} 
+      difficultyRating={difficultyRating}
+      overallRating ={overallRating} 
+      enjoymentRating={enjoymentRating}
+      onOverallRate={handleOverallRate}
+      onDifficultyRate={handleDifficultyRate}
+      onEnjoymentRate={handleEnjoymentRate}
+      onComment={handleCommentChange}
+      comment={comment}
+       onSubmit={handleSumbit}/>
+
       {comment && (
           <div className="mt-3">
             <strong>Your Comment:</strong>

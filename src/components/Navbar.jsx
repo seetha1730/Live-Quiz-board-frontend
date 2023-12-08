@@ -4,11 +4,14 @@ import ThemeSwitcher from './ThemeSwitcher';
 import { NavLink } from "react-router-dom";
 import { Collapse } from 'flowbite';
 import { ThemeContext } from '../context/theme.context';
+
 const Navbar = () => {
 const { theme } = useContext(ThemeContext);
 const [hamburgerMenuStatus, setHMState] = useState(false)
 const [userMenuStatus, setUserMState] = useState(false)
-  const { isLoggedIn, user,logOutUser } = useContext(AuthContext);
+const { isLoggedIn, user,logOutUser } = useContext(AuthContext);
+
+  console.log("user:" , user);
   const options = {
     onCollapse: () => {
         console.log('element has been collapsed');
@@ -58,10 +61,6 @@ const [userMenuStatus, setUserMState] = useState(false)
 
   useEffect(() => {
   },[theme])
-
-  // const toggleMobileMenu = () => {
-  //   setIsMobileMenuOpen(!isMobileMenuOpen);
-  // };
 
   return (
     <nav className={theme === 'dark' ? 'bg-gray-800' : 'bg-gradient-main border-gray-200'}>
