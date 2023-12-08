@@ -112,7 +112,7 @@ const response = await fetch(`${ import.meta.env.VITE_BASE_URL_API}/feedback/use
               .map((item, index) => item.score && (
                 <div key={index} className="grid p-5 grid-cols-12 items-center bg-dull-purple border-light-purple m-0 sm:m-3">
                   <div className="col-span-2 flex flex-row items-center">
-                    {index < 3 && (
+                    {index <= 3 && (
                       <img className="w-10 mr-2" src={trophyImage} alt="Trophy" />
                     )}
                     {index}
