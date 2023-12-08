@@ -6,16 +6,16 @@ const ThemeSwitcher = () => {
 
   const toggleDarkMode = () => {
     toggleTheme();
-  };                   
+  };
 
   return (
     <>
       <button
         onClick={toggleDarkMode}
         id="theme-toggle"
-        type="button"                             
+        type="button"
         aria-pressed={theme}
-        className={theme ==="light"? "text-white-900  hover:bg-gray-100  focus:outline-none focus:ring-4 focus:ring-gray-200  rounded-lg text-sm p-2.5":"p-2.5 dark:text-white-400 dark:focus:ring-gray-700 dark:hover:bg-white-700 dark:focus:bg-white hover:bg-gray-900 " }
+        className={theme === "light" ? "text-white-900  hover:bg-gray-100  focus:outline-none focus:ring-4 focus:ring-gray-200  rounded-lg text-sm p-2.5" : "p-2.5 dark:text-white-400 dark:focus:ring-gray-700 dark:hover:bg-white-700 dark:focus:bg-white hover:bg-gray-900 "}
       >
         <svg
           className={theme === "light" ? "hidden" : ""}

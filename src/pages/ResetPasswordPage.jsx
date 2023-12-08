@@ -11,7 +11,6 @@ function ResetPassWordPage() {
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
   const [error, setError] = useState("");
   const location = useLocation(); // Get the current location object
   const navigate = useNavigate();
@@ -23,6 +22,7 @@ function ResetPassWordPage() {
   };
 
   const email = getEmailFromQuery();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 

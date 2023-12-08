@@ -11,8 +11,6 @@ import { GameContext } from "../context/game.context";
 import trophyImage from '/public/trophy-icon.png';
 import Leaderboard from "./LeaderBoard";
 
-
-
 function CreatorRoom() {
   const { theme } = useContext(ThemeContext);
   const { roomName } = useParams();
@@ -24,13 +22,12 @@ function CreatorRoom() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState({});
   const { result } = useContext(GameContext);
- 
+  const [timer, setTimer] = useState(0);
 
   const fetchQuestions = async () => {
     try {
       const response = await axios.get(
-        `${
-          import.meta.env.VITE_BASE_URL_API
+        `${import.meta.env.VITE_BASE_URL_API
         }/question-answers/allQuestionAnswer`
       );
       setQuestions(response.data);
@@ -55,10 +52,24 @@ function CreatorRoom() {
     }
   };
 
+
   useEffect(() => {
     // Fetch questions when the component mounts
     fetchQuestions();
+
   }, []);
+
+  useEffect(() => {
+    let timerInterval;
+    if (timer > 0) {
+      timerInterval = setInterval(() => {
+        setTimer((prevTimer) => prevTimer - 1);
+      }, 1000);
+    }
+
+
+    return () => clearInterval(timerInterval); // Cleanup function
+  }, [timer]);
 
   useEffect(() => {
     console.log(result);
@@ -76,6 +87,7 @@ function CreatorRoom() {
   const sendQuestion = (question, index) => {
     socket.emit("sendQuestion", { question, roomName });
     setSentQuestion([...sentQuestion, index]);
+    setTimer(40)
   };
 
   const deleteQuestion = async (id, index) => {
@@ -134,22 +146,24 @@ function CreatorRoom() {
     }
   };
 
- 
-
-
   return (
     <div>
       <>
+        <div>
+          <span className="countdown  bg-black-900 text-white font-mono text-6xl w-[120px] p-5 mb-3 rounded-2xl mx-auto border-white-800 border-solid border-2">
+
+            <span style={{ "--value": timer }}></span>
+          </span>
+        </div>
         {!result.length && (
           <select
             id="category"
             value={selectedCategory}
             onChange={handleOnChange}
-            className={` ${
-              theme === "dark"
-                ? " bg-gray-700"
-                : "bg-base-purple border-light-purple"
-            } border  text-white text-lg rounded-lg  block w-full p-2.5 `}
+            className={` ${theme === "dark"
+              ? " bg-gray-700"
+              : "bg-base-purple border-light-purple"
+              } border  text-white text-lg rounded-lg  block w-full p-2.5 `}
           >
             <option className="ml-2 text-gradient" value="Choose a category">
               Choose a category
@@ -163,6 +177,8 @@ function CreatorRoom() {
                 </option>
               ))}
           </select>
+
+
         )}
 
         {filteredQuestions.length &&
@@ -170,19 +186,17 @@ function CreatorRoom() {
           filteredQuestions.map((question, index) => (
             <div
               key={index}
-              className={`${
-                theme === "dark"
-                  ? " bg-gray-700"
-                  : "bg-dull-purple border-light-purple"
-              } flex flex-col p-5 mt-5 text-white rounded-lg text-gray-700 border-2 border-gray-200 
-              ${ selectedCategory === "Emoji Quiz" ? "emoji-quiz" : ""}
-              ${ selectedCategory === "Emoji" ? "emoji-quiz" : ""}
-              ${sentQuestion.includes(question._id) ? "grayscale -inset" : ""}` }
+              className={`${theme === "dark"
+                ? " bg-gray-700"
+                : "bg-dull-purple border-light-purple"
+                } flex flex-col p-5 mt-5 text-white rounded-lg text-gray-700 border-2 border-gray-200 
+              ${selectedCategory === "Emoji Quiz" ? "emoji-quiz" : ""}
+              ${selectedCategory === "Emoji" ? "emoji-quiz" : ""}
+              ${sentQuestion.includes(question._id) ? "grayscale -inset" : ""}`}
             >
               <h2
-                className={` ${
-                  theme === "dark" ? " bg-gray-700" : "text-gradient "
-                } text-2xl font-bold mb-4 text-center `}
+                className={` ${theme === "dark" ? " bg-gray-700" : "text-gradient "
+                  } text-2xl font-bold mb-4 text-center `}
               >
                 {" "}
                 <span>{index + 1} </span>
@@ -235,9 +249,9 @@ function CreatorRoom() {
           <Leaderboard score={result} theme={theme} trophyImage={trophyImage} />
 
         )}
-        
-       
-      
+
+
+
       </>
     </div>
   );

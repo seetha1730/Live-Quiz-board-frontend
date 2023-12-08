@@ -1,4 +1,4 @@
-import { useState, useEffect,useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { ThemeContext } from '../context/theme.context';
@@ -10,9 +10,9 @@ function ProfilePage() {
   const [profile, setProfile] = useState(null);
   const [editing, setEditing] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
-  
-  console.log("profile:",profile)
- 
+
+  console.log("profile:", profile)
+
   const { userId } = useParams();
   useEffect(() => {
     const fetchProfile = async () => {
@@ -40,7 +40,7 @@ function ProfilePage() {
       formData.append('dateOfBirth', profile.dateOfBirth);
       formData.append('gender', profile.gender);
       formData.append('phoneNumber', profile.phoneNumber);
-      formData.append('image', profileImage); 
+      formData.append('image', profileImage);
 
       const response = await axios.put(`${import.meta.env.VITE_BASE_URL_API}/profile/${userId}`, formData, {
         headers: {
@@ -57,7 +57,7 @@ function ProfilePage() {
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-  
+
     if (name === 'image') {
       setProfileImage(files[0]);
     } else {
@@ -77,8 +77,8 @@ function ProfilePage() {
     <div>
       {editing ? (
         <div className="flex my-screen items-center">
-        <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-base-purple border-light-purple' } max-w-lg mx-auto w-11/12 my-8 p-6  text-white-900 shadow-lg rounded-lg `}>
-        <h2 className={` ${theme === 'dark' ? ' bg-gray-700' :' text-gradient '} text-2xl font-bold mb-4 text-center `}>Update my Profile </h2>
+          <div className={` ${theme === 'dark' ? ' bg-gray-700' : 'bg-base-purple border-light-purple'} max-w-lg mx-auto w-11/12 my-8 p-6  text-white-900 shadow-lg rounded-lg `}>
+            <h2 className={` ${theme === 'dark' ? ' bg-gray-700' : ' text-gradient '} text-2xl font-bold mb-4 text-center `}>Update my Profile </h2>
             <form>
               <div className="mb-4">
                 <label className="block text-sm font-medium ">
@@ -122,13 +122,13 @@ function ProfilePage() {
                 <label className="block text-sm font-medium ">
                   Upload your image :
                   <input
-                type="file"
-                name="image"
-                accept="image/*"
-                className="mt-1 p-2 w-full border rounded-md"
-                onChange={handleChange}
-              />
-              </label>
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    className="mt-1 p-2 w-full border rounded-md"
+                    onChange={handleChange}
+                  />
+                </label>
               </div>
 
               <div className="mb-4">
@@ -158,14 +158,14 @@ function ProfilePage() {
               </div>
 
               <div className="flex">
-              <button
-              type="button"
-              onClick={handleUpdate}
-              className={` ${theme === 'dark' ? ' bg-gray-800 border-white ' : 'gradient-button' }  text-white mx-auto flex   font-bold py-2 px-4 rounded-3xl focus:outline-none `}
-            >
-              Update
-            </button>
-               
+                <button
+                  type="button"
+                  onClick={handleUpdate}
+                  className={` ${theme === 'dark' ? ' bg-gray-800 border-white ' : 'gradient-button'}  text-white mx-auto flex   font-bold py-2 px-4 rounded-3xl focus:outline-none `}
+                >
+                  Update
+                </button>
+
                 <button type="button" className="bg-white mx-auto  hover:bg-blue-700 text-gray-700 font-bold mx-auto flex   font-bold py-2 px-4 rounded-3xl focus:outline-none" onClick={handleCancel}>
                   Cancel
                 </button>
@@ -175,16 +175,15 @@ function ProfilePage() {
         </div>
       ) : (
         <ProfileCard
-  theme={theme}
-  profile={profile}
-  handleEdit={handleEdit} 
-/>
-       
-       
+          theme={theme}
+          profile={profile}
+          handleEdit={handleEdit}
+        />
+
+
       )}
     </div>
   );
 }
 
 export default ProfilePage;
- 

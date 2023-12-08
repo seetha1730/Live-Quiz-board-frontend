@@ -10,6 +10,7 @@ function GameHistoryPage() {
   const { userId } = useParams();
   const [openIndex, setOpenIndex] = useState(null);
   const { theme } = useContext(ThemeContext);
+  
   useEffect(() => {
     // Fetch score history when the component mounts
     fetchScoreHistory();

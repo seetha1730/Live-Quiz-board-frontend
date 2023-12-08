@@ -1,10 +1,10 @@
 // Leaderboard.js
-import { useState,useEffect,useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import PropTypes from 'prop-types';
 import Rating from './Rating';
 import { useNavigate } from "react-router-dom";
 
-import { GameContext} from "../context/game.context";
+import { GameContext } from "../context/game.context";
 const Leaderboard = ({ score, theme, trophyImage }) => {
   const [showRating, setShowRating] = useState(false);
   const [selectedRating, setSelectedRating] = useState(0);
@@ -34,15 +34,15 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
   const handleRate = (value) => {
     setSelectedRating(value);
   };
- 
+
   useEffect(() => {
     let ratingTimeout;
 
 
-      // Set a timeout to show the rating after 5 seconds
-      ratingTimeout = setTimeout(() => {
-        setShowRating(true);
-      }, 5000);
+    // Set a timeout to show the rating after 5 seconds
+    ratingTimeout = setTimeout(() => {
+      setShowRating(true);
+    }, 5000);
 
 
     return () => {
@@ -52,37 +52,37 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
   }, []);
 
   useEffect(() => {
-console.log(score)
-  },[score])
+    console.log(score)
+  }, [score])
 
- 
-    const handleSumbit = async () => {
-      try {
-        
- 
-const response = await fetch(`${ import.meta.env.VITE_BASE_URL_API}/feedback/user`, {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                  game:playerDetail.room,
-                  player:playerDetail.userName,
-                  feedbackText: comment,
-                  rating: {
-                      overall: overallRating,
-                      difficulty: difficultyRating ,
-                      enjoyment: enjoymentRating,
-                  },
-              }),
-          });
-  
-          const data = await response.json();
-          navigate("/");
-          console.log('Feedback submitted:', data);
-      } catch (error) {
-          console.error('Error submitting feedback:', error);
-      }
+
+  const handleSumbit = async () => {
+    try {
+
+
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL_API}/feedback/user`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          game: playerDetail.room,
+          player: playerDetail.userName,
+          feedbackText: comment,
+          rating: {
+            overall: overallRating,
+            difficulty: difficultyRating,
+            enjoyment: enjoymentRating,
+          },
+        }),
+      });
+
+      const data = await response.json();
+      navigate("/");
+      console.log('Feedback submitted:', data);
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+    }
   };
 
 
@@ -128,33 +128,33 @@ const response = await fetch(`${ import.meta.env.VITE_BASE_URL_API}/feedback/use
               ))}
           </div>
           {showRating && score.length > 0 && (
-          <div className="bg-white text-gray-700  my-3 border-light-purple rounded-lg p-5">
-      <h5>Game Feedback</h5>
-      <p>Your Rating: {selectedRating}</p>
-      <Rating onRate={handleRate} 
-      difficultyRating={difficultyRating}
-      overallRating ={overallRating} 
-      enjoymentRating={enjoymentRating}
-      onOverallRate={handleOverallRate}
-      onDifficultyRate={handleDifficultyRate}
-      onEnjoymentRate={handleEnjoymentRate}
-      onComment={handleCommentChange}
-      comment={comment}
-       onSubmit={handleSumbit}/>
-       </div>
-          
-        )}
-      
+            <div className="bg-white text-gray-700  my-3 border-light-purple rounded-lg p-5">
+              <h5>Game Feedback</h5>
+              <p>Your Rating: {selectedRating}</p>
+              <Rating onRate={handleRate}
+                difficultyRating={difficultyRating}
+                overallRating={overallRating}
+                enjoymentRating={enjoymentRating}
+                onOverallRate={handleOverallRate}
+                onDifficultyRate={handleDifficultyRate}
+                onEnjoymentRate={handleEnjoymentRate}
+                onComment={handleCommentChange}
+                comment={comment}
+                onSubmit={handleSumbit} />
+            </div>
+
+          )}
+
         </div>
       </div>
     </section>
   );
 };
 Leaderboard.propTypes = {
-    score: PropTypes.array.isRequired, 
+  score: PropTypes.array.isRequired,
   theme: PropTypes.string.isRequired,
   trophyImage: PropTypes.string.isRequired,
-  }
+}
 
 export default Leaderboard;
 

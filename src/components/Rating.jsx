@@ -1,7 +1,7 @@
 
 import PropTypes from "prop-types";
 
-const Rating = ({ onOverallRate, onDifficultyRate, onEnjoymentRate, onComment, onSubmit ,comment ,overallRating,difficultyRating,enjoymentRating}) => {
+const Rating = ({ onOverallRate, onDifficultyRate, onEnjoymentRate, onComment, onSubmit, comment, overallRating, difficultyRating, enjoymentRating }) => {
 
   return (
     <div className="row">
@@ -12,7 +12,7 @@ const Rating = ({ onOverallRate, onDifficultyRate, onEnjoymentRate, onComment, o
             <button
               className="btn border-white bg-purple-500  hover:bg-white rounded-full"
               key={value}
-              onClick={()=>onOverallRate(value)}
+              onClick={() => onOverallRate(value)}
               style={{
                 color: value <= overallRating ? "gold" : "white",
                 cursor: "pointer",
@@ -31,7 +31,7 @@ const Rating = ({ onOverallRate, onDifficultyRate, onEnjoymentRate, onComment, o
             <button
               className="btn border-white bg-purple-500 hover:bg-white  rounded-full"
               key={value}
-              onClick={()=>onDifficultyRate(value)}
+              onClick={() => onDifficultyRate(value)}
               style={{
                 color: value <= difficultyRating ? "gold" : "white",
                 cursor: "pointer",
@@ -77,7 +77,7 @@ const Rating = ({ onOverallRate, onDifficultyRate, onEnjoymentRate, onComment, o
 
       <button
         className="btn mt-3 bg-purple-600 text-white rounded-full"
-        onClick={()=> onSubmit()}
+        onClick={() => onSubmit()}
       >
         Submit
       </button>
