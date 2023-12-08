@@ -10,7 +10,7 @@ const Rating = ({ onOverallRate, onDifficultyRate, onEnjoymentRate, onComment, o
         <div className="flex justify-center items-stretch self-end">
           {[1, 2, 3, 4, 5].map((value) => (
             <button
-              className="btn border-white bg-purple-500 bg-transparent rounded-full"
+              className="btn border-white bg-purple-500  hover:bg-white rounded-full"
               key={value}
               onClick={()=>onOverallRate(value)}
               style={{
@@ -29,7 +29,7 @@ const Rating = ({ onOverallRate, onDifficultyRate, onEnjoymentRate, onComment, o
         <div className="flex justify-center items-stretch self-end">
           {[1, 2, 3, 4, 5].map((value) => (
             <button
-              className="btn border-white bg-purple-500 bg-transparent rounded-full"
+              className="btn border-white bg-purple-500 hover:bg-white  rounded-full"
               key={value}
               onClick={()=>onDifficultyRate(value)}
               style={{
@@ -48,7 +48,7 @@ const Rating = ({ onOverallRate, onDifficultyRate, onEnjoymentRate, onComment, o
         <div className="flex justify-center items-stretch self-end">
           {[1, 2, 3, 4, 5].map((value) => (
             <button
-              className="btn border-white bg-purple-500 bg-transparent rounded-full"
+              className="btn border-white bg-purple-500 hover:bg-white rounded-full"
               key={value}
               onClick={() => onEnjoymentRate(value)}
               style={{

@@ -49,6 +49,10 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
     };
   }, []);
 
+  useEffect(() => {
+console.log(score)
+  },[score])
+
  
     const handleSumbit = async () => {
       try {
@@ -83,7 +87,7 @@ const response = await fetch(`${ import.meta.env.VITE_BASE_URL_API}/feedback/use
   return (
     <section className="rounded-lg h-screen w-full block items-start " id="leaderboard">
       <div className="row">
-        <div className="block w-full text-white">
+        <div className="block w-full h-screen text-white">
           <h2 className={` ${theme === 'dark' ? ' bg-gray-700' : ' text-gradient '} text-2xl font-bold mb-4 text-center `}>
             Current Leaderboard <p className="capitalize">Created by {score[0].userName}</p>
           </h2>
@@ -109,7 +113,7 @@ const response = await fetch(`${ import.meta.env.VITE_BASE_URL_API}/feedback/use
                       <img className="w-10 mr-2" src={trophyImage} alt="Trophy" />
                     )}
                     {index}
-                  </div>Update
+                  </div>
                   <div className="col-span-8">
                     <p className='capitalize'>{item.userName}</p>
                     <p className="text-xs text-gray-500">{item.email}</p>
