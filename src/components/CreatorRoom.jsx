@@ -12,6 +12,7 @@ import trophyImage from '/public/trophy-icon.png';
 import Leaderboard from "./LeaderBoard";
 
 
+
 function CreatorRoom() {
   const { theme } = useContext(ThemeContext);
   const { roomName } = useParams();
@@ -23,7 +24,7 @@ function CreatorRoom() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState({});
   const { result } = useContext(GameContext);
-
+ 
 
   const fetchQuestions = async () => {
     try {
@@ -133,6 +134,9 @@ function CreatorRoom() {
     }
   };
 
+ 
+
+
   return (
     <div>
       <>
@@ -170,9 +174,10 @@ function CreatorRoom() {
                 theme === "dark"
                   ? " bg-gray-700"
                   : "bg-dull-purple border-light-purple"
-              } flex flex-col p-5 mt-5 text-white rounded-lg text-gray-700 border-2 border-gray-200 ${
-                sentQuestion.includes(index) ? "grayscale -inset" : ""
-              }`}
+              } flex flex-col p-5 mt-5 text-white rounded-lg text-gray-700 border-2 border-gray-200 
+              ${ selectedCategory === "Emoji Quiz" ? "emoji-quiz" : ""}
+              ${ selectedCategory === "Emoji" ? "emoji-quiz" : ""}
+              ${sentQuestion.includes(question._id) ? "grayscale -inset" : ""}` }
             >
               <h2
                 className={` ${
@@ -196,7 +201,7 @@ function CreatorRoom() {
                 <div className="col-span-12 w-full sm:w-content sm:col-span-6">
                   <Button
                     color2="gradient-button"
-                    clickFunction={() => sendQuestion(question, index)}
+                    clickFunction={() => sendQuestion(question, question._id)}
                     text="Send Question"
                   />
                 </div>
@@ -230,6 +235,9 @@ function CreatorRoom() {
           <Leaderboard score={result} theme={theme} trophyImage={trophyImage} />
 
         )}
+        
+       
+      
       </>
     </div>
   );

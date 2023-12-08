@@ -8,8 +8,6 @@ const Navbar = () => {
 const { theme } = useContext(ThemeContext);
 const [hamburgerMenuStatus, setHMState] = useState(false)
 const [userMenuStatus, setUserMState] = useState(false)
-// const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const { isLoggedIn, user,logOutUser } = useContext(AuthContext);
   const options = {
     onCollapse: () => {

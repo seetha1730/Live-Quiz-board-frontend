@@ -178,6 +178,7 @@ body {
   background-color: #11042a;
 }
 
+
 .my-screen{
   height: 90vh;
 }
@@ -192,6 +193,14 @@ position: absolute;
     margin: 0px;
     transform: translate3d(157.5px, 68px, 0px);
 }
+.emoji-quiz h2.text-gradient ,.question h2.text-gradient{
+  background: -webkit-linear-gradient(226.65deg, #12c2ea 5.28%, #be7eff 68.63%);
+  -webkit-text-fill-color: none;
+  -webkit-text-fill-color: white;
+  
+}
+
+.question h2.text-gradient{padding:10px;border-radius:10px}
 @media  (max-width: 640px){
   .my-screen{
     height:auto;
@@ -203,7 +212,8 @@ position: absolute;
     padding: 10px;
     font-size: 14px;
 }
-
+.scoreList {font-size:14px}
+.scoreList img {width:20px}
 }
 @media (min-width: 768px){
   .purple-button{width:100%}

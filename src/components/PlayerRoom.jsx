@@ -64,10 +64,9 @@ function PlayerRoom() {
     }
   };
 
-
   return (
     <>
-      {!answerSubmitted && question ? (
+      {!answerSubmitted && question && !score.length ? (
         <div className={` ${theme === 'dark' ? ' bg-gray-700' : ' question bg-base-purple border-light-purple '} flex flex-col rounded-2xl px-5 text-white `}>
           <div className="p-5 rounded-2xl">
             <h2 className={` ${theme === 'dark' ? ' bg-gray-700' : ' text-gradient '} text-2xl   font-bold text-center `}>{question.questionText}</h2>
@@ -104,6 +103,10 @@ function PlayerRoom() {
           <Leaderboard score={score} theme={theme} trophyImage={trophyImage} />
          
         )}
+        
+
+       
+
 
       </>
     </>

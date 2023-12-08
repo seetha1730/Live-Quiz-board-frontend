@@ -1,4 +1,4 @@
-import { useEffect, useContext,useState} from 'react';
+import { useEffect, useContext} from 'react';
 import { AuthContext } from '../context/auth.context';
 import ThemeSwitcher from './ThemeSwitcher';
 import { NavLink } from "react-router-dom";
@@ -6,7 +6,6 @@ import { Collapse } from 'flowbite';
 import { ThemeContext } from '../context/theme.context';
 const Navbar = () => {
 const { theme } = useContext(ThemeContext);
-// const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const { isLoggedIn, user,logOutUser } = useContext(AuthContext);
 
@@ -30,10 +29,6 @@ const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
   },[theme])
-
-  // const toggleMobileMenu = () => {
-  //   setIsMobileMenuOpen(!isMobileMenuOpen);
-  // };
 
   return (
     <nav className={theme === 'dark' ? 'bg-gray-800' : 'bg-gradient-main border-gray-200'}>
@@ -121,9 +116,6 @@ const { theme } = useContext(ThemeContext);
               
             </ul>
         
-            
-        
- 
           </div>
         
           <ThemeSwitcher/>

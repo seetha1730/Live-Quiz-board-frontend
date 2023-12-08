@@ -1,4 +1,4 @@
-import { useContext ,useEffect, useState} from 'react';
+import { useContext , useState} from 'react';
 import RoomAndUsers from "../components/RoomsAndUser";
 import { GameContext } from '../context/game.context';
 import CreatorRoom from '../components/CreatorRoom';
@@ -27,7 +27,7 @@ function GameRoom() {
        
          
             <div className={`p-5 md:hidden ${isToggleVisible ? 'visible' : 'invisible' }`}>
-            <div className={` ${theme === 'dark' ? ' bg-gray-700' :'bg-dull-purple border-light-purple' } md:hidden block overflow-y-scroll  gap-3 col-span-12 m-5 h-screen absolute z-30 w-10/12 rounded-lg top-[4.8125rem]`}>
+            <div className={` ${theme === 'dark' ? ' bg-gray-500' :'bg-dull-purple border-light-purple' } md:hidden block overflow-y-scroll  gap-3 col-span-12 m-5 h-screen absolute z-30 w-10/12 rounded-lg top-[4.8125rem]`}>
             <RoomAndUsers  />
             </div>
           </div>

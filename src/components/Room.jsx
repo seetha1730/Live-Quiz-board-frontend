@@ -2,6 +2,7 @@ import  {useState,useContext, useEffect} from "react";
 import { AuthContext } from "../context/auth.context";
 import { ThemeContext } from '../context/theme.context';
 import { socket } from "../services/socket.service";
+import PropTypes from 'prop-types';
 
 function Room({ buttonEvt, title ,background}) {
   const { theme } = useContext(ThemeContext);
@@ -85,5 +86,9 @@ useEffect(() => {
     </>
   );
 }
-
+Room.propTypes = {
+  title: PropTypes.node.isRequired,
+  buttonEvt: PropTypes.node.isRequired,
+  background: PropTypes.node.isRequired,
+};
 export default Room;

@@ -1,7 +1,34 @@
 // Leaderboard.js
+import { useState,useEffect } from "react";
 import PropTypes from 'prop-types';
-
+import Rating from './Rating';
 const Leaderboard = ({ score, theme, trophyImage }) => {
+  const [showRating, setShowRating] = useState(false);
+  const [selectedRating, setSelectedRating] = useState(0);
+  const [comment, setComment] = useState("");
+  const handleRate = (value) => {
+    setSelectedRating(value);
+  };
+  const handleComment = (commentValue) => {
+    setComment(commentValue);
+  };
+  useEffect(() => {
+    let ratingTimeout;
+
+
+      // Set a timeout to show the rating after 5 seconds
+      ratingTimeout = setTimeout(() => {
+        setShowRating(true);
+      }, 5000);
+
+
+    return () => {
+      // Clear the timeout when the component unmounts or when it is updated
+      clearTimeout(ratingTimeout);
+    };
+  }, []);
+
+
   return (
     <section className="rounded-lg h-screen w-full block items-start " id="leaderboard">
       <div className="row">
@@ -10,8 +37,8 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
             Current Leaderboard <p className="capitalize">Created by {score[0].userName}</p>
           </h2>
 
-          <div className="m-5 scoreList">
-            <div className="grid grid-cols-12">
+          <div className="sm:m-5 m-0 scoreList">
+            <div className="grid grid-cols-12 mb-2">
               <div className="col-span-2">
                 Rank
               </div>
@@ -25,7 +52,7 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
             {score
               .sort((a, b) => b.score - a.score)
               .map((item, index) => item.score && (
-                <div key={index} className="grid p-5 grid-cols-12 items-center bg-dull-purple border-light-purple m-3">
+                <div key={index} className="grid p-5 grid-cols-12 items-center bg-dull-purple border-light-purple m-0 sm:m-3">
                   <div className="col-span-2 flex flex-row items-center">
                     {index < 3 && (
                       <img className="w-10 mr-2" src={trophyImage} alt="Trophy" />
@@ -33,7 +60,7 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
                     {index}
                   </div>
                   <div className="col-span-8">
-                    <p>{item.userName}</p>
+                    <p className='capitalize'>{item.userName}</p>
                     <p className="text-xs text-gray-500">{item.email}</p>
                   </div>
                   <div className="col-span-2">
@@ -42,6 +69,23 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
                 </div>
               ))}
           </div>
+          {showRating && score.length > 0 && (
+          <div className="bg-white text-gray-700 border-light-purple rounded-lg p-5">
+      <h5>Game Feedback</h5>
+      <p>Your Rating: {selectedRating}</p>
+      <Rating onRate={handleRate}  onComment={handleComment} />
+      {comment && (
+          <div className="mt-3">
+            <strong>Your Comment:</strong>
+            <p>{comment}</p>
+          </div>
+        )}
+
+        
+       </div>
+          
+        )}
+      
         </div>
       </div>
     </section>

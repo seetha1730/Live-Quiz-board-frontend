@@ -764,6 +764,85 @@
         "questionText": "How do you include an external Handlebars partial in a template?",
         "options": ["{{ include 'partialName' }}", "{{ partial 'partialName' }}", "{{ external 'partialName' }}", "{{ extend 'partialName' }}"],
         "correctOption": 1
-      }
+      },
+        {
+          "id": 111,
+          "category": "General",
+          "questionText": "What is the capital of France?",
+          "options": ["Paris", "London", "Berlin", "Madrid"],
+          "correctOption": 0
+        },
+        {
+          "id": 112,
+          "category": "Emoji",
+          "questionText": "🍎 + 🍌 = ?",
+          "options": ["🍇", "🍊", "🍍", "🍉"],
+          "correctOption": 2
+        },
+        {
+          "id": 113,
+          "category": "JavaScript",
+          "questionText": "What is the purpose of the 'setTimeout' function in JavaScript?",
+          "options": ["To delay the execution of a function", "To set a timer for an event", "To measure the time taken by a function", "To create a timeout error"],
+          "correctOption": 0
+        },
+        {
+          "id": 114,
+          "category": "Emoji",
+          "questionText": "🚗 + 🏞️ = ?",
+          "options": ["🚤", "🏰", "🏡", "🚙"],
+          "correctOption": 3
+        },
+        {
+          "id": 115,
+          "category": "HTML",
+          "questionText": "Which HTML tag is used for creating a hyperlink?",
+          "options": ["<link>", "<a>", "<href>", "<hyperlink>"],
+          "correctOption": 1
+        },
+        {
+          "id": 116,
+          "category": "General",
+          "questionText": "In which year did the Titanic sink?",
+          "options": ["1912", "1920", "1901", "1931"],
+          "correctOption": 0
+        },
+        {
+          "id": 117,
+          "category": "Emoji",
+          "questionText": "🎨 + 🖌️ = ?",
+          "options": ["📷", "🎤", "🖼️", "🎬"],
+          "correctOption": 2
+        },
+        {
+          "id": 118,
+          "category": "CSS",
+          "questionText": "What is the 'box-sizing' property in CSS used for?",
+          "options": ["To set the color of text", "To create a shadow effect", "To control the box model for sizing elements", "To define the size of a box"],
+          "correctOption": 2
+        },
+        {
+          "id": 119,
+          "category": "JavaScript",
+          "questionText": "What does the 'typeof' operator in JavaScript do?",
+          "options": ["Returns the type of a variable", "Checks if a variable is defined", "Converts a variable to a specific type", "Compares the type of two variables"],
+          "correctOption": 0
+        },
+        {
+          "id": 120,
+          "category": "General",
+          "questionText": "Who wrote 'Romeo and Juliet'?",
+          "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+          "correctOption": 1
+        },
+        {
+          "id": 121,
+          "category": "Emoji",
+          "questionText": "🌍 - 🌞 = ?",
+          "options": ["🌑", "🌙", "☁️", "⭐"],
+          "correctOption": 1
+        }
+      
+      
   ]
   

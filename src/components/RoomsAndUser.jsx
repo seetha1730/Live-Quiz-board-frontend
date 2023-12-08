@@ -28,6 +28,7 @@ function RoomAndUsers() {
 
   const leaveRoom = () => {
     navigate('/', { replace: true });
+    setResult(0);
   };
 
    const endGame = (roomData) => {
