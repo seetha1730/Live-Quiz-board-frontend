@@ -37,7 +37,7 @@ Real-time updates and interactions through WebSocket.io.
 To get started with the B2B Grocery Store POS System, follow these steps:
 
 # Prerequisites
-Node.js installed on your machine.
+Node.js is installed on your machine.
 # Installation
 1. Fork the Repository:
 Click the "Fork" button at the top right corner of this repository's page. This will create a copy of the project in your GitHub account.
@@ -91,9 +91,8 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-Contributors: Seetha Lakshmi
-Special thanks to Diogo Barros and Maik Schmidt.
+Instructor: Special thanks to Diogo Barros and Maik Schmidt.
 
 ## Contact Information
 
-For any question or queries, please contact: seetharaj1990@gmail.com
+For any questions or queries, please contact: seetharaj1990@gmail.com
