@@ -108,7 +108,7 @@ function ProfilePage() {
 
               <div className="mb-4">
                 <label className="block text-sm font-medium ">
-                  Date of Birth:
+                  Date of Birth:<span className="ml-2">*</span>
                   <input
                     type="date"
                     name="dateOfBirth"

@@ -2,6 +2,8 @@
 import { useState,useEffect,useContext } from "react";
 import PropTypes from 'prop-types';
 import Rating from './Rating';
+import { useNavigate } from "react-router-dom";
+
 import { GameContext} from "../context/game.context";
 const Leaderboard = ({ score, theme, trophyImage }) => {
   const [showRating, setShowRating] = useState(false);
@@ -12,7 +14,7 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
   const [enjoymentRating, setEnjoymentRating] = useState(0);
   const { playerDetail } = useContext(GameContext)
 
-
+  const navigate = useNavigate();
 
   const handleOverallRate = (value) => {
     setOverallRating(value);
@@ -76,6 +78,7 @@ const response = await fetch(`${ import.meta.env.VITE_BASE_URL_API}/feedback/use
           });
   
           const data = await response.json();
+          navigate("/");
           console.log('Feedback submitted:', data);
       } catch (error) {
           console.error('Error submitting feedback:', error);
@@ -138,15 +141,6 @@ const response = await fetch(`${ import.meta.env.VITE_BASE_URL_API}/feedback/use
       onComment={handleCommentChange}
       comment={comment}
        onSubmit={handleSumbit}/>
-
-      {comment && (
-          <div className="mt-3">
-            <strong>Your Comment:</strong>
-            <p>{comment}</p>
-          </div>
-        )}
-
-        
        </div>
           
         )}
