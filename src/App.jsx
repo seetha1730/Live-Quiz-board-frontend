@@ -14,8 +14,7 @@ import ProfilePage from './pages/ProfilePage';
 import GameHistory from "./pages/GameHistoryPage"
 import ForgotPassword from './pages/ForgotPassword';
 import HomePage from './pages/HomePage';
-import FeedbackPage from "./pages/FeedbackPage"
-
+import FeedBackPage from './pages/FeedBackPage';
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -32,7 +31,7 @@ function App() {
         <Route path="/history/:userId" element={<GameHistory /> } />
         <Route path="/" element={ <HomePage />} />
         <Route path="/room" element={ <QuizBoardPage />} />
-        <Route path="/feedback" element={ <FeedbackPage/>} />
+        <Route path="/feedback" element={ <FeedBackPage/>} />
         <Route path="/forgot-password" element={ <ForgotPassword/>} />
         <Route path="/reset-password" element={ <ResetPassWordPage/>} />
         <Route path="/profile/:userId" element={ <ProfilePage/>} />

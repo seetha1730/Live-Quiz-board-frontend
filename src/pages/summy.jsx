@@ -4,7 +4,7 @@ import axios from 'axios';
 import { ThemeContext } from '../context/theme.context';
 import Star from '../components/Star';
 
-const FeedBackPage = () => {
+const FeedbackPage = () => {
   const [feedback, setFeedback] = useState([]);
   const { theme } = useContext(ThemeContext);
   useEffect(() => {
@@ -55,4 +55,4 @@ const FeedBackPage = () => {
   );
 };
 
-export default FeedBackPage;
+export default FeedbackPage;
