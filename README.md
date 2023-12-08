@@ -1,6 +1,6 @@
 ## Links
 
-# Slides presentation :[ https://slides.com/lea-3/palette](https://slides.com/seetharaj/decks/project-3)
+# Slides presentation :https://slides.com/seetharaj/decks/project-3
 # Github repository : https://github.com/seetha1730/Live-Quiz-board-frontend
 # App deployed with Cyclic: https://candid-mousse-99e5c1.netlify.app
 
