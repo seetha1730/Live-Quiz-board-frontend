@@ -11,7 +11,7 @@ function ProfilePage() {
   const [editing, setEditing] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
 
-  console.log("profile:", profile)
+
 
   const { userId } = useParams();
   useEffect(() => {

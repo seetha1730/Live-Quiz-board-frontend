@@ -1,4 +1,5 @@
 
+import PropTypes from "prop-types";
 
 function ProfileCard({ theme, profile, handleEdit }) {
   return (
@@ -24,10 +25,21 @@ function ProfileCard({ theme, profile, handleEdit }) {
         </button>
 
 
-
       </div>
     </div>
   );
 }
 
+ProfileCard.propTypes = {
+  theme: PropTypes.string.isRequired,
+  profile: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    lastName: PropTypes.string,
+    dateOfBirth: PropTypes.instanceOf(Date).isRequired,
+    gender: PropTypes.string.isRequired,
+    phoneNumber: PropTypes.string,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
+  handleEdit: PropTypes.func.isRequired,
+};
 export default ProfileCard;
