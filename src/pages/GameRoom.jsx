@@ -16,10 +16,10 @@ function GameRoom() {
     setIsToggleVisible(!isToggleVisible);
   };
  
-  useBeforeunload((event) => {
-    event.preventDefault();
-    window.confirm('Are you sure! You will exiting the game..')
-  });
+  // useBeforeunload((event) => {
+  //   event.preventDefault();
+  //   window.confirm('Are you sure! You will exiting the game..')
+  // });
 
   useEffect( () => () => window.onpopstate = () => {
     window.confirm('Are you sure! You will exiting the game..')

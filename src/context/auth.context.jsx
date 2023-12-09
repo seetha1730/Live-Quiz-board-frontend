@@ -84,7 +84,7 @@ function AuthProviderWrapper(props) {
   )
 }
 AuthProviderWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export { AuthProviderWrapper, AuthContext };

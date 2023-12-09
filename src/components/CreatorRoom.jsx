@@ -123,6 +123,7 @@ function CreatorRoom() {
   };
 
   const EditQuestion = async (id, formData) => {
+    console.log(id, formData)
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL_API}/question-answers/${id}/update`,
@@ -133,7 +134,7 @@ function CreatorRoom() {
         ques._id === id ? response.data : ques
       );
       setQuestions(updatedQuestions);
-      setFilteredQuestions(filteredQuestions.filter((ques) => ques.id === id));
+      setFilteredQuestions(questions.filter((ques) => ques.id === id));
 
       setIsOpen(false);
 

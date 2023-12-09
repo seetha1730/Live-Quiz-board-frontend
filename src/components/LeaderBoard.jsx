@@ -151,9 +151,9 @@ const Leaderboard = ({ score, theme, trophyImage }) => {
   );
 };
 Leaderboard.propTypes = {
-  score: PropTypes.array.isRequired,
-  theme: PropTypes.string.isRequired,
-  trophyImage: PropTypes.string.isRequired,
+  score: PropTypes.array,
+  theme: PropTypes.string,
+  trophyImage: PropTypes.string,
 }
 
 export default Leaderboard;

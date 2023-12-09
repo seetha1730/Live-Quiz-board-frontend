@@ -87,8 +87,8 @@ function Room({ buttonEvt, title, background }) {
   );
 }
 Room.propTypes = {
-  title: PropTypes.node.isRequired,
-  buttonEvt: PropTypes.func.isRequired,
-  background: PropTypes.node.isRequired,
+  title: PropTypes.node,
+  buttonEvt: PropTypes.func,
+  background: PropTypes.node,
 };
 export default Room;

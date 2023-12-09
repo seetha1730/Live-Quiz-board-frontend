@@ -841,7 +841,270 @@
           "questionText": "🌍 - 🌞 = ?",
           "options": ["🌑", "🌙", "☁️", "⭐"],
           "correctOption": 1
-        }
+        },{
+          "id": 111,
+          "category": "General",
+          "questionText": "What is the capital of France?",
+          "options": ["Paris", "London", "Berlin", "Madrid"],
+          "correctOption": 0
+        },
+        {
+          "id": 112,
+          "category": "Emoji",
+          "questionText": "🍎 + 🍌 = ?",
+          "options": ["🍇", "🍊", "🍍", "🍉"],
+          "correctOption": 2
+        },
+        {
+          "id": 113,
+          "category": "JavaScript",
+          "questionText": "What is the purpose of the 'setTimeout' function in JavaScript?",
+          "options": ["To delay the execution of a function", "To set a timer for an event", "To measure the time taken by a function", "To create a timeout error"],
+          "correctOption": 0
+        },
+        {
+            "category": "Emoji",
+            "questionText": "📘 + ✏️ = ?",
+            "options": ["📚", "🎨", "📝", "📖"],
+            "correctOption": 0
+          },
+          {
+            "category": "Emoji",
+            "questionText": "🚀 + 🌌 = ?",
+            "options": ["🛰️", "🌠", "🌙", "🪐"],
+            "correctOption": 1
+          },
+          {
+            "category": "Emoji",
+            "questionText": "🍕 + 🍔 = ?",
+            "options": ["🍟", "🍖", "🍛", "🍟"],
+            "correctOption": 3
+          },
+        {
+          "id": 114,
+          "category": "Emoji",
+          "questionText": "🚗 + 🏞️ = ?",
+          "options": ["🚤", "🏰", "🏡", "🚙"],
+          "correctOption": 3
+        },
+        {
+          "id": 115,
+          "category": "HTML",
+          "questionText": "Which HTML tag is used for creating a hyperlink?",
+          "options": ["<link>", "<a>", "<href>", "<hyperlink>"],
+          "correctOption": 1
+        },
+        {
+          "id": 116,
+          "category": "General",
+          "questionText": "In which year did the Titanic sink?",
+          "options": ["1912", "1920", "1901", "1931"],
+          "correctOption": 0
+        },
+        {
+          "id": 117,
+          "category": "Emoji",
+          "questionText": "🎨 + 🖌️ = ?",
+          "options": ["📷", "🎤", "🖼️", "🎬"],
+          "correctOption": 2
+        },
+        {
+          "id": 118,
+          "category": "CSS",
+          "questionText": "What is the 'box-sizing' property in CSS used for?",
+          "options": ["To set the color of text", "To create a shadow effect", "To control the box model for sizing elements", "To define the size of a box"],
+          "correctOption": 2
+        },
+        {
+          "id": 119,
+          "category": "JavaScript",
+          "questionText": "What does the 'typeof' operator in JavaScript do?",
+          "options": ["Returns the type of a variable", "Checks if a variable is defined", "Converts a variable to a specific type", "Compares the type of two variables"],
+          "correctOption": 0
+        },
+        {
+          "id": 120,
+          "category": "General",
+          "questionText": "Who wrote 'Romeo and Juliet'?",
+          "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+          "correctOption": 1
+        },
+        {
+          "id": 121,
+          "category": "Emoji",
+          "questionText": "🌍 - 🌞 = ?",
+          "options": ["🌑", "🌙", "☁️", "⭐"],
+          "correctOption": 1
+        },
+        {
+            "id": 122,
+            "category": "React",
+            "questionText": "What is the purpose of the 'useState' hook in React?",
+            "options": ["To perform side effects in functional components", "To manage state in functional components", "To define routing in a React app", "To create custom hooks for authentication"],
+            "correctOption": 1
+          },
+          {
+            "id": 123,
+            "category": "Tailwind CSS",
+            "questionText": "What utility class in Tailwind CSS is used to set the font size?",
+            "options": ["text-size", "font-size", "text-font", "size-font"],
+            "correctOption": 1
+          },
+        
+          {
+            "id": 125,
+            "category": "Node.js",
+            "questionText": "Which module in Node.js is used for handling file operations?",
+            "options": ["http", "fs", "path", "file"],
+            "correctOption": 1
+          },
+        
+          {
+            "id": 127,
+            "category": "JavaScript",
+            "questionText": "Which of the following is not a valid JavaScript data type?",
+            "options": ["number", "boolean", "character", "string"],
+            "correctOption": 2
+          },
+         
+          {
+            "id": 129,
+            "category": "CSS",
+            "questionText": "What does the 'z-index' property in CSS control?",
+            "options": ["The size of a box", "The stacking order of elements", "The color of text", "The spacing between lines of text"],
+            "correctOption": 1
+          },
+          {
+            "id": 130,
+            "category": "Bootstrap",
+            "questionText": "Which class is used to create a responsive, fixed-width container in Bootstrap?",
+            "options": ["container", "container-fluid", "container-fixed", "fixed-width"],
+            "correctOption": 0
+          },{
+            "category": "Emoji",
+            "questionText": "Guess the programming language represented by the following emojis: 🐍🔵",
+            "options": ["Python", "Java", "JavaScript", "Ruby"],
+            "correctOption": 0
+          },
+            {
+              "category": "Emoji Quiz",
+              "questionText": "Guess the movie title represented by the following emojis: 🦁👑",
+              "options": ["The Lion King", "Madagascar", "Finding Nemo", "Shrek"],
+              "correctOption": 0
+            },
+            {
+              "category": "Emoji Quiz",
+              "questionText": "Identify the famous landmark represented by these emojis: 🗽🍎",
+              "options": ["Eiffel Tower", "Sydney Opera House", "Statue of Liberty", "Taj Mahal"],
+              "correctOption": 2
+            },
+            {
+              "category": "Emoji Quiz",
+              "questionText": "Guess the musical instrument depicted by these emojis: 🎺🎷",
+              "options": ["Piano", "Violin", "Trumpet", "Flute"],
+              "correctOption": 2
+            },
+            {
+              "category": "Emoji Quiz",
+              "questionText": "What sport is represented by these emojis: ⚽🥅",
+              "options": ["Basketball", "Tennis", "Soccer", "Golf"],
+              "correctOption": 2
+            },
+            {
+              "category": "Emoji Quiz",
+              "questionText": "Identify the profession represented by these emojis: 👩‍⚕️💉",
+              "options": ["Chef", "Scientist", "Doctor", "Firefighter"],
+              "correctOption": 2
+            },
+            {
+              "category": "Emoji Quiz",
+              "questionText": "Guess the cartoon character represented by these emojis: 🧙‍♂️⚡🔮",
+              "options": ["Mickey Mouse", "SpongeBob SquarePants", "Harry Potter", "Bugs Bunny"],
+              "correctOption": 2
+            },
+            {
+                "category": "Emoji Quiz",
+                "questionText": "What type of weather is depicted by these emojis: ☀️⛈️",
+                "options": ["Snowy", "Sunny", "Rainy", "Cloudy"],
+                "correctOption": 2
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "Guess the famous scientist represented by these emojis: 👨‍🔬🍏",
+                "options": ["Marie Curie", "Albert Einstein", "Isaac Newton", "Galileo Galilei"],
+                "correctOption": 2
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "Identify the gaming console represented by these emojis: 🎮❌",
+                "options": ["PlayStation", "Xbox", "Nintendo Switch", "PC"],
+                "correctOption": 1
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "Guess the car brand represented by these emojis: 🍏🚗",
+                "options": ["Ford", "Tesla", "Toyota", "BMW"],
+                "correctOption": 1
+              },{
+                "category": "Emoji Quiz",
+                "questionText": "Identify the famous painting represented by these emojis: 🎨🌺",
+                "options": ["Starry Night", "Mona Lisa", "The Scream", "Sunflowers"],
+                "correctOption": 3
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "Guess the movie title represented by the following emojis: 🚀🌌",
+                "options": ["Interstellar", "Gravity", "The Martian", "Apollo 13"],
+                "correctOption": 0
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "What dance style is represented by these emojis: 💃🕺",
+                "options": ["Salsa", "Ballet", "Hip Hop", "Waltz"],
+                "correctOption": 2
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "Identify the TV show represented by these emojis: 🧙‍♀️🚗",
+                "options": ["Charmed", "Bewitched", "Sabrina the Teenage Witch", "Supernatural"],
+                "correctOption": 2
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "Guess the country represented by these emojis: 🍣🗾",
+                "options": ["China", "Japan", "Thailand", "South Korea"],
+                "correctOption": 1
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "What board game is represented by these emojis: 🚂💰",
+                "options": ["Chess", "Monopoly", "Scrabble", "Catan"],
+                "correctOption": 1
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "Identify the science fiction book represented by these emojis: 🤖📚",
+                "options": ["Dune", "Neuromancer", "Brave New World", "I, Robot"],
+                "correctOption": 3
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "Guess the animal represented by these emojis: 🐘🏞️",
+                "options": ["Lion", "Elephant", "Giraffe", "Zebra"],
+                "correctOption": 1
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "What movie genre is represented by these emojis: 🎬👻",
+                "options": ["Horror", "Comedy", "Action", "Drama"],
+                "correctOption": 0
+              },
+              {
+                "category": "Emoji Quiz",
+                "questionText": "Identify the famous scientist represented by these emojis: 🔬🍎",
+                "options": ["Marie Curie", "Albert Einstein", "Isaac Newton", "Galileo Galilei"],
+                "correctOption": 0
+              }
       
       
   ]

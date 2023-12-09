@@ -20,7 +20,7 @@ function ThemeProviderWrapper(props) {
   );
 }
 ThemeProviderWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 

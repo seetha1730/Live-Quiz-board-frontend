@@ -18,7 +18,7 @@ function IsAnon({ children }) {
   }
 }
 IsAnon.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default IsAnon;

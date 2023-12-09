@@ -37,10 +37,10 @@ const Accordion = ({ items }) => {
 Accordion.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.node.isRequired,
-      content: PropTypes.node.isRequired,
+      title: PropTypes.node,
+      content: PropTypes.node,
     })
-  ).isRequired,
+  ),
 };
 
 export default Accordion;

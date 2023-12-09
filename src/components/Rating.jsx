@@ -86,15 +86,15 @@ const Rating = ({ onOverallRate, onDifficultyRate, onEnjoymentRate, onComment, o
 };
 
 Rating.propTypes = {
-  onOverallRate: PropTypes.func.isRequired,
-  onDifficultyRate: PropTypes.func.isRequired,
-  onEnjoymentRate: PropTypes.func.isRequired,
-  onComment: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  overallRating: PropTypes.number.isRequired,
-  difficultyRating: PropTypes.number.isRequired,
-  enjoymentRating: PropTypes.number.isRequired,
-  comment: PropTypes.string.isRequired,
+  onOverallRate: PropTypes.func,
+  onDifficultyRate: PropTypes.func,
+  onEnjoymentRate: PropTypes.func,
+  onComment: PropTypes.func,
+  onSubmit: PropTypes.func,
+  overallRating: PropTypes.number,
+  difficultyRating: PropTypes.number,
+  enjoymentRating: PropTypes.number,
+  comment: PropTypes.string,
 };
 
 export default Rating;

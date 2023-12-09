@@ -31,15 +31,15 @@ function ProfileCard({ theme, profile, handleEdit }) {
 }
 
 ProfileCard.propTypes = {
-  theme: PropTypes.string.isRequired,
+  theme: PropTypes.string,
   profile: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     lastName: PropTypes.string,
-    dateOfBirth: PropTypes.instanceOf(Date).isRequired,
-    gender: PropTypes.string.isRequired,
+    dateOfBirth: PropTypes.instanceOf(Date),
+    gender: PropTypes.string,
     phoneNumber: PropTypes.string,
-    image: PropTypes.string.isRequired,
-  }).isRequired,
-  handleEdit: PropTypes.func.isRequired,
+    image: PropTypes.string,
+  }),
+  handleEdit: PropTypes.func,
 };
 export default ProfileCard;

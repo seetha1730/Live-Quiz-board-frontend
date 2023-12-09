@@ -16,7 +16,7 @@ function EditButton({ onEdit }) {
 }
 EditButton.propTypes = {
 
-  onEdit: PropTypes.func.isRequired,
+  onEdit: PropTypes.func,
 
 
 };

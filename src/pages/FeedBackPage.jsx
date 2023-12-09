@@ -26,13 +26,13 @@ const FeedBackPage = () => {
   };
   return (
     <div className="w-11/12 pb-8 sm:w-8/12 mx-auto">
-  <h2 className={` ${theme === 'dark' ? ' text-gray-300 ' : ' text-gradient '} text-2xl m-5 font-bold mb-4 text-center `}>
+  <h2 className={` ${theme === 'dark' ? ' text-gray-300  ' : ' text-gradient '} text-2xl m-5 font-bold mb-4 text-center `}>
 
      Feedback</h2>
      <div  className=' '>
   
         {feedback.map((item) => (
-     <div key={item._id} className=' bg-base-purple border-light-purple accordion-item p-5  m-2 rounded-md'>
+     <div key={item._id} className={` ${theme === 'dark' ? '  text-gray-300 bg-gray-800 border border-white ' : ' bg-base-purple border-light-purple '}   p-5  m-2 rounded-md`}>
           <p>Game Room: {item?.game}</p>
           <p>Player: {item?.player}</p>
           <p>Feedback Text: {item?.feedbackText}</p>
