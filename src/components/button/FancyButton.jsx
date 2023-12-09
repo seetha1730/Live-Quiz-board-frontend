@@ -1,5 +1,6 @@
 import React from 'react'
 import "./FancyButton.css"
+import PropTypes from 'prop-types';
 function FancyButton({ text, option, answerClick }) {
   return (
     <div className='w-100 ' onClick={() => answerClick(option)}>
@@ -13,5 +14,13 @@ function FancyButton({ text, option, answerClick }) {
     </div>
   )
 }
+FancyButton.propTypes = {
+
+  answerClick: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired,
+  option: PropTypes.string.isRequired,
+
+};
+
 
 export default FancyButton

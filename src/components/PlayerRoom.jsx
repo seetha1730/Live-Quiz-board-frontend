@@ -7,8 +7,6 @@ import { ThemeContext } from '../context/theme.context';
 import trophyImage from '/public/trophy-icon.png';
 import Leaderboard from "./LeaderBoard";
 
-
-
 function PlayerRoom() {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);

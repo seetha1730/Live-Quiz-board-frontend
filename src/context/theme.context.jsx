@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-
+import PropTypes from 'prop-types';
 const ThemeContext = createContext();
 
 function ThemeProviderWrapper(props) {
@@ -19,5 +19,9 @@ function ThemeProviderWrapper(props) {
     </ThemeContext.Provider>
   );
 }
+ThemeProviderWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 
 export { ThemeContext, ThemeProviderWrapper };

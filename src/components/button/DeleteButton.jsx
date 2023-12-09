@@ -1,6 +1,6 @@
 import {  useContext } from "react";
 import { ThemeContext } from '../../context/theme.context';
-
+import PropTypes from 'prop-types';
 function DeleteButton({onDelete,span}) {
   const { theme } = useContext(ThemeContext);
   
@@ -13,5 +13,12 @@ function DeleteButton({onDelete,span}) {
   
   )
 }
+
+DeleteButton.propTypes = {
+
+  onDelete: PropTypes.func.isRequired,
+  span: PropTypes.string.isRequired,
+
+};
 
 export default DeleteButton

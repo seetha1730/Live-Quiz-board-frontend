@@ -11,7 +11,6 @@ const Navbar = () => {
   const [userMenuStatus, setUserMState] = useState(false)
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
-  console.log("user:", user);
   const options = {
     onCollapse: () => {
       console.log('element has been collapsed');

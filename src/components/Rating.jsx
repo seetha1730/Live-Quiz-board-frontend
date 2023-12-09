@@ -91,6 +91,10 @@ Rating.propTypes = {
   onEnjoymentRate: PropTypes.func.isRequired,
   onComment: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  overallRating: PropTypes.number.isRequired,
+  difficultyRating: PropTypes.number.isRequired,
+  enjoymentRating: PropTypes.number.isRequired,
+  comment: PropTypes.string.isRequired,
 };
 
 export default Rating;

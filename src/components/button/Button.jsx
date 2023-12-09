@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from '../../context/theme.context';
-
+import PropTypes from 'prop-types';
 function Button({ clickFunction, text, color1, color2 }) {
   const { theme } = useContext(ThemeContext);
   
@@ -15,5 +15,10 @@ function Button({ clickFunction, text, color1, color2 }) {
 
   )
 }
-
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  clickFunction: PropTypes.func.isRequired,
+  color1: PropTypes.string.isRequired,
+  color2: PropTypes.string.isRequired,
+};
 export default Button

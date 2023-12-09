@@ -1,7 +1,7 @@
 import {  useContext } from "react";
 
 import { ThemeContext } from '../../context/theme.context';
-
+import PropTypes from 'prop-types';
 function EditButton({ onEdit }) {
   const { theme } = useContext(ThemeContext);
   return (
@@ -14,7 +14,12 @@ function EditButton({ onEdit }) {
   
   )
 }
+EditButton.propTypes = {
 
+  onEdit: PropTypes.func.isRequired,
+
+
+};
 
 
 export default EditButton;
