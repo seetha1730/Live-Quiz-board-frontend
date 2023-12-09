@@ -219,7 +219,7 @@ const Navbar = () => {
                 className="block py-2 px-3  text-white rounded "
                 aria-current="page"
               >
-                Comments
+                Feedback Blog
               </NavLink>
 
             </li>
